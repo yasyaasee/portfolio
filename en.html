@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yasya - AI UGC for Beauty Brands</title>
+<meta name="description" content="AI UGC videos for beauty brands: your real product in the shot, AI model, ready in 2-3 days.">
+<meta property="og:title" content="Yasya - AI UGC for Beauty Brands">
+<meta property="og:description" content="9 AI UGC videos with real products. Pricing in USD.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317151B'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%23E07C9C'/%3E%3C/svg%3E">
+<style>html{-webkit-text-size-adjust:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: витрина вертикальных роликов — узкие «телефонные» кадры в сетке, между ними короткие разборы; блок «было / стало» как сравнение двух витрин WB */
+:root{
+  --bg:#F2F1F4;        /* перламутр с холодным оттенком */
+  --surface:#FFFFFF;
+  --ink:#17151B;
+  --muted:#6B6672;
+  --line:#DCD8E0;
+  --accent:#B0476A;    /* приглушённая роза, как у блеска для губ */
+  --accent-soft:#F3E3E9;
+  --chrome:linear-gradient(135deg,#E9E8EC 0%,#FFFFFF 40%,#C9C7CE 60%,#F4F3F6 100%);
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121015;--surface:#1C1A20;--ink:#F1EEF3;--muted:#A49EAB;--line:#2E2B33;--accent:#E07C9C;--accent-soft:#3A2230;
+  --chrome:linear-gradient(135deg,#2A2830 0%,#3B3941 40%,#1E1C22 60%,#2C2A31 100%);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121015;--surface:#1C1A20;--ink:#F1EEF3;--muted:#A49EAB;--line:#2E2B33;--accent:#E07C9C;--accent-soft:#3A2230;
+  --chrome:linear-gradient(135deg,#2A2830 0%,#3B3941 40%,#1E1C22 60%,#2C2A31 100%);color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));}
+.wrap{max-width:1180px;margin:0 auto;padding-block:40px 80px;display:flex;flex-direction:column;gap:96px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.08}
+h1{font-size:clamp(34px,6.4vw,76px);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(26px,3.6vw,42px);font-weight:600;letter-spacing:-.01em}
+h3{font-size:18px;font-weight:600;line-height:1.25}
+p{margin:0}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lead{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:60ch}
+.section-head{display:flex;flex-direction:column;gap:14px;max-width:760px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end}
+.hero-text{display:flex;flex-direction:column;gap:24px;min-width:0}
+.hero h1 em{font-style:normal;background:var(--chrome);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1px var(--ink)}
+.hero-reel{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hero-reel .phone:nth-child(2){transform:translateY(-36px)}
+.facts{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:12px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);white-space:nowrap}
+.cta{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:600;padding:14px 22px;border-radius:999px}
+.cta:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* phone frame */
+.phone{position:relative;aspect-ratio:9/16;max-width:100%;border-radius:22px;overflow:hidden;background:var(--chrome);padding:5px}
+.phone video,.phone img.poster{width:100%;height:100%;object-fit:cover;border-radius:18px;display:block;background:#000}
+.phone .ai{position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;background:rgba(0,0,0,.55);color:#fff;padding:4px 8px;border-radius:999px}
+.phone button.snd{position:absolute;right:14px;bottom:14px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:15px;cursor:pointer}
+
+/* offer */
+.offer{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.offer > div{background:var(--surface);padding:28px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.offer .n{font-family:var(--display);font-size:34px;font-weight:800;color:var(--accent)}
+.offer p{color:var(--muted)}
+
+/* works */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 28px}
+.work{display:flex;flex-direction:column;gap:14px;min-width:0}
+.work .meta{display:flex;align-items:center;gap:12px}
+.work .pack{width:52px;height:52px;flex:none;border-radius:12px;background:#fff;border:1px solid var(--line);object-fit:contain;padding:4px}
+.work .meta div{min-width:0}
+.work .brand{font-weight:700}
+.work .prod{font-size:14px;color:var(--muted)}
+.work dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:14px}
+.work dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.work dd{margin:0}
+.tag{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin-left:auto;align-self:flex-start;white-space:nowrap}
+.tag.client{background:var(--accent-soft);border-color:transparent;color:var(--accent)}
+
+/* before / after */
+.case{display:flex;flex-direction:column;gap:28px;padding:32px;background:var(--surface);border:1px solid var(--line);border-radius:24px}
+.ba{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start}
+figure.col{margin:0}
+.cap{font-size:13px;color:var(--muted)}
+.shot{aspect-ratio:3/4}
+.shot img{width:100%;height:100%;object-fit:cover}
+.col{display:flex;flex-direction:column;gap:12px;min-width:0}
+.col-head{display:flex;align-items:center;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--muted)}
+.dot.new{background:var(--accent)}
+.shot{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--bg)}
+.shot img{display:block;width:100%;height:auto}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.why ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.why li{display:grid;grid-template-columns:22px 1fr;gap:8px;font-size:15px}
+.why li::before{content:"—";color:var(--muted)}
+.why .plus li::before{content:"+";color:var(--accent);font-weight:700}
+
+/* cards concepts */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cards figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.cards img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:12px;display:block;border:1px solid var(--line)}
+.cards figcaption{font-size:13px;color:var(--muted)}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
+.steps li{list-style:none;display:flex;flex-direction:column;gap:8px;padding-top:18px;border-top:2px solid var(--ink);counter-increment:s}
+.steps li::before{content:"0" counter(s);font-family:var(--mono);font-size:12px;color:var(--accent)}
+.steps p{color:var(--muted);font-size:15px}
+.steps{padding:0;margin:0}
+
+/* prices */
+.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.price{display:flex;flex-direction:column;gap:10px;padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--surface);min-width:0}
+.price.hl{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.price.hl .label,.price.hl p{color:color-mix(in srgb,var(--bg) 70%,transparent)}
+.price .sum{font-family:var(--display);font-size:28px;font-weight:600;font-variant-numeric:tabular-nums}
+.price p{color:var(--muted);font-size:14px}
+
+.contact{display:flex;flex-direction:column;gap:20px;padding:40px;border-radius:28px;background:var(--chrome);border:1px solid var(--line)}
+.contact .handle{color:var(--ink);text-decoration:none;font-family:var(--mono);font-size:clamp(18px,2.4vw,26px);user-select:all;word-break:break-all}
+.note{font-size:13px;color:var(--muted);max-width:70ch}
+
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr}
+  .hero-reel{max-width:420px}
+  .works{grid-template-columns:repeat(2,1fr)}
+  .prices,.steps{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:620px){
+  .wrap{gap:72px;padding-block:24px 64px}
+  .offer,.why{grid-template-columns:1fr}
+  .works{grid-template-columns:1fr}
+  .works .phone{max-width:340px}
+  .ba{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .ba figure:first-child{grid-column:1 / -1;max-width:calc(50% - 6px)}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .case{padding:18px}
+  .prices{grid-template-columns:1fr}
+  .contact{padding:24px}
+}
+@media (prefers-reduced-motion:reduce){.hero-reel .phone:nth-child(2){transform:none}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-text">
+      <span class="label">Yasya · AI UGC creator · beauty &amp; fashion</span>
+      <h1>UGC videos with your product, <em>no creators</em> needed</h1>
+      <p class="lead">I make UGC-style videos for beauty brands with AI. The model is generated, the product in the shot is yours, with your real packaging. Videos are ready in 2-3 days, without shipping products, briefing creators or waiting for reshoots.</p>
+      <div class="facts">
+        <span class="chip">9:16 · Reels, TikTok, Ads</span>
+        <span class="chip">10-15 sec</span>
+        <span class="chip">2-3 days delivery</span>
+        <span class="chip">your real packaging</span>
+      </div>
+      <a class="cta" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Get a free test video →</a>
+    </div>
+    <div class="hero-reel">
+      <div class="phone"><span class="ai">AI</span><video src="hair1.mp4" poster="hair1.jpg" muted loop playsinline preload="none"></video></div>
+      <div class="phone"><span class="ai">AI</span><video src="lips.mp4" poster="lips.jpg" muted loop playsinline preload="none"></video></div>
+    </div>
+  </header>
+
+  <section class="section-head" style="max-width:none;gap:28px">
+    <div class="section-head">
+      <span class="label">Why brands use it</span>
+      <h2>More ad creatives for less money</h2>
+    </div>
+    <div class="offer">
+      <div><span class="n">~½</span><h3>About half the cost of a creator</h3><p>No creator fees, no product shipping, no usage rights to negotiate. You pay for the video, that's it.</p></div>
+      <div><span class="n">2-3d</span><h3>Fast turnaround</h3><p>From brief to finished video in a few days, not weeks of finding and chasing creators.</p></div>
+      <div><span class="n">10×</span><h3>Built for ad testing</h3><p>Different hooks, scenes and looks of one product, so you find the winning ad faster. Same face across all your videos.</p></div>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:36px">
+    <div class="section-head">
+      <span class="label">Work · 9 videos</span>
+      <h2>Real products in every shot</h2>
+      <p class="lead">Next to each video is the product photo from the brand's website. Compare the packaging - it matches down to the lettering.</p>
+    </div>
+    <div class="works">
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="mascara.mp4" poster="mascara.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Sound on">♪</button></div>
+        <div class="meta"><img class="pack" src="p_mascara.jpg" alt="a'skin thermal mascara packaging"><div><div class="brand">a'skin care</div><div class="prod">Thermal mascara</div></div><span class="tag">concept</span></div>
+        <dl><dt>Format</dt><dd>Application + test</dd><dt>Goal</dt><dd>Prove "no smudging" with a cotton swab test right on camera</dd></dl>
+      </article>
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="stick.mp4" poster="stick.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Sound on">♪</button></div>
+        <div class="meta"><img class="pack" src="p_stick.jpg" alt="a'skin lifting stick packaging"><div><div class="brand">a'skin care</div><div class="prod">Lifting stick cream</div></div><span class="tag">concept</span></div>
+        <dl><dt>Format</dt><dd>Beauty hack in the car</dd><dt>Goal</dt><dd>Show "take it with you": out of the bag and applied in seconds</dd></dl>
+      </article>
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="hair1.mp4" poster="hair1.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Sound on">♪</button></div>
+        <div class="meta"><img class="pack" src="p_hairspray.jpg" alt="a'skin volume hair spray packaging"><div><div class="brand">a'skin care</div><div class="prod">Volume hair spray</div></div><span class="tag">concept</span></div>
+        <dl><dt>Format</dt><dd>Before / after</dd><dt>Goal</dt><dd>Open with the pain (flat thin hair) and show the result in one video</dd></dl>
+      </article>
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="hair2.mp4" poster="hair2.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Sound on">♪</button></div>
+        <div class="meta"><img class="pack" src="p_hairspray.jpg" alt="a'skin volume hair spray packaging"><div><div class="brand">a'skin care</div><div class="prod">Volume hair spray</div></div><span class="tag">concept</span></div>
+        <dl><dt>Format</dt><dd>Getting ready for a night out</dd><dt>Goal</dt><dd>Same product, different scenario - a second variant for A/B testing</dd></dl>
+      </article>
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="brow.mp4" poster="brow.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Sound on">♪</button></div>
+        <div class="meta"><img class="pack" src="p_brow.jpg" alt="LUVU Brow Sculpture packaging"><div><div class="brand">LUVU</div><div class="prod">Brow Sculpture</div></div><span class="tag client">client work</span></div>
+        <dl><dt>Format</dt><dd>GRWM by the pool</dd><dt>Goal</dt><dd>Summer lifestyle plus a close-up of the brow brush in action</dd></dl>
+      </article>
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="lips.mp4" poster="lips.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Sound on">♪</button></div>
+        <div class="meta"><img class="pack" src="p_lippencil.jpg" alt="LUVU Lip Pencil Rose Haze packaging"><div><div class="brand">LUVU</div><div class="prod">Lip Pencil Rose Haze + Glossy Lip Treatment</div></div><span class="tag client">client work</span></div>
+        <dl><dt>Format</dt><dd>Makeup on the subway</dd><dt>Goal</dt><dd>Show a two-product combo and the shade on the lips up close</dd></dl>
+      </article>
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="mists.mp4" poster="mists.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Sound on">♪</button></div>
+        <div class="meta"><span class="pack" style="display:grid;place-items:center;font-family:var(--mono);font-size:11px">K</span><div><div class="brand">K-beauty</div><div class="prod">Mists and serums</div></div><span class="tag">concept</span></div>
+        <dl><dt>Format</dt><dd>Shelf review</dd><dt>Goal</dt><dd>For multi-brand stores: several products in one video</dd></dl>
+      </article>
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="coat.mp4" poster="coat.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Sound on">♪</button></div>
+        <div class="meta"><img class="pack" src="p_coat.jpg" alt="Insulated trench coat"><div><div class="brand">Fashion</div><div class="prod">Insulated trench coat</div></div><span class="tag">concept</span></div>
+        <dl><dt>Format</dt><dd>Street style</dd><dt>Goal</dt><dd>Show fit and movement, which a flat white-background photo can't</dd></dl>
+      </article>
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="bag.mp4" poster="bag.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Sound on">♪</button></div>
+        <div class="meta"><span class="pack" style="display:grid;place-items:center;font-family:var(--mono);font-size:11px">F</span><div><div class="brand">Fashion</div><div class="prod">Bag</div></div><span class="tag">concept</span></div>
+        <dl><dt>Format</dt><dd>Elevator selfie</dd><dt>Goal</dt><dd>An accessory on the body: size, how it sits on the shoulder, what to wear it with</dd></dl>
+      </article>
+
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:36px">
+    <div class="section-head">
+      <span class="label">How it works</span>
+      <h2>From brief to video in 2-3 days</h2>
+    </div>
+    <ol class="steps">
+      <li><h3>Brief</h3><p>You send a product link and packaging photos. We talk about your buyer and what stops them from buying.</p></li>
+      <li><h3>Script</h3><p>I write 2-3 scripts with the opening hook and a storyboard. You pick one.</p></li>
+      <li><h3>Video</h3><p>I generate the video with your product and check packaging, text and colors frame by frame.</p></li>
+      <li><h3>Revisions</h3><p>One free round of edits. You get 9:16 files ready for Reels, TikTok and ads.</p></li>
+    </ol>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:36px">
+    <div class="section-head">
+      <span class="label">Pricing</span>
+      <h2>Packages</h2>
+    </div>
+    <div class="prices" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+      <div class="price hl"><span class="label">Test</span><span class="sum">$290</span><p>2 videos of your product. Try the format before a bigger order.</p></div>
+      <div class="price"><span class="label">Starter</span><span class="sum">$590</span><p>5 videos with scripts and captions. Different hooks for ad testing.</p></div>
+      <div class="price"><span class="label">Monthly</span><span class="sum">$1,490/mo</span><p>15 videos a month for ads and social. One consistent face for your brand.</p></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <span class="label">Contact</span>
+    <h2>Let's start with a free test video</h2>
+    <p class="lead" style="color:var(--ink)">Send me your product link and I'll make one video for free, so you can see how it works in your ads.</p>
+    <a class="handle" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Telegram · @yaaasyya</a>
+    <a class="cta" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Message me on Telegram →</a>
+    <p class="note">All models in the videos are AI-generated. Products and packaging are real. Videos marked "concept" were made for the portfolio and were not commissioned by the brand; brand names are shown for reference only.</p>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  var vids=[].slice.call(document.querySelectorAll('video'));
+  if(!('IntersectionObserver' in window)){vids.forEach(function(v){v.preload='metadata';});return;}
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      var v=e.target;
+      if(e.isIntersecting){ if(v.preload==='none') v.preload='auto'; var p=v.play(); if(p&&p.catch)p.catch(function(){}); }
+      else { v.pause(); }
+    });
+  },{threshold:0.35});
+  vids.forEach(function(v){io.observe(v);});
+  document.querySelectorAll('button.snd').forEach(function(b){
+    b.addEventListener('click',function(){
+      var v=b.parentNode.querySelector('video');
+      var on=v.muted;
+      vids.forEach(function(x){x.muted=true;});
+      document.querySelectorAll('button.snd').forEach(function(x){x.textContent='♪';x.setAttribute('aria-label','Sound on');});
+      if(on){v.muted=false;v.play().catch(function(){});b.textContent='■';b.setAttribute('aria-label','Sound off');}
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
