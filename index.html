@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI UGC для beauty-брендов</title>
+<meta name="description" content="AI UGC-ролики и слайды карточек для beauty-брендов на WB и Ozon: реальный продукт в кадре, модель создана нейросетью.">
+<meta property="og:title" content="AI UGC для beauty-брендов">
+<meta property="og:description" content="9 роликов с реальными продуктами, было/стало карточки на WB, пакеты и цены.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317151B'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%23E07C9C'/%3E%3C/svg%3E">
+<style>html{-webkit-text-size-adjust:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: витрина вертикальных роликов — узкие «телефонные» кадры в сетке, между ними короткие разборы; блок «было / стало» как сравнение двух витрин WB */
+:root{
+  --bg:#F2F1F4;        /* перламутр с холодным оттенком */
+  --surface:#FFFFFF;
+  --ink:#17151B;
+  --muted:#6B6672;
+  --line:#DCD8E0;
+  --accent:#B0476A;    /* приглушённая роза, как у блеска для губ */
+  --accent-soft:#F3E3E9;
+  --chrome:linear-gradient(135deg,#E9E8EC 0%,#FFFFFF 40%,#C9C7CE 60%,#F4F3F6 100%);
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121015;--surface:#1C1A20;--ink:#F1EEF3;--muted:#A49EAB;--line:#2E2B33;--accent:#E07C9C;--accent-soft:#3A2230;
+  --chrome:linear-gradient(135deg,#2A2830 0%,#3B3941 40%,#1E1C22 60%,#2C2A31 100%);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121015;--surface:#1C1A20;--ink:#F1EEF3;--muted:#A49EAB;--line:#2E2B33;--accent:#E07C9C;--accent-soft:#3A2230;
+  --chrome:linear-gradient(135deg,#2A2830 0%,#3B3941 40%,#1E1C22 60%,#2C2A31 100%);color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));}
+.wrap{max-width:1180px;margin:0 auto;padding-block:40px 80px;display:flex;flex-direction:column;gap:96px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.08}
+h1{font-size:clamp(34px,6.4vw,76px);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(26px,3.6vw,42px);font-weight:600;letter-spacing:-.01em}
+h3{font-size:18px;font-weight:600;line-height:1.25}
+p{margin:0}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lead{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:60ch}
+.section-head{display:flex;flex-direction:column;gap:14px;max-width:760px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end}
+.hero-text{display:flex;flex-direction:column;gap:24px;min-width:0}
+.hero h1 em{font-style:normal;background:var(--chrome);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1px var(--ink)}
+.hero-reel{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hero-reel .phone:nth-child(2){transform:translateY(-36px)}
+.facts{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:12px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);white-space:nowrap}
+.cta{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:600;padding:14px 22px;border-radius:999px}
+.cta:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* phone frame */
+.phone{position:relative;aspect-ratio:9/16;max-width:100%;border-radius:22px;overflow:hidden;background:var(--chrome);padding:5px}
+.phone video,.phone img.poster{width:100%;height:100%;object-fit:cover;border-radius:18px;display:block;background:#000}
+.phone .ai{position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;background:rgba(0,0,0,.55);color:#fff;padding:4px 8px;border-radius:999px}
+.phone button.snd{position:absolute;right:14px;bottom:14px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:15px;cursor:pointer}
+
+/* offer */
+.offer{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.offer > div{background:var(--surface);padding:28px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.offer .n{font-family:var(--display);font-size:34px;font-weight:800;color:var(--accent)}
+.offer p{color:var(--muted)}
+
+/* works */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 28px}
+.work{display:flex;flex-direction:column;gap:14px;min-width:0}
+.work .meta{display:flex;align-items:center;gap:12px}
+.work .pack{width:52px;height:52px;flex:none;border-radius:12px;background:#fff;border:1px solid var(--line);object-fit:contain;padding:4px}
+.work .meta div{min-width:0}
+.work .brand{font-weight:700}
+.work .prod{font-size:14px;color:var(--muted)}
+.work dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:14px}
+.work dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.work dd{margin:0}
+.tag{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin-left:auto;align-self:flex-start;white-space:nowrap}
+.tag.client{background:var(--accent-soft);border-color:transparent;color:var(--accent)}
+
+/* before / after */
+.case{display:flex;flex-direction:column;gap:28px;padding:32px;background:var(--surface);border:1px solid var(--line);border-radius:24px}
+.ba{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start}
+figure.col{margin:0}
+.cap{font-size:13px;color:var(--muted)}
+.shot{aspect-ratio:3/4}
+.shot img{width:100%;height:100%;object-fit:cover}
+.col{display:flex;flex-direction:column;gap:12px;min-width:0}
+.col-head{display:flex;align-items:center;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--muted)}
+.dot.new{background:var(--accent)}
+.shot{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--bg)}
+.shot img{display:block;width:100%;height:auto}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.why ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.why li{display:grid;grid-template-columns:22px 1fr;gap:8px;font-size:15px}
+.why li::before{content:"—";color:var(--muted)}
+.why .plus li::before{content:"+";color:var(--accent);font-weight:700}
+
+/* cards concepts */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cards figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.cards img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:12px;display:block;border:1px solid var(--line)}
+.cards figcaption{font-size:13px;color:var(--muted)}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
+.steps li{list-style:none;display:flex;flex-direction:column;gap:8px;padding-top:18px;border-top:2px solid var(--ink);counter-increment:s}
+.steps li::before{content:"0" counter(s);font-family:var(--mono);font-size:12px;color:var(--accent)}
+.steps p{color:var(--muted);font-size:15px}
+.steps{padding:0;margin:0}
+
+/* prices */
+.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.price{display:flex;flex-direction:column;gap:10px;padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--surface);min-width:0}
+.price.hl{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.price.hl .label,.price.hl p{color:color-mix(in srgb,var(--bg) 70%,transparent)}
+.price .sum{font-family:var(--display);font-size:28px;font-weight:600;font-variant-numeric:tabular-nums}
+.price p{color:var(--muted);font-size:14px}
+
+.contact{display:flex;flex-direction:column;gap:20px;padding:40px;border-radius:28px;background:var(--chrome);border:1px solid var(--line)}
+.contact .handle{color:var(--ink);text-decoration:none;font-family:var(--mono);font-size:clamp(18px,2.4vw,26px);user-select:all;word-break:break-all}
+.note{font-size:13px;color:var(--muted);max-width:70ch}
+
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr}
+  .hero-reel{max-width:420px}
+  .works{grid-template-columns:repeat(2,1fr)}
+  .prices,.steps{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:620px){
+  .wrap{gap:72px;padding-block:24px 64px}
+  .offer,.why{grid-template-columns:1fr}
+  .works{grid-template-columns:1fr}
+  .works .phone{max-width:340px}
+  .ba{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .ba figure:first-child{grid-column:1 / -1;max-width:calc(50% - 6px)}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .case{padding:18px}
+  .prices{grid-template-columns:1fr}
+  .contact{padding:24px}
+}
+@media (prefers-reduced-motion:reduce){.hero-reel .phone:nth-child(2){transform:none}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-text">
+      <span class="label">Портфолио · AI UGC · beauty &amp; fashion</span>
+      <h1>Видео с вашим продуктом <em>без блогеров</em> и&nbsp;съёмок</h1>
+      <p class="lead">Делаю UGC-ролики и слайды карточек для косметических брендов на WB и Ozon. Модель создана нейросетью, продукт в кадре — ваш, настоящий, с вашей упаковкой. Ролик готов за 2–3 дня, а не за месяц переговоров с блогером.</p>
+      <div class="facts">
+        <span class="chip">9:16 · Reels, Клипы, WB</span>
+        <span class="chip">10–15 секунд</span>
+        <span class="chip">готово за 2–3 дня</span>
+        <span class="chip">реальная упаковка в кадре</span>
+      </div>
+      <a class="cta" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Обсудить пилот в Telegram →</a>
+    </div>
+    <div class="hero-reel">
+      <div class="phone"><span class="ai">AI</span><video src="v/hair1.mp4" poster="v/hair1.jpg" muted loop playsinline preload="none"></video></div>
+      <div class="phone"><span class="ai">AI</span><video src="v/lips.mp4" poster="v/lips.jpg" muted loop playsinline preload="none"></video></div>
+    </div>
+  </header>
+
+  <section class="section-head" style="max-width:none;gap:28px">
+    <div class="section-head">
+      <span class="label">Что вы получаете</span>
+      <h2>Поток контента, который выглядит как живые отзывы</h2>
+    </div>
+    <div class="offer">
+      <div><span class="n">UGC</span><h3>Ролики «как от подруги»</h3><p>Нанесение, распаковка, «до/после», GRWM, рутина. Формат, который смотрят до конца и которому верят.</p></div>
+      <div><span class="n">WB</span><h3>Видео и слайды для карточки</h3><p>Обложка, 4–5 слайдов инфографики и короткое видео на первый экран карточки.</p></div>
+      <div><span class="n">∞</span><h3>Одна модель — весь бренд</h3><p>Одно и то же лицо во всех роликах. Нужен новый образ или ракурс — без пересъёмки и графиков блогеров.</p></div>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:36px">
+    <div class="section-head">
+      <span class="label">Работы · 9 роликов</span>
+      <h2>Реальные продукты в кадре</h2>
+      <p class="lead">Рядом с каждым роликом — фото продукта с сайта бренда. Сравните упаковку: она совпадает до надписей.</p>
+    </div>
+    <div class="works">
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="v/mascara.mp4" poster="v/mascara.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Включить звук">♪</button></div>
+        <div class="meta"><img class="pack" src="img/p_mascara.jpg" alt="Упаковка термотуши a'skin"><div><div class="brand">a'skin care</div><div class="prod">Термотушь</div></div><span class="tag">концепт</span></div>
+        <dl><dt>Формат</dt><dd>Нанесение + тест</dd><dt>Задача</dt><dd>Доказать «не осыпается» — проверка ватной палочкой прямо в кадре</dd></dl>
+      </article>
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="v/stick.mp4" poster="v/stick.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Включить звук">♪</button></div>
+        <div class="meta"><img class="pack" src="img/p_stick.jpg" alt="Упаковка лифтинг-стика a'skin"><div><div class="brand">a'skin care</div><div class="prod">Лифтинг крем-стик</div></div><span class="tag">концепт</span></div>
+        <dl><dt>Формат</dt><dd>Бьюти-лайфхак в машине</dd><dt>Задача</dt><dd>Показать «бери с собой»: достала из сумки, нанесла за секунды</dd></dl>
+      </article>
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="v/hair1.mp4" poster="v/hair1.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Включить звук">♪</button></div>
+        <div class="meta"><img class="pack" src="img/p_hairspray.jpg" alt="Упаковка спрея для объёма a'skin"><div><div class="brand">a'skin care</div><div class="prod">Спрей для объёма волос</div></div><span class="tag">концепт</span></div>
+        <dl><dt>Формат</dt><dd>До / после</dd><dt>Задача</dt><dd>Начать с боли (тонкие прилизанные волосы) и показать результат за один ролик</dd></dl>
+      </article>
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="v/hair2.mp4" poster="v/hair2.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Включить звук">♪</button></div>
+        <div class="meta"><img class="pack" src="img/p_hairspray.jpg" alt="Упаковка спрея для объёма a'skin"><div><div class="brand">a'skin care</div><div class="prod">Спрей для объёма волос</div></div><span class="tag">концепт</span></div>
+        <dl><dt>Формат</dt><dd>Вечерние сборы</dd><dt>Задача</dt><dd>Тот же продукт, другой сценарий — вариант для A/B-теста рекламы</dd></dl>
+      </article>
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="v/brow.mp4" poster="v/brow.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Включить звук">♪</button></div>
+        <div class="meta"><img class="pack" src="img/p_brow.jpg" alt="Упаковка LUVU Brow Sculpture"><div><div class="brand">LUVU</div><div class="prod">Brow Sculpture</div></div><span class="tag client">для бренда</span></div>
+        <dl><dt>Формат</dt><dd>GRWM у бассейна</dd><dt>Задача</dt><dd>Летний lifestyle и крупный план щёточки на брови</dd></dl>
+      </article>
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="v/lips.mp4" poster="v/lips.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Включить звук">♪</button></div>
+        <div class="meta"><img class="pack" src="img/p_lippencil.jpg" alt="Упаковка LUVU Lip Pencil Rose Haze"><div><div class="brand">LUVU</div><div class="prod">Lip Pencil Rose Haze + Glossy Lip Treatment</div></div><span class="tag client">для бренда</span></div>
+        <dl><dt>Формат</dt><dd>Макияж в метро</dd><dt>Задача</dt><dd>Показать связку из двух продуктов и оттенок на губах крупно</dd></dl>
+      </article>
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="v/mists.mp4" poster="v/mists.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Включить звук">♪</button></div>
+        <div class="meta"><span class="pack" style="display:grid;place-items:center;font-family:var(--mono);font-size:11px">K</span><div><div class="brand">K-beauty</div><div class="prod">Мисты и сыворотки</div></div><span class="tag">концепт</span></div>
+        <dl><dt>Формат</dt><dd>Обзор полки</dd><dt>Задача</dt><dd>Формат для магазина-мультибренда: несколько товаров в одном ролике</dd></dl>
+      </article>
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="v/coat.mp4" poster="v/coat.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Включить звук">♪</button></div>
+        <div class="meta"><img class="pack" src="img/p_coat.jpg" alt="Плащ «Выбор редактора»"><div><div class="brand">Fashion</div><div class="prod">Утеплённый плащ</div></div><span class="tag">концепт</span></div>
+        <dl><dt>Формат</dt><dd>Street-style</dd><dt>Задача</dt><dd>Показать посадку и движение вещи, чего не видно на фото с белого фона</dd></dl>
+      </article>
+
+      <article class="work">
+        <div class="phone"><span class="ai">AI</span><video src="v/bag.mp4" poster="v/bag.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Включить звук">♪</button></div>
+        <div class="meta"><span class="pack" style="display:grid;place-items:center;font-family:var(--mono);font-size:11px">F</span><div><div class="brand">Fashion</div><div class="prod">Сумка</div></div><span class="tag">концепт</span></div>
+        <dl><dt>Формат</dt><dd>Селфи в лифте</dd><dt>Задача</dt><dd>Аксессуар на теле: размер, как сидит на плече, с чем носить</dd></dl>
+      </article>
+
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:36px">
+    <div class="section-head">
+      <span class="label">Было / стало</span>
+      <h2>Термотушь a'skin на Wildberries</h2>
+      <p class="lead">Слева — обложка, которая стоит в карточке сейчас. Справа — мои слайды на тот же товар: обложка с моделью и предметный слайд.</p>
+    </div>
+
+    <article class="case">
+      <div class="ba">
+        <figure class="col">
+          <div class="col-head"><span class="dot"></span><span class="label">Сейчас на WB</span></div>
+          <div class="shot"><img src="img/wb_mascara.jpg" alt="Текущая обложка карточки термотуши a'skin на Wildberries"></div>
+          <figcaption class="cap">Скриншот карточки, кнопки приложения WB убраны</figcaption>
+        </figure>
+        <figure class="col">
+          <div class="col-head"><span class="dot new"></span><span class="label">Мой вариант · обложка</span></div>
+          <div class="shot"><img src="img/tush1.jpg" alt="Новая обложка термотуши: модель с тушью у лица"></div>
+          <figcaption class="cap">Слайд 1 — результат на ресницах</figcaption>
+        </figure>
+        <figure class="col">
+          <div class="col-head"><span class="dot new"></span><span class="label">Мой вариант · предмет</span></div>
+          <div class="shot"><img src="img/tush2.jpg" alt="Новый предметный слайд термотуши без модели"></div>
+          <figcaption class="cap">Слайд 2 — упаковка и кисточка крупно</figcaption>
+        </figure>
+      </div>
+      <div class="why">
+        <div class="col"><span class="label">Что мешает продавать сейчас</span><ul>
+          <li>Тушь стоит на пустом фоне. Покупатель не видит главного — какими станут ресницы.</li>
+          <li>Шесть надписей почти одного размера спорят друг с другом, взгляд не знает, куда смотреть.</li>
+          <li>Бежевый флакон на бежевом фоне сливается в ленте с десятками похожих карточек.</li>
+        </ul></div>
+        <div class="col"><span class="label">Что меняет новый вариант</span><ul class="plus">
+          <li>На обложке ресницы модели крупным планом — результат виден раньше, чем текст.</li>
+          <li>Заголовок и два преимущества. Остальные свойства переезжают на следующие слайды.</li>
+          <li>Предметный слайд с тенями от листьев и золотым светом показывает упаковку дороже, чем она выглядит на плоском фоне.</li>
+          <li>Оба слайда в одном цвете и шрифте — это серия, а не набор случайных картинок.</li>
+        </ul></div>
+      </div>
+    </article>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:36px">
+    <div class="section-head">
+      <span class="label">Карточки</span>
+      <h2>Серии слайдов в одном стиле</h2>
+      <p class="lead">Свет, цвет и шрифты одинаковые по всей линейке. Покупатель листает товары бренда и узнаёт его.</p>
+    </div>
+    <div class="cards">
+      <figure><img src="img/tush3.jpg" alt="Термотушь: два флакона крест-накрест и мазок туши"><figcaption>Термотушь — текстура</figcaption></figure>
+      <figure><img src="img/mask1.jpg" alt="Тканевые маски: контейнер на подиуме"><figcaption>Тканевые маски — упаковка</figcaption></figure>
+      <figure><img src="img/mask3.jpg" alt="Тканевые маски: модель в маске с контейнером"><figcaption>Тканевые маски — в использовании</figcaption></figure>
+      <figure><img src="img/mask2.jpg" alt="Тканевые маски: улыбающаяся модель с контейнером"><figcaption>Тканевые маски — эмоция</figcaption></figure>
+      <figure><img src="img/butter1.jpg" alt="Крем-баттер: банка с кокосом и ванилью"><figcaption>Крем-баттер — предмет</figcaption></figure>
+      <figure><img src="img/butter3.jpg" alt="Крем-баттер: модель с банкой у лица"><figcaption>Крем-баттер — состав</figcaption></figure>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:36px">
+    <div class="section-head">
+      <span class="label">Как работаем</span>
+      <h2>От брифа до ролика за 2–3 дня</h2>
+    </div>
+    <ol class="steps">
+      <li><h3>Бриф</h3><p>Вы присылаете ссылку на товар и фото упаковки. Обсуждаем, кто ваш покупатель и что его останавливает.</p></li>
+      <li><h3>Сценарий</h3><p>Предлагаю 2–3 сценария с первой фразой и раскадровкой. Вы выбираете.</p></li>
+      <li><h3>Ролик</h3><p>Генерирую видео с вашим продуктом. Проверяю упаковку, надписи и цвет кадр за кадром.</p></li>
+      <li><h3>Правки</h3><p>Одна бесплатная правка. Отдаю файлы в 9:16 для Reels, Клипов и карточки.</p></li>
+    </ol>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:36px">
+    <div class="section-head">
+      <span class="label">Стоимость</span>
+      <h2>Пакеты</h2>
+    </div>
+    <div class="prices">
+      <div class="price hl"><span class="label">Пилот</span><span class="sum">4 000 ₽</span><p>2 ролика на ваш товар. Чтобы проверить формат до большого заказа.</p></div>
+      <div class="price"><span class="label">Старт</span><span class="sum">9 000 ₽</span><p>5 роликов, сценарии и подписи к ним.</p></div>
+      <div class="price"><span class="label">Поток</span><span class="sum">22 000 ₽/мес</span><p>15 роликов в месяц для рекламы и соцсетей. Одна модель для всего бренда.</p></div>
+      <div class="price"><span class="label">Карточка</span><span class="sum">от 5 000 ₽</span><p>Обложка и 4–5 слайдов инфографики для WB или Ozon.</p></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <span class="label">Контакты</span>
+    <h2>Начнём с пилота на ваш товар</h2>
+    <p class="lead" style="color:var(--ink)">Пришлите ссылку на карточку — предложу 2 сценария бесплатно.</p>
+    <a class="handle" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Telegram · @yaaasyya</a>
+    <a class="cta" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Написать в Telegram →</a>
+    <p class="note">Все модели в роликах созданы нейросетью. Продукты и упаковка — реальные. Работы с пометкой «концепт» сделаны для портфолио и не заказаны брендом; бренды-правообладатели указаны для наглядности.</p>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  var vids=[].slice.call(document.querySelectorAll('video'));
+  if(!('IntersectionObserver' in window)){vids.forEach(function(v){v.preload='metadata';});return;}
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      var v=e.target;
+      if(e.isIntersecting){ if(v.preload==='none') v.preload='auto'; var p=v.play(); if(p&&p.catch)p.catch(function(){}); }
+      else { v.pause(); }
+    });
+  },{threshold:0.35});
+  vids.forEach(function(v){io.observe(v);});
+  document.querySelectorAll('button.snd').forEach(function(b){
+    b.addEventListener('click',function(){
+      var v=b.parentNode.querySelector('video');
+      var on=v.muted;
+      vids.forEach(function(x){x.muted=true;});
+      document.querySelectorAll('button.snd').forEach(function(x){x.textContent='♪';x.setAttribute('aria-label','Включить звук');});
+      if(on){v.muted=false;v.play().catch(function(){});b.textContent='■';b.setAttribute('aria-label','Выключить звук');}
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
