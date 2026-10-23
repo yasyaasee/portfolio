@@ -67,6 +67,21 @@ section{padding-block:76px;border-top:1px solid var(--line)}
 .compare{margin:18px 0 0}
 .compare img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;border-radius:4px;background:var(--paper-2)}
 .compare figcaption{margin-top:10px;font-size:14px;color:var(--ink-2);max-width:640px}
+/* funnels */
+.fn-lead{color:var(--ink-2);max-width:680px;margin:-6px 0 28px}
+.funnel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px}
+.funnel article{min-width:0}
+.fn-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fn-imgs img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:4px;background:#fff}
+.funnel h4{font-family:var(--f-display);font-weight:400;font-size:22px;line-height:1.2;margin:18px 0 14px}
+.fn{list-style:none;margin:0;padding:0;counter-reset:f;border-top:1px solid var(--line)}
+.fn li{counter-increment:f;display:grid;grid-template-columns:30px 96px minmax(0,1fr);column-gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.fn li::before{content:counter(f,decimal-leading-zero);font-family:var(--f-mono);font-size:12px;color:var(--ink-2);padding-top:2px;grid-row:span 2}
+.fn i{font-style:normal;font-family:var(--f-mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);padding-top:3px;grid-row:span 2}
+.fn b{font-weight:600}
+.fn span{color:var(--ink-2);grid-column:3}
+@media (max-width:900px){.funnel{grid-template-columns:1fr}}
+@media (max-width:560px){.fn li{grid-template-columns:26px minmax(0,1fr)}.fn i{grid-row:auto;grid-column:2;padding:0}.fn b,.fn span{grid-column:2}}
 /* brand films */
 .films{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px}
 .film{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start}
@@ -196,6 +211,43 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
       <figure><img src="media/butter1.jpg" alt="Слайд: крем-баттер, предмет" loading="lazy"><figcaption>Крем-баттер · предмет</figcaption></figure>
       <figure><img src="media/mask1.jpg" alt="Слайд: тканевые маски, упаковка" loading="lazy"><figcaption>Тканевые маски · упаковка</figcaption></figure>
       <figure><img src="media/mask3.jpg" alt="Слайд: маска на лице модели" loading="lazy"><figcaption>Тканевые маски · в использовании</figcaption></figure>
+    </div>
+
+    <h3 class="sub">Воронки: что написать на 10 слайдах</h3>
+    <p class="fn-lead">Мне дают товар и описание от бренда, я пишу ТЗ на всю карточку: какую боль вынести на обложку, как объяснить состав простыми словами, кому подходит, как пользоваться и что важно знать. Порядок слайдов ведёт покупателя от «это про меня» до «беру».</p>
+    <div class="funnel">
+      <article>
+        <div class="fn-imgs"><img src="media/gua_pack.jpg" alt="Тюбик массажного крема с аппликатором гуаша" loading="lazy"><img src="media/gua_use.jpg" alt="Крем наносится аппликатором на скулу" loading="lazy"></div>
+        <h4>Массажный крем-гуаша с ретиналем и кофеином, 120 мл</h4>
+        <ol class="fn">
+          <li><i>Обложка</i><b>Массажный крем для овала лица с ретиналем и кофеином</b><span>отёки, птоз, морщины · встроенный гуаша</span></li>
+          <li><i>Применение</i><b>Вечерний массажный уход</b><span>три шага: дозатор «ON», массаж снизу вверх, «OFF»</span></li>
+          <li><i>Результат</i><b>До / после: чёткий овал и свежий вид</b><span>меньше отёков и второго подбородка</span></li>
+          <li><i>Активы</i><b>Кофеин 1% + ретиналь 12 000 мкг + аппликатор</b><span>что делает каждый, одной строкой</span></li>
+          <li><i>Состав</i><b>9 пептидов, 7 видов коллагена, 10 видов ГК</b><span>плюс масла для питания</span></li>
+          <li><i>Для кого</i><b>Для тебя, если…</b><span>утренние отёки, птоз, нужен массаж дома</span></li>
+          <li><i>Эффект</i><b>Скульптурирующий лифтинг</b><span>скулы, линия челюсти, тест на раздражение 0.00</span></li>
+          <li><i>Текстура</i><b>Насыщенная, для скольжения аппликатора</b><span>подходит и для лица, и для тела</span></li>
+          <li><i>Важно знать</i><b>Только вечером, хранить в холодильнике</b><span>противопоказания честно, отдельным слайдом</span></li>
+          <li><i>Доверие</i><b>Официальный дистрибьютор</b><span>сертификаты и поставки из Кореи</span></li>
+        </ol>
+      </article>
+      <article>
+        <div class="fn-imgs"><img src="media/ret_pack.jpg" alt="Тюбик крема с ретиналем 0.1" loading="lazy"><img src="media/ret_drops.jpg" alt="Капли крема из тонкого носика" loading="lazy"></div>
+        <h4>Интенсивный крем с ретиналем 0.1%, 20 мл</h4>
+        <ol class="fn">
+          <li><i>Обложка</i><b>Интенсивный крем с ретиналем 0.1 и EGF</b><span>глубокие морщины, птоз, тусклость</span></li>
+          <li><i>Применение</i><b>Финальный шаг вечернего ухода</b><span>и график привыкания по неделям</span></li>
+          <li><i>Результат</i><b>До / после: подтянутая, обновлённая кожа</b><span>меньше морщин и пигментации</span></li>
+          <li><i>Активы</i><b>Нано-ретиналь 0.1% + PDRN + EGF</b><span>обновление и восстановление кожи</span></li>
+          <li><i>Состав</i><b>Волюфилин, NMN, 9 пептидов</b><span>объём, плотность, тургор</span></li>
+          <li><i>Для кого</i><b>Для тебя, если…</b><span>уже прошла адаптацию к 0.025–0.05%</span></li>
+          <li><i>Линейка</i><b>Высшая ступень: Basic → Advanced → Expert</b><span>покупатель сразу видит, его ли это уровень</span></li>
+          <li><i>Текстура</i><b>Насыщенная, тонкий носик</b><span>точечно на заломы, межбровье, лоб</span></li>
+          <li><i>Важно знать</i><b>Только вечером, привыкание</b><span>противопоказания отдельным слайдом</span></li>
+          <li><i>Доверие</i><b>Официальный дистрибьютор</b><span>сертификаты и поставки из Кореи</span></li>
+        </ol>
+      </article>
     </div>
   </div>
 </section>
