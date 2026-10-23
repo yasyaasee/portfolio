@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Портфолио Яны</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: витрина-лента — крупные кадры работ, короткие подписи сбоку, разделы как главы каталога */
+:root{
+  --paper:#F4F3EF; --paper-2:#E9E7E1; --ink:#171615; --ink-2:#5E5A55; --line:#D6D3CC;
+  --accent:#6B2E44; --accent-ink:#FFFFFF; --chip:#FFFFFF;
+  --f-display:"Prata", "Times New Roman", Georgia, serif;
+  --f-body:"Onest", "Helvetica Neue", Arial, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+  --maxw:1180px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#141312;--paper-2:#1E1C1B;--ink:#EEEBE5;--ink-2:#A8A29A;--line:#34312E;--accent:#D49AB0;--accent-ink:#1A1214;--chip:#24211F;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#141312;--paper-2:#1E1C1B;--ink:#EEEBE5;--ink-2:#A8A29A;--line:#34312E;--accent:#D49AB0;--accent-ink:#1A1214;--chip:#24211F;color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:var(--maxw);margin:0 auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;text-wrap:balance;margin:0}
+p{margin:0}
+.mono{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.btn{display:inline-flex;align-items:center;gap:.5em;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:500;padding:.8em 1.3em;border-radius:999px;font-size:16px}
+.btn:focus-visible,a:focus-visible,video:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+/* top */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px;border-bottom:1px solid var(--line)}
+.top .name{font-family:var(--f-display);font-size:22px}
+.top .tg{font-family:var(--f-mono);font-size:13px;text-decoration:none;border:1px solid var(--line);padding:.55em 1em;border-radius:999px}
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:end;padding-block:64px 72px}
+.hero h1{font-size:clamp(40px,6vw,78px);line-height:1.02;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{max-width:560px;margin-top:26px;font-size:19px;color:var(--ink-2)}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.facts span{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:.45em .95em;font-size:14px}
+.hero .cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero .reel{position:relative;max-width:360px;justify-self:end;width:100%}
+.reel video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border-radius:6px;background:var(--paper-2)}
+.reel figcaption{margin-top:10px}
+/* sections */
+section{padding-block:76px;border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:200px 1fr;gap:32px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(30px,4vw,48px);line-height:1.08}
+.sec-head p{margin-top:14px;color:var(--ink-2);max-width:620px}
+/* before / after */
+.ba{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.ba figure{margin:0}
+.ba img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:4px}
+.ba figcaption{margin-top:10px;font-size:14px;color:var(--ink-2)}
+.ba figure.before img{filter:saturate(.85)}
+.tag{display:inline-block;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding:.3em .7em;border-radius:999px;border:1px solid var(--line);margin-bottom:8px}
+.tag.mine{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:36px}
+.why h3{font-family:var(--f-body);font-weight:600;font-size:17px;margin-bottom:10px}
+.why ul{margin:0;padding-left:1.1em;color:var(--ink-2);display:grid;gap:8px}
+/* card grid */
+.sub{font-family:var(--f-body);font-weight:600;font-size:20px;margin:64px 0 18px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.cards figure{margin:0}
+.cards img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:4px;background:var(--paper-2)}
+.cards figcaption{margin-top:8px;font-size:13.5px;color:var(--ink-2)}
+.compare{margin:18px 0 0}
+.compare img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;border-radius:4px;background:var(--paper-2)}
+.compare figcaption{margin-top:10px;font-size:14px;color:var(--ink-2);max-width:640px}
+/* brand films */
+.films{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px}
+.film{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start}
+.film video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border-radius:6px;background:var(--paper-2)}
+.film h3{font-size:30px;line-height:1.1;margin:6px 0 12px}
+.film p{color:var(--ink-2);font-size:15.5px}
+.film dl{margin:18px 0 0;display:grid;gap:10px}
+.film dt{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.film dd{margin:2px 0 0;font-size:15px}
+/* ugc */
+.ugc{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:22px}
+.u{display:grid;gap:10px;min-width:0}
+.u .v{position:relative}
+.u video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border-radius:6px;background:var(--paper-2)}
+.u .pack{position:absolute;right:8px;bottom:8px;width:54px;height:54px;border-radius:6px;object-fit:cover;background:#fff;border:2px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.u b{font-weight:600;font-size:15.5px;display:block}
+.u span{font-size:14px;color:var(--ink-2)}
+/* brand cases */
+.case{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,2fr);gap:36px;align-items:start}
+.case+.case{margin-top:72px}
+.case h3{font-size:40px;line-height:1.05;margin:4px 0 14px}
+.case-text p{color:var(--ink-2);font-size:15.5px}
+.points{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:14.5px}
+.points li{padding-left:18px;position:relative}
+.points li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:1px;background:var(--ink)}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:88%;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;min-width:0;scrollbar-color:var(--line) transparent}
+.rail img{content-visibility:auto;width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:4px;scroll-snap-align:start;background:var(--paper-2)}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;counter-reset:s}
+.step{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:var(--f-mono);font-size:12px;color:var(--ink-2)}
+.step b{display:block;margin:8px 0 6px;font-weight:600}
+.step p{font-size:14.5px;color:var(--ink-2)}
+.tools{margin-top:36px;display:flex;flex-wrap:wrap;gap:10px}
+.tools span{font-family:var(--f-mono);font-size:13px;border:1px solid var(--line);border-radius:999px;padding:.45em .9em}
+/* contact */
+.contact{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:28px}
+.contact h2{font-size:clamp(34px,5vw,60px);line-height:1.04}
+.handle{font-family:var(--f-mono);font-size:15px;margin-top:14px;user-select:all}
+footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-2)}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:36px;padding-block:40px 48px}
+  .hero .reel{justify-self:start;max-width:300px}
+  .sec-head{grid-template-columns:1fr;gap:6px}
+  .films{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .why{grid-template-columns:1fr}
+  .case{grid-template-columns:1fr;gap:22px}
+  .rail{grid-auto-columns:92%}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .ba{grid-template-columns:1fr 1fr}
+  .ba figure.before{grid-column:1/-1}
+  .film{grid-template-columns:1fr}
+  .film video{max-width:340px}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ugc{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .steps{grid-template-columns:1fr}
+  section{padding-block:56px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="name">Яна</div>
+    <a class="tg" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Telegram · @yaaasyya</a>
+  </header>
+
+  <div class="hero">
+    <div>
+      <p class="mono">AI-дизайнер · e-commerce · Санкт-Петербург</p>
+      <h1 style="margin-top:18px">Карточки и ИИ‑визуал, в которых <em>товар&nbsp;настоящий</em></h1>
+      <p class="lead">Делаю обложки и слайды для Wildberries и Ozon, рекламные ролики и UGC. Модели, сцены и свет генерирую в нейросетях, а товар на кадре совпадает с оригиналом: крой, цвет, фактура, упаковка до надписей.</p>
+      <div class="facts"><span>Карточки WB / Ozon</span><span>ИИ-модели и лайфстайл</span><span>Рекламные ролики</span><span>UGC</span><span>Упаковка и полиграфия</span></div>
+      <div class="cta"><a class="btn" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Написать в Telegram →</a><span class="mono">готова к тестовому</span></div>
+    </div>
+    <figure class="reel" style="margin:0">
+      <video src="media/moveli.mp4" poster="media/moveli.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Ролик «Мамино пальто»"></video>
+      <figcaption class="mono">«Мамино пальто» · ролик для бренда сумок · концепт</figcaption>
+    </figure>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="mono">01 · Карточки</p>
+      <div>
+        <h2>Обложки и слайды для маркетплейсов</h2>
+        <p>Смотрю на карточку глазами покупателя в выдаче: что он должен понять за секунду и что его останавливает. Всё, что на слайдах, сгенерировано нейросетями и свёрстано в Figma.</p>
+      </div>
+    </div>
+
+    <div class="ba">
+      <figure class="before"><span class="tag">Сейчас на WB</span><img src="media/wb_mascara.jpg" alt="Текущая обложка туши на Wildberries" loading="lazy"><figcaption>Обложка, которая стоит в карточке сейчас</figcaption></figure>
+      <figure><span class="tag mine">Мой вариант</span><img src="media/tush1.jpg" alt="Новая обложка: модель и ресницы крупно" loading="lazy"><figcaption>Обложка: результат на ресницах виден раньше текста</figcaption></figure>
+      <figure><span class="tag mine">Мой вариант</span><img src="media/tush2.jpg" alt="Предметный слайд с тушью" loading="lazy"><figcaption>Предметный слайд: упаковка и кисточка крупно</figcaption></figure>
+    </div>
+    <div class="why">
+      <div><h3>Что мешало продавать</h3><ul><li>Тушь на пустом фоне: покупатель не видит главного, какими станут ресницы.</li><li>Шесть надписей одного размера спорят между собой.</li><li>Бежевый флакон на бежевом фоне теряется среди похожих карточек.</li></ul></div>
+      <div><h3>Что поменяла</h3><ul><li>На обложке ресницы модели крупно: результат считывается сразу.</li><li>Один заголовок и два преимущества, остальное на следующих слайдах.</li><li>Тени от листьев и тёплый свет делают упаковку дороже, слайды собраны в одну серию.</li></ul></div>
+    </div>
+
+    <h3 class="sub">Бельё: обложка, посадка, ткань</h3>
+    <div class="cards">
+      <figure><img src="media/lin_cover.jpg" alt="Обложка: трусы-шорты на модели, 3 шт в наборе, размеры 42–52" loading="lazy"><figcaption>Обложка · количество, размеры и цвета видны сразу</figcaption></figure>
+      <figure><img src="media/lin_fit.jpg" alt="Слайд посадки: модель со спины и четыре преимущества" loading="lazy"><figcaption>Посадка · четыре причины купить</figcaption></figure>
+      <figure><img src="media/lin_fabric.jpg" alt="Слайд ткани: макро и три цвета набора" loading="lazy"><figcaption>Ткань и набор · макро и три цвета</figcaption></figure>
+    </div>
+    <figure class="compare">
+      <img src="media/lin_compare.jpg" alt="Слева кадр с фотосессии, справа ИИ-генерация с тем же товаром" loading="lazy">
+      <figcaption>Слева кадр с фотосессии, справа ИИ-генерация: новая модель, свет и поза, а крой, цвет и фактура белья те же.</figcaption>
+    </figure>
+
+    <h3 class="sub" id="series-title">Косметика: серии слайдов в одном стиле</h3>
+    <div class="cards" id="series">
+      <figure><img src="media/tush3.jpg" alt="Слайд: тушь и мазок текстуры" loading="lazy"><figcaption>Термотушь · текстура</figcaption></figure>
+      <figure><img src="media/tush4.jpg" alt="Слайд: тушь у лица модели" loading="lazy"><figcaption>Термотушь · результат на ресницах</figcaption></figure>
+      <figure><img src="media/serum1.jpg" alt="Обложка сыворотки с моделью" loading="lazy"><figcaption>Anti-age сыворотка · обложка</figcaption></figure>
+      <figure><img src="media/serum2.jpg" alt="Слайд сыворотки: кожа крупно" loading="lazy"><figcaption>Anti-age сыворотка · кожа крупно</figcaption></figure>
+      <figure><img src="media/souffle.jpg" alt="Обложка крема-суфле" loading="lazy"><figcaption>Крем-суфле для лица · обложка</figcaption></figure>
+      <figure><img src="media/butter3.jpg" alt="Слайд: крем-баттер в руках модели" loading="lazy"><figcaption>Крем-баттер · состав</figcaption></figure>
+      <figure><img src="media/butter1.jpg" alt="Слайд: крем-баттер, предмет" loading="lazy"><figcaption>Крем-баттер · предмет</figcaption></figure>
+      <figure><img src="media/mask1.jpg" alt="Слайд: тканевые маски, упаковка" loading="lazy"><figcaption>Тканевые маски · упаковка</figcaption></figure>
+      <figure><img src="media/mask3.jpg" alt="Слайд: маска на лице модели" loading="lazy"><figcaption>Тканевые маски · в использовании</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="mono">02 · Ролики для брендов</p>
+      <div>
+        <h2>Рекламные ролики уровня съёмки</h2>
+        <p>Идея, раскадровка, генерация и монтаж. Сумка в кадре повторяет настоящую модель бренда: форму, фурнитуру, фактуру кожи.</p>
+      </div>
+    </div>
+    <div class="films">
+      <article class="film">
+        <video src="media/moveli.mp4" poster="media/moveli.jpg" controls playsinline preload="none"></video>
+        <div>
+          <span class="tag">концепт</span>
+          <h3>Мамино пальто</h3>
+          <p>Короткий фильм для бренда сумок: мех на сумке напоминает героине мамин воротник, и мы уходим в воспоминание из 90-х.</p>
+          <dl><div><dt>Задача</dt><dd>Эмоция и история вместо демонстрации товара</dd></div><div><dt>Сделано</dt><dd>Сценарий, раскадровка, переход в воспоминание через свет</dd></div><div><dt>Инструменты</dt><dd>Midjourney, Nano Banana Pro, Seedance</dd></div></dl>
+        </div>
+      </article>
+      <article class="film">
+        <video src="media/cns.mp4" poster="media/cns.jpg" controls playsinline preload="none"></video>
+        <div>
+          <span class="tag">концепт</span>
+          <h3>Сумка как экспонат</h3>
+          <p>Презентация новой сумки бренда: фактура кожи, фурнитура, силуэт на модели и финальный кадр в музейном зале.</p>
+          <dl><div><dt>Задача</dt><dd>Показать товар дорого и спокойно, без вычурности</dd></div><div><dt>Сделано</dt><dd>Детали крупно, свет из фонаря, финал под логотип</dd></div><div><dt>Инструменты</dt><dd>Midjourney, Nano Banana Pro, Seedance</dd></div></dl>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="mono">03 · UGC</p>
+      <div>
+        <h2>Ролики с реальным товаром и ИИ-моделью</h2>
+        <p>Одна модель держится во всех роликах бренда. В углу каждого ролика фото упаковки с сайта бренда для сравнения.</p>
+      </div>
+    </div>
+    <div class="ugc">
+      <div class="u"><div class="v"><video src="media/lips.mp4" poster="media/lips.jpg" controls playsinline preload="none"></video><img class="pack" src="media/p_lippencil.jpg" alt="Упаковка карандаша для губ"></div><div><b>LUVU · Lip Pencil + Glossy</b><span>для бренда · макияж в метро</span></div></div>
+      <div class="u"><div class="v"><video src="media/brow.mp4" poster="media/brow.jpg" controls playsinline preload="none"></video><img class="pack" src="media/p_brow.jpg" alt="Упаковка геля для бровей"></div><div><b>LUVU · Brow Sculpture</b><span>для бренда · GRWM у бассейна</span></div></div>
+      <div class="u"><div class="v"><video src="media/mascara.mp4" poster="media/mascara.jpg" controls playsinline preload="none"></video><img class="pack" src="media/p_mascara.jpg" alt="Упаковка туши"></div><div><b>a'skin · Термотушь</b><span>концепт · тест ватной палочкой</span></div></div>
+      <div class="u"><div class="v"><video src="media/stick.mp4" poster="media/stick.jpg" controls playsinline preload="none"></video><img class="pack" src="media/p_stick.jpg" alt="Упаковка крем-стика"></div><div><b>a'skin · Крем-стик</b><span>концепт · лайфхак в машине</span></div></div>
+      <div class="u"><div class="v"><video src="media/hair1.mp4" poster="media/hair1.jpg" controls playsinline preload="none"></video><img class="pack" src="media/p_hairspray.jpg" alt="Упаковка спрея для волос"></div><div><b>a'skin · Спрей для объёма</b><span>концепт · до / после</span></div></div>
+      <div class="u"><div class="v"><video src="media/hair2.mp4" poster="media/hair2.jpg" controls playsinline preload="none"></video><img class="pack" src="media/p_hairspray.jpg" alt="Упаковка спрея для волос"></div><div><b>a'skin · Спрей для объёма</b><span>концепт · вечерние сборы</span></div></div>
+      <div class="u"><div class="v"><video src="media/mists.mp4" poster="media/mists.jpg" controls playsinline preload="none"></video></div><div><b>K-beauty · мисты и сыворотки</b><span>концепт · обзор полки</span></div></div>
+      <div class="u"><div class="v"><video src="media/coat.mp4" poster="media/coat.jpg" controls playsinline preload="none"></video><img class="pack" src="media/p_coat.jpg" alt="Фото плаща"></div><div><b>Fashion · утеплённый плащ</b><span>концепт · street-style</span></div></div>
+      <div class="u"><div class="v"><video src="media/bag.mp4" poster="media/bag.jpg" controls playsinline preload="none"></video></div><div><b>Fashion · сумка</b><span>концепт · селфи в лифте</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="graphic">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="mono">04 · Бренд и упаковка</p>
+      <div>
+        <h2>Айдентика, упаковка и соцсети</h2>
+        <p>Два бренда с нуля: от смысла названия до флаконов, коробок и ленты в Instagram. Листайте кадры вбок.</p>
+      </div>
+    </div>
+
+    <article class="case">
+      <div class="case-text">
+        <span class="tag">косметика 30+ · айдентика и упаковка</span>
+        <h3>[amologia]</h3>
+        <p>Название переводится как «я люблю тебя, наука». Задача была соединить два мира: строгую медицину и живую природу. Поэтому типографика сдержанная и почти лабораторная, палитра из глубокого морского и белого, а «изюминка» спрятана в упаковке: через вырубку на коробке видна волна или камни у моря.</p>
+        <ul class="points"><li>Логотип в квадратных скобках, как формула</li><li>Две линии: anti-age и базовый уход</li><li>Коробки, развёртка, пакеты, флаконы</li><li>Лента и посты в одном стиле</li></ul>
+      </div>
+      <div class="rail" tabindex="0" aria-label="Кадры презентации amologia">
+        <img src="media/amo_1.jpg" alt="Обложка: волна и логотип">
+        <img src="media/amo_7.jpg" alt="Линейка флаконов" loading="lazy">
+        <img src="media/amo_8.jpg" alt="Флакон сыворотки" loading="lazy">
+        <img src="media/amo_9.jpg" alt="Коробки с вырубкой" loading="lazy">
+        <img src="media/amo_10.jpg" alt="Развёртка коробки" loading="lazy">
+        <img src="media/amo_12.jpg" alt="Упаковка с пейзажами" loading="lazy">
+        <img src="media/amo_13.jpg" alt="Стопка коробок" loading="lazy">
+        <img src="media/amo_14.jpg" alt="Фирменные пакеты" loading="lazy">
+        <img src="media/amo_16.jpg" alt="Лента Instagram" loading="lazy">
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-text">
+        <span class="tag">wellness-добавки · айдентика и контент</span>
+        <h3>TRÅD</h3>
+        <p>По-датски «нить», связь человека и природы. Бренд для людей, которые заботятся о здоровье осознанно и покупают качество. Отсюда спокойный серый, природный нюд и один энергичный оранжевый акцент, который отвечает за «энергию жизни». Для соцсетей разработала рубрики, правила фотоконтента и шаблоны.</p>
+        <ul class="points"><li>Логотип, цвета, шрифтовая пара</li><li>Графический приём: линия-«нить»</li><li>Рубрикатор и гид по фотоконтенту</li><li>Лента, обложки Reels, истории</li></ul>
+      </div>
+      <div class="rail" tabindex="0" aria-label="Кадры презентации TRÅD">
+        <img src="media/trad_9.jpg" alt="Логотип TRÅD">
+        <img src="media/trad_10.jpg" alt="Фирменные цвета" loading="lazy">
+        <img src="media/trad_11.jpg" alt="Графические приёмы" loading="lazy">
+        <img src="media/trad_2.jpg" alt="История компании" loading="lazy">
+        <img src="media/trad_4.jpg" alt="Контент, продвигающий бренд" loading="lazy">
+        <img src="media/trad_14.jpg" alt="Лента Instagram" loading="lazy">
+        <img src="media/trad_15.jpg" alt="Обложки Reels" loading="lazy">
+        <img src="media/trad_17.jpg" alt="Истории" loading="lazy">
+        <img src="media/trad_18.jpg" alt="Посты с продуктом" loading="lazy">
+      </div>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="mono">Процесс</p>
+      <div>
+        <h2>Как я довожу генерацию до коммерческого качества</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step"><b>Разбор товара</b><p>Кто покупатель, что его останавливает, какой смысл вынести на обложку.</p></div>
+      <div class="step"><b>Референсы и стиль</b><p>Свет, палитра и настроение под бренд, единые для всей серии.</p></div>
+      <div class="step"><b>Генерация</b><p>Модель и сцена в Midjourney, Higgsfield, Nano Banana Pro.</p></div>
+      <div class="step"><b>Точный товар</b><p>Сверяю крой, цвет, фактуру и надписи с оригиналом, правлю до совпадения.</p></div>
+      <div class="step"><b>Вёрстка и видео</b><p>Слайды в Figma, ролики в Seedance и Kling, монтаж и звук.</p></div>
+    </div>
+    <div class="tools"><span>Midjourney</span><span>Nano Banana Pro</span><span>Higgsfield</span><span>Seedance</span><span>Kling</span><span>Veo</span><span>Figma</span><span>Photoshop</span><span>Illustrator</span><span>CapCut</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap contact">
+    <div>
+      <p class="mono">Контакты</p>
+      <h2 style="margin-top:12px">Открыта к работе в команде</h2>
+      <p class="handle">Telegram · @yaaasyya</p>
+    </div>
+    <a class="btn" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Написать в Telegram →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Все модели, сцены и ролики созданы с помощью нейросетей. Товары и упаковка в кадре реальные. Работы с пометкой «концепт» сделаны для портфолио и не заказаны брендом.</div>
+</footer>
+
+</body>
+</html>
