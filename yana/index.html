@@ -198,6 +198,13 @@ section{padding-block:76px;border-top:1px solid var(--line)}
 .bx .feedg{grid-column:1/-1;background:var(--paper-2);padding:40px;display:grid;justify-items:center}
 .bx .feedg img{width:100%;max-width:640px;height:auto}
 .bx-trad .tb,.bx-trad .tc{grid-column:span 6;aspect-ratio:4/5}
+.bx-trad .bx-text{grid-column:1/6;grid-row:1}
+.bx-trad .tr-col{grid-column:1/6;grid-row:2;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-self:end}
+.bx-trad .tr-col figure{aspect-ratio:1}
+.bx-trad .tr-feed{grid-column:6/13;grid-row:1/3;background:var(--paper-2);padding:28px;display:grid;place-items:center}
+.bx-trad .tr-feed img{width:100%;max-width:620px;height:auto}
+.bx-trad .tr-st{grid-column:1/-1;aspect-ratio:2.4/1}
+@media (max-width:900px){.bx-trad .bx-text,.bx-trad .tr-col,.bx-trad .tr-feed{grid-column:1/-1;grid-row:auto}.bx-trad .tr-st{aspect-ratio:auto}.bx-trad .tr-st img{height:auto}}
 /* process */
 .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;counter-reset:s}
 .step{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
@@ -292,18 +299,18 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
         <div class="bx-text">
           <h3>TRÅD</h3>
           <p class="bx-quote">«Нить» по-датски</p>
-          <p>Wellness-бренд добавок звучал «бежевой эстетикой»: красиво, но без энергии и характера. Я провела анализ контента бренда, описала портрет клиента - осознанный человек 30+, который покупает эффективность и качество - и пересобрала визуальную коммуникацию вокруг идеи связи человека и природы.</p>
+          <p>Wellness-бренд добавок звучал «бежевой эстетикой»: красиво, но без энергии и характера. Я провела анализ контента бренда, описала портрет клиента - осознанный человек 30+, который покупает эффективность и качество - и пересобрала визуальную коммуникацию вокруг идеи связи человека и природы. Весь фотоконтент для соцсетей - продукт, люди и комьюнити - сгенерировала в нейросетях.</p>
           <div class="sw"><span style="--c:#B8BBC2">серый</span><span style="--c:#F26A1B">оранжевый</span><span style="--c:#F3EDE3">нюд</span></div>
           <ul class="points"><li>Аудит контента и портрет аудитории</li><li>Рубрикатор: продвижение, аналог сайта, эмоциональная связь</li><li>Гид по фотоконтенту: модель, пространство, стиль кадров</li><li>Палитра с одним акцентом, типографика, приём «нить»</li><li>Лента, истории и обложки актуальных</li></ul>
         </div>
-        <figure class="ta"><img src="media/n_trad_pack.jpg" alt="Протеин TRÅD на камне со мхом в горной долине" loading="lazy"></figure>
-        <figure class="tb"><img src="media/n_trad_woman.jpg" alt="Женщина 35+ после пробежки пьёт протеин у моря" loading="lazy"></figure>
-        <figure class="tc"><img src="media/n_trad_curc.jpg" alt="Куркумин TRÅD с корнем куркумы и чёрным перцем" loading="lazy"></figure>
-        <figure class="tk"><img src="media/n_trad_kitchen.jpg" alt="Утренний ритуал: протеин в стакан с растительным молоком" loading="lazy"></figure>
-        <figure class="tl"><img src="media/n_trad_coll.jpg" alt="Коллаген TRÅD на мокрой гальке у моря" loading="lazy"></figure>
-        <figure class="feedg"><img src="media/n_trad_feed.jpg" alt="Дизайн ленты Instagram TRÅD" loading="lazy"></figure>
-        <figure class="tm"><img src="media/b_trad_a2.jpg" alt="Макеты историй" loading="lazy"></figure>
-        <figure class="tn"><img src="media/n_trad_covers.jpg" alt="Обложки актуальных историй" loading="lazy"></figure>
+        <div class="tr-col">
+          <figure><img src="media/q_pack.jpg" alt="Протеин на камне в горах" loading="lazy"></figure>
+          <figure><img src="media/q_woman.jpg" alt="Женщина 35+ после пробежки у моря" loading="lazy"></figure>
+          <figure><img src="media/q_kitchen.jpg" alt="Протеин в утреннем ритуале" loading="lazy"></figure>
+          <figure><img src="media/q_coll.jpg" alt="Коллаген на гальке у моря" loading="lazy"></figure>
+        </div>
+        <figure class="tr-feed"><img src="media/n_trad_feed.jpg" alt="Дизайн ленты Instagram TRÅD" loading="lazy"></figure>
+        <figure class="tr-st"><img src="media/q_stories.jpg" alt="Макеты историй и обложки актуальных" loading="lazy"></figure>
       </div>
     </article>
   </div>
