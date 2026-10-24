@@ -185,6 +185,16 @@ section{padding-block:76px;border-top:1px solid var(--line)}
 @media (max-width:900px){.bx .ta,.bx .te,.bx .tf{grid-column:1/-1}.bx .tb,.bx .tc,.bx .td{grid-column:span 6}.bx .td{grid-column:1/-1;aspect-ratio:4/5}}
 .bx .te-wide{grid-column:1/-1;aspect-ratio:3.2/1}
 .bx .te-wide2{grid-column:1/-1;aspect-ratio:2.6/1}
+.bx-trad .tk{grid-column:1/8;aspect-ratio:3/2}
+.bx-trad .tl{grid-column:8/13;aspect-ratio:1.07/1}
+.bx-trad .tm,.bx-trad .tn{grid-column:span 6;aspect-ratio:3/2}
+.feedx{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.6fr);gap:28px;align-items:center;background:var(--paper-2);border-radius:6px;padding:36px}
+.fx-ph{display:grid;justify-items:center;gap:12px}
+.phone{width:100%;max-width:250px;aspect-ratio:390/844;border:9px solid #141414;border-radius:38px;overflow:hidden;background:#fff;box-shadow:0 18px 40px rgba(0,0,0,.18);position:relative}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.fx-text h4{font-family:var(--f-display);font-weight:400;font-size:28px;margin:0 0 6px}
+.fx-note{margin-top:16px;font-size:13.5px;color:var(--ink-2)}
+@media (max-width:900px){.bx-trad .tk,.bx-trad .tl{grid-column:1/-1}.bx-trad .tl{aspect-ratio:4/5}.bx-trad .tm,.bx-trad .tn{grid-column:1/-1}.feedx{grid-template-columns:1fr 1fr;padding:20px}.fx-text{grid-column:1/-1}}
 /* process */
 .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;counter-reset:s}
 .step{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
@@ -283,11 +293,23 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
           <div class="sw"><span style="--c:#B8BBC2">серый</span><span style="--c:#F26A1B">оранжевый</span><span style="--c:#F3EDE3">нюд</span></div>
           <ul class="points"><li>Аудит контента и портрет аудитории</li><li>Рубрикатор: продвижение, аналог сайта, эмоциональная связь</li><li>Гид по фотоконтенту: модель, пространство, стиль кадров</li><li>Палитра с одним акцентом, типографика, приём «нить»</li><li>Лента, истории и обложки актуальных</li></ul>
         </div>
-        <figure class="ta"><img src="media/b_trad_a2.jpg" alt="Макеты историй" loading="lazy"></figure>
-        <figure class="tb"><img src="media/b_trad_b.jpg" alt="Стикеры с составом на коже" loading="lazy"></figure>
-        <figure class="tc"><img src="media/b_trad_c.jpg" alt="Лента Instagram" loading="lazy"></figure>
-        <figure class="td"><img src="media/b_trad_d.jpg" alt="Логотип TRÅD" loading="lazy"></figure>
-        <figure class="te te-wide"><img src="media/b_trad_e2.jpg" alt="Обложки актуальных историй" loading="lazy"></figure>
+        <figure class="ta"><img src="media/n_trad_pack.jpg" alt="Протеин TRÅD на камне со мхом в горной долине" loading="lazy"></figure>
+        <figure class="tb"><img src="media/n_trad_woman.jpg" alt="Женщина 35+ после пробежки пьёт протеин у моря" loading="lazy"></figure>
+        <figure class="tc"><img src="media/n_trad_curc.jpg" alt="Куркумин TRÅD с корнем куркумы и чёрным перцем" loading="lazy"></figure>
+        <figure class="td"><img src="media/n_trad_run.jpg" alt="Комьюнити 35+ на утренней пробежке у моря" loading="lazy"></figure>
+        <figure class="tk"><img src="media/n_trad_kitchen.jpg" alt="Утренний ритуал: протеин в стакан с растительным молоком" loading="lazy"></figure>
+        <figure class="tl"><img src="media/n_trad_coll.jpg" alt="Коллаген TRÅD на мокрой гальке у моря" loading="lazy"></figure>
+        <div class="feedx">
+          <div class="fx-ph"><div class="phone"><img src="media/n_trad_ig_old.jpg" alt="Старая лента бренда" loading="lazy"></div><span class="mono">было</span></div>
+          <div class="fx-ph"><div class="phone"><img src="media/n_trad_ig_new.jpg" alt="Новая лента бренда" loading="lazy"></div><span class="mono">стало</span></div>
+          <div class="fx-text">
+            <h4>Лента: было → стало</h4>
+            <ul class="points"><li>Формат 3:4 - так Instagram показывает профиль с 2025 года, квадратные посты в сетке обрезаются</li><li>Вместо стоковых фото - продукт бренда в каждом ряду</li><li>Ритм ряда: продукт, человек, польза</li><li>Комьюнити 35+: люди, которые вместе занимаются спортом</li><li>Инфопосты в фирменных цветах с приёмом «нить»</li></ul>
+            <p class="fx-note">Съёмка продукта и люди созданы в нейросетях, банки и этикетки - настоящие продукты бренда.</p>
+          </div>
+        </div>
+        <figure class="tm"><img src="media/b_trad_a2.jpg" alt="Макеты историй" loading="lazy"></figure>
+        <figure class="tn"><img src="media/n_trad_covers.jpg" alt="Обложки актуальных историй" loading="lazy"></figure>
       </div>
     </article>
   </div>
