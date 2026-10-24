@@ -237,6 +237,9 @@ section{padding-block:76px;border-top:1px solid var(--line)}
 .bx .am-feed img{width:100%;max-width:760px;height:auto}
 .bx .am-feed:hover img{transform:none}
 @media (max-width:900px){.bx .am-feed{padding:0;background:none}}
+.bx .am-st{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:900px;margin:0 auto;width:100%}
+.bx .am-st img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;display:block;height:auto}
+@media (max-width:900px){.bx .am-st{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:62%;overflow-x:auto;scroll-snap-type:x mandatory}.bx .am-st img{scroll-snap-align:start}}
 /* process */
 .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;counter-reset:s}
 .step{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
@@ -322,7 +325,11 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
         <figure class="tc"><img src="media/b_amo_c.jpg" alt="Стопка коробок" loading="lazy"></figure>
         <figure class="td"><img src="media/b_amo_d.jpg" alt="Фирменные пакеты" loading="lazy"></figure>
         <figure class="te te-wide2"><img src="media/b_amo_e2.jpg" alt="Чертёж линейки" loading="lazy"></figure>
-        <figure class="am-feed"><img src="media/am_feed.jpg" alt="Дизайн ленты Instagram amologia" loading="lazy"></figure>
+        <div class="am-st">
+          <img src="media/am_st1.jpg" alt="История amologia: утро у моря" loading="lazy">
+          <img src="media/am_st2.jpg" alt="История amologia: пептидная эмульсия для век" loading="lazy">
+          <img src="media/am_st3.jpg" alt="История amologia: море внутри коробки" loading="lazy">
+        </div>
       </div>
     </article>
 
