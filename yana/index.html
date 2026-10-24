@@ -97,6 +97,18 @@ section{padding-block:76px;border-top:1px solid var(--line)}
 .fs p{margin:6px 0 0;color:var(--ink-2)}
 .fs-head .fn-imgs{margin-bottom:12px}
 .fs-head b{font-family:var(--f-display);font-weight:400;font-size:18px}
+/* card series tabs */
+.cdx>input{position:absolute;opacity:0;pointer-events:none}
+#cdt0:checked~.fn-tabs label[for=cdt0],#cdt1:checked~.fn-tabs label[for=cdt1],#cdt2:checked~.fn-tabs label[for=cdt2],#cdt3:checked~.fn-tabs label[for=cdt3],#cdt4:checked~.fn-tabs label[for=cdt4]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+#cdt0:focus-visible~.fn-tabs label[for=cdt0],#cdt1:focus-visible~.fn-tabs label[for=cdt1],#cdt2:focus-visible~.fn-tabs label[for=cdt2],#cdt3:focus-visible~.fn-tabs label[for=cdt3],#cdt4:focus-visible~.fn-tabs label[for=cdt4]{outline:2px solid var(--accent)}
+.cd-rail{display:none;grid-auto-flow:column;grid-auto-columns:minmax(220px,280px);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-color:var(--line) transparent}
+#cdt0:checked~.cr0,#cdt1:checked~.cr1,#cdt2:checked~.cr2,#cdt3:checked~.cr3,#cdt4:checked~.cr4{display:grid}
+.cd-rail figure{margin:0;scroll-snap-align:start;min-width:0}
+.cd-rail img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:4px;background:var(--paper-2)}
+.cd-rail figcaption{margin-top:8px;font-size:13px;color:var(--ink-2)}
+.cd-rail .cw{grid-column:span 2}
+.cd-rail .cw img{aspect-ratio:auto;height:auto}
+.fn-tabs{flex-wrap:wrap}
 /* brand films */
 .films{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px}
 .film{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start}
@@ -354,29 +366,8 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
       <div><h3>Что поменяла</h3><ul><li>На обложке ресницы модели крупно: результат считывается сразу.</li><li>Один заголовок и два преимущества, остальное на следующих слайдах.</li><li>Тени от листьев и тёплый свет делают упаковку дороже, слайды собраны в одну серию.</li></ul></div>
     </div>
 
-    <h3 class="sub">Бельё: обложка, посадка, ткань</h3>
-    <div class="cards">
-      <figure><img src="media/lin_cover.jpg" alt="Обложка: трусы-шорты на модели, 3 шт в наборе, размеры 42–52" loading="lazy"><figcaption>Обложка · количество, размеры и цвета видны сразу</figcaption></figure>
-      <figure><img src="media/lin_fit.jpg" alt="Слайд посадки: модель со спины и четыре преимущества" loading="lazy"><figcaption>Посадка · четыре причины купить</figcaption></figure>
-      <figure><img src="media/lin_fabric.jpg" alt="Слайд ткани: макро и три цвета набора" loading="lazy"><figcaption>Ткань и набор · макро и три цвета</figcaption></figure>
-    </div>
-    <figure class="compare">
-      <img src="media/lin_compare.jpg" alt="Слева кадр с фотосессии, справа ИИ-генерация с тем же товаром" loading="lazy">
-      <figcaption>Слева кадр с фотосессии, справа ИИ-генерация: новая модель, свет и поза, а крой, цвет и фактура белья те же.</figcaption>
-    </figure>
-
-    <h3 class="sub" id="series-title">Косметика: серии слайдов в одном стиле</h3>
-    <div class="cards" id="series">
-      <figure><img src="media/tush3.jpg" alt="Слайд: тушь и мазок текстуры" loading="lazy"><figcaption>Термотушь · текстура</figcaption></figure>
-      <figure><img src="media/tush4.jpg" alt="Слайд: тушь у лица модели" loading="lazy"><figcaption>Термотушь · результат на ресницах</figcaption></figure>
-      <figure><img src="media/serum1.jpg" alt="Обложка сыворотки с моделью" loading="lazy"><figcaption>Anti-age сыворотка · обложка</figcaption></figure>
-      <figure><img src="media/serum2.jpg" alt="Слайд сыворотки: кожа крупно" loading="lazy"><figcaption>Anti-age сыворотка · кожа крупно</figcaption></figure>
-      <figure><img src="media/souffle.jpg" alt="Обложка крема-суфле" loading="lazy"><figcaption>Крем-суфле для лица · обложка</figcaption></figure>
-      <figure><img src="media/butter3.jpg" alt="Слайд: крем-баттер в руках модели" loading="lazy"><figcaption>Крем-баттер · состав</figcaption></figure>
-      <figure><img src="media/butter1.jpg" alt="Слайд: крем-баттер, предмет" loading="lazy"><figcaption>Крем-баттер · предмет</figcaption></figure>
-      <figure><img src="media/mask1.jpg" alt="Слайд: тканевые маски, упаковка" loading="lazy"><figcaption>Тканевые маски · упаковка</figcaption></figure>
-      <figure><img src="media/mask3.jpg" alt="Слайд: маска на лице модели" loading="lazy"><figcaption>Тканевые маски · в использовании</figcaption></figure>
-    </div>
+    <h3 class="sub">Серии карточек</h3>
+    <div class="cdx"><input type="radio" name="cdt" id="cdt0" checked><input type="radio" name="cdt" id="cdt1"><input type="radio" name="cdt" id="cdt2"><input type="radio" name="cdt" id="cdt3"><input type="radio" name="cdt" id="cdt4"><div class="fn-tabs"><label for="cdt0">Бельё</label><label for="cdt1">Тушь</label><label for="cdt2">Сыворотка</label><label for="cdt3">Кремы</label><label for="cdt4">Маски</label></div><div class="cd-rail cr0" tabindex="0" aria-label="Бельё"><figure><img src="media/lin_cover.jpg" alt="Обложка: трусы-шорты на модели, 3 шт в наборе, размеры 42–52" loading="lazy"><figcaption>Обложка · количество, размеры и цвета видны сразу</figcaption></figure><figure><img src="media/lin_fit.jpg" alt="Слайд посадки: модель со спины и четыре преимущества" loading="lazy"><figcaption>Посадка · четыре причины купить</figcaption></figure><figure><img src="media/lin_fabric.jpg" alt="Слайд ткани: макро и три цвета набора" loading="lazy"><figcaption>Ткань и набор · макро и три цвета</figcaption></figure><figure class="cw"><img src="media/lin_compare.jpg" alt="Слева кадр с фотосессии, справа ИИ-генерация с тем же товаром" loading="lazy"><figcaption>Фотосессия → ИИ-генерация: модель, свет и поза новые, крой, цвет и фактура те же</figcaption></figure></div><div class="cd-rail cr1" tabindex="0" aria-label="Тушь"><figure><img src="media/tush3.jpg" alt="Слайд: тушь и мазок текстуры" loading="lazy"><figcaption>Термотушь · текстура</figcaption></figure><figure><img src="media/tush4.jpg" alt="Слайд: тушь у лица модели" loading="lazy"><figcaption>Термотушь · результат на ресницах</figcaption></figure></div><div class="cd-rail cr2" tabindex="0" aria-label="Сыворотка"><figure><img src="media/serum1.jpg" alt="Обложка сыворотки с моделью" loading="lazy"><figcaption>Anti-age сыворотка · обложка</figcaption></figure><figure><img src="media/serum2.jpg" alt="Слайд сыворотки: кожа крупно" loading="lazy"><figcaption>Anti-age сыворотка · кожа крупно</figcaption></figure></div><div class="cd-rail cr3" tabindex="0" aria-label="Кремы"><figure><img src="media/souffle.jpg" alt="Обложка крема-суфле" loading="lazy"><figcaption>Крем-суфле для лица · обложка</figcaption></figure><figure><img src="media/butter3.jpg" alt="Слайд: крем-баттер в руках модели" loading="lazy"><figcaption>Крем-баттер · состав</figcaption></figure><figure><img src="media/butter1.jpg" alt="Слайд: крем-баттер, предмет" loading="lazy"><figcaption>Крем-баттер · предмет</figcaption></figure></div><div class="cd-rail cr4" tabindex="0" aria-label="Маски"><figure><img src="media/mask1.jpg" alt="Слайд: тканевые маски, упаковка" loading="lazy"><figcaption>Тканевые маски · упаковка</figcaption></figure><figure><img src="media/mask3.jpg" alt="Слайд: маска на лице модели" loading="lazy"><figcaption>Тканевые маски · в использовании</figcaption></figure></div></div>
 
     <h3 class="sub">Воронки: структура и тексты карточки</h3>
     <p class="fn-lead">Пишу продающую структуру карточки: из состава, исследований и описания бренда отбираю главное и раскладываю по 10 слайдам - от проблемы покупателя на обложке до противопоказаний и гарантий. Ниже две мои воронки без правок.</p>
