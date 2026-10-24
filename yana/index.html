@@ -207,6 +207,23 @@ section{padding-block:76px;border-top:1px solid var(--line)}
 .bx-trad .tr-st img{object-fit:contain}
 .bx-trad .tr-st:hover img{transform:none}
 @media (max-width:900px){.bx-trad .bx-text,.bx-trad .tr-col,.bx-trad .tr-feed{grid-column:1/-1;grid-row:auto}.bx-trad .tr-st{aspect-ratio:auto}.bx-trad .tr-st img{height:auto}}
+.bx-trad .bx-text{grid-column:1/6;grid-row:auto}
+.bx-trad .r-curc{grid-column:6/13;aspect-ratio:1}
+.bx-trad .r-3{grid-column:span 4;aspect-ratio:4/5}
+.bx-trad .r-sm{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr) minmax(0,.9fr);gap:14px;align-items:stretch}
+.bx-trad .r-ph{background:var(--paper-2);border-radius:6px;display:grid;place-items:center;padding:28px}
+.bx-trad .r-ph .phone{max-width:260px;width:100%;aspect-ratio:390/844;border:9px solid #141414;border-radius:40px;overflow:hidden;background:#fff;box-shadow:0 18px 40px rgba(0,0,0,.18)}
+.bx-trad .r-ph .phone img{width:100%;height:100%;object-fit:cover;object-position:top}
+.bx-trad .r-feed{background:var(--paper-2);padding:28px;display:grid;place-items:center}
+.bx-trad .r-feed img{width:100%;height:auto;max-width:460px}
+.bx-trad .r-logo{background:#FDFBF5}
+.bx-trad .r-logo img{object-fit:contain}
+.bx-trad .r-stories{grid-column:1/-1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.bx-trad .r-stories img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;display:block;height:auto}
+.bx-trad .r-hl{grid-column:1/-1;background:#FDFBF5;padding:28px;display:grid;place-items:center}
+.bx-trad .r-hl img{width:100%;max-width:620px;height:auto}
+.bx-trad .r-hl:hover img{transform:none}
+@media (max-width:900px){.bx-trad .bx-text,.bx-trad .r-curc{grid-column:1/-1}.bx-trad .r-3{grid-column:span 6}.bx-trad .r-3:last-of-type{grid-column:1/-1}.bx-trad .r-sm{grid-template-columns:1fr 1fr}.bx-trad .r-logo{grid-column:1/-1;aspect-ratio:16/9}.bx-trad .r-stories{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:42%;overflow-x:auto;scroll-snap-type:x mandatory}.bx-trad .r-stories img{scroll-snap-align:start}}
 /* process */
 .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;counter-reset:s}
 .step{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
@@ -301,18 +318,28 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
         <div class="bx-text">
           <h3>TRÅD</h3>
           <p class="bx-quote">«Нить» по-датски</p>
-          <p>Wellness-бренд добавок звучал «бежевой эстетикой»: красиво, но без энергии и характера. Я провела анализ контента бренда, описала портрет клиента - осознанный человек 30+, который покупает эффективность и качество - и пересобрала визуальную коммуникацию вокруг идеи связи человека и природы. Весь фотоконтент для соцсетей - продукт, люди и комьюнити - сгенерировала в нейросетях.</p>
+          <p>Бренд растительных добавок выглядел как десятки других: бежевые стоки, нет продукта и нет людей, которым он нужен. Я начала с аудита контента и портрета клиента - человек 35+, который бегает по утрам, читает составы и платит за качество. Из этого выросла система: один оранжевый акцент как «энергия жизни», линия-«нить» в инфографике и лента, где в каждом ряду продукт, человек и польза.</p>
+          <p>Весь фотоконтент для соцсетей - предметную съёмку, людей и комьюнити - сгенерировала в нейросетях. Банки и этикетки настоящие.</p>
           <div class="sw"><span style="--c:#B8BBC2">серый</span><span style="--c:#F26A1B">оранжевый</span><span style="--c:#F3EDE3">нюд</span></div>
-          <ul class="points"><li>Аудит контента и портрет аудитории</li><li>Рубрикатор: продвижение, аналог сайта, эмоциональная связь</li><li>Гид по фотоконтенту: модель, пространство, стиль кадров</li><li>Палитра с одним акцентом, типографика, приём «нить»</li><li>Лента, истории и обложки актуальных</li></ul>
+          <ul class="points"><li>Аудит контента и портрет аудитории</li><li>Рубрикатор и гид по фотоконтенту</li><li>ИИ-съёмка продукта и комьюнити</li><li>Сетка 3:4, профиль, истории и актуальные</li></ul>
         </div>
-        <div class="tr-col">
-          <figure><img src="media/q_pack.jpg" alt="Протеин на камне в горах" loading="lazy"></figure>
-          <figure><img src="media/q_woman.jpg" alt="Женщина 35+ после пробежки у моря" loading="lazy"></figure>
-          <figure><img src="media/q_kitchen.jpg" alt="Протеин в утреннем ритуале" loading="lazy"></figure>
-          <figure><img src="media/q_coll.jpg" alt="Коллаген на гальке у моря" loading="lazy"></figure>
+        <figure class="r-curc"><img src="media/r_curc.jpg" alt="Куркумин TRÅD с корнем куркумы и чёрным перцем" loading="lazy"></figure>
+        <figure class="r-3"><img src="media/r_woman.jpg" alt="Женщина 35+ после пробежки пьёт протеин у моря" loading="lazy"></figure>
+        <figure class="r-3"><img src="media/r_pack.jpg" alt="Протеин TRÅD на камне со мхом в горах" loading="lazy"></figure>
+        <figure class="r-3"><img src="media/r_coll.jpg" alt="Коллаген TRÅD на гальке у моря" loading="lazy"></figure>
+        <div class="r-sm">
+          <div class="r-ph"><div class="phone"><img src="media/r_profile.jpg" alt="Профиль Instagram TRÅD" loading="lazy"></div></div>
+          <figure class="r-feed"><img src="media/n_trad_feed.jpg" alt="Сетка ленты TRÅD 3×3" loading="lazy"></figure>
+          <figure class="r-logo"><img src="media/b_trad_d.jpg" alt="Логотип TRÅD" loading="lazy"></figure>
         </div>
-        <figure class="tr-feed"><img src="media/n_trad_feed.jpg" alt="Дизайн ленты Instagram TRÅD" loading="lazy"></figure>
-        <figure class="tr-st"><img src="media/q_stories.webp" alt="Макеты историй и обложки актуальных" loading="lazy"></figure>
+        <div class="r-stories" tabindex="0" aria-label="Истории TRÅD">
+          <img src="media/r_st_curc.jpg" alt="История: куркумин с пиперином" loading="lazy">
+          <img src="media/r_st_run.jpg" alt="История: рубрика комьюнити" loading="lazy">
+          <img src="media/r_st_rec.jpg" alt="История: рецепт тыквенного смузи" loading="lazy">
+          <img src="media/r_st_chl.jpg" alt="История: чем полезна хлорелла" loading="lazy">
+          <img src="media/r_st_del.jpg" alt="История: доставка" loading="lazy">
+        </div>
+        <figure class="r-hl"><img src="media/r_hl.jpg" alt="Обложки актуальных историй" loading="lazy"></figure>
       </div>
     </article>
   </div>
