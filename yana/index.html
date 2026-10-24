@@ -109,6 +109,47 @@ section{padding-block:76px;border-top:1px solid var(--line)}
 .points li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:1px;background:var(--ink)}
 .rail{display:grid;grid-auto-flow:column;grid-auto-columns:88%;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;min-width:0;scrollbar-color:var(--line) transparent}
 .rail img{content-visibility:auto;width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:4px;scroll-snap-align:start;background:var(--paper-2)}
+/* brand bento */
+.bx+.bx{margin-top:96px}
+.bx figure{margin:0;position:relative;overflow:hidden;border-radius:6px;background:var(--paper-2)}
+.bx img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
+.bx figure:hover img{transform:scale(1.04)}
+.bx figcaption{position:absolute;left:10px;bottom:10px;font-family:var(--f-mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:rgba(255,255,255,.88);color:#171615;padding:.35em .7em;border-radius:999px}
+.bx-hero{aspect-ratio:21/9}
+.bx-label{position:absolute;left:18px;top:16px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#fff;mix-blend-mode:difference}
+.bx-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px;margin-top:14px}
+.bx-text{grid-column:1/6;grid-row:1/3;padding:22px 8px 8px 0}
+.bx-text h3{font-size:46px;line-height:1;margin:0 0 14px}
+.bx-quote{font-family:var(--f-display);font-size:24px;color:var(--accent);margin:0 0 14px}
+.bx-text p{color:var(--ink-2);font-size:15.5px}
+.sw{display:flex;gap:16px;margin:22px 0 6px}
+.sw span{display:grid;justify-items:center;gap:6px;font-family:var(--f-mono);font-size:11px;color:var(--ink-2)}
+.sw span::before{content:"";width:46px;height:46px;border-radius:50%;background:var(--c);border:1px solid var(--line)}
+.bx .c1{grid-column:6/9;grid-row:1/3;aspect-ratio:auto}
+.bx .c2{grid-column:9/13;aspect-ratio:4/3}
+.bx .c3{grid-column:9/11;aspect-ratio:1}
+.bx .c4{grid-column:11/13;aspect-ratio:1}
+.bx .c5{grid-column:1/8;aspect-ratio:16/9}
+.bx .c6{grid-column:8/13;aspect-ratio:auto}
+.bx-amo .c1 img{object-position:50% 50%}
+.bx-amo .c2 img{object-position:50% 40%}
+.bx-amo .c3 img{object-position:38% 60%}
+.bx-amo .c4 img{object-position:72% 55%}
+.bx-amo .c6 img{object-position:40% 50%}
+.bx-trad .c1 img{object-position:68% 50%}
+.bx-trad .c2 img{object-position:62% 45%}
+.bx-trad .c3 img{object-position:50% 50%}
+.bx-trad .c4 img{object-position:78% 60%}
+.bx-trad .c6 img{object-position:55% 55%}
+@media (max-width:900px){
+ .bx-text{grid-column:1/-1;grid-row:auto;padding:8px 0}
+ .bx .c1{grid-column:1/7;grid-row:auto;aspect-ratio:3/4}
+ .bx .c2{grid-column:7/13;aspect-ratio:3/4}
+ .bx .c3{grid-column:1/7}.bx .c4{grid-column:7/13}
+ .bx .c5{grid-column:1/-1}
+ .bx .c6{grid-column:1/-1;aspect-ratio:4/3}
+ .bx-hero{aspect-ratio:16/9}
+}
 /* process */
 .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;counter-reset:s}
 .step{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
@@ -313,47 +354,45 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
       <p class="mono">04 · Бренд и упаковка</p>
       <div>
         <h2>Айдентика, упаковка и соцсети</h2>
-        <p>Два бренда с нуля: от смысла названия до флаконов, коробок и ленты в Instagram. Листайте кадры вбок.</p>
+        <p>Два бренда с нуля: от смысла названия до флаконов, коробок и ленты в Instagram.</p>
       </div>
     </div>
 
-    <article class="case">
-      <div class="case-text">
-        <span class="tag">косметика 30+ · айдентика и упаковка</span>
-        <h3>[amologia]</h3>
-        <p>Название переводится как «я люблю тебя, наука». Задача была соединить два мира: строгую медицину и живую природу. Поэтому типографика сдержанная и почти лабораторная, палитра из глубокого морского и белого, а «изюминка» спрятана в упаковке: через вырубку на коробке видна волна или камни у моря.</p>
-        <ul class="points"><li>Логотип в квадратных скобках, как формула</li><li>Две линии: anti-age и базовый уход</li><li>Коробки, развёртка, пакеты, флаконы</li><li>Лента и посты в одном стиле</li></ul>
-      </div>
-      <div class="rail" tabindex="0" aria-label="Кадры презентации amologia">
-        <img src="media/amo_1.jpg" alt="Обложка: волна и логотип">
-        <img src="media/amo_7.jpg" alt="Линейка флаконов" loading="lazy">
-        <img src="media/amo_8.jpg" alt="Флакон сыворотки" loading="lazy">
-        <img src="media/amo_9.jpg" alt="Коробки с вырубкой" loading="lazy">
-        <img src="media/amo_10.jpg" alt="Развёртка коробки" loading="lazy">
-        <img src="media/amo_12.jpg" alt="Упаковка с пейзажами" loading="lazy">
-        <img src="media/amo_13.jpg" alt="Стопка коробок" loading="lazy">
-        <img src="media/amo_14.jpg" alt="Фирменные пакеты" loading="lazy">
-        <img src="media/amo_16.jpg" alt="Лента Instagram" loading="lazy">
+    <article class="bx bx-amo">
+      <figure class="bx-hero"><img src="media/amo_1.jpg" alt="Обложка: волна и логотип amologia" loading="lazy"><span class="bx-label">01 · косметика 30+</span></figure>
+      <div class="bx-grid">
+        <div class="bx-text">
+          <h3>[amologia]</h3>
+          <p class="bx-quote">«Я люблю тебя, наука»</p>
+          <p>Так переводится название. Задача - соединить строгую медицину и живую природу: типографика сдержанная, почти лабораторная, а на коробке через вырубку видна волна или камни у моря.</p>
+          <div class="sw"><span style="--c:#1E2830">морской</span><span style="--c:#F4F4F2">белый</span><span style="--c:#8E9499">камень</span></div>
+          <ul class="points"><li>Логотип в скобках, как формула</li><li>Две линии: anti-age и базовый уход</li><li>Коробки, развёртка, пакеты, флаконы</li></ul>
+        </div>
+        <figure class="c1"><img src="media/amo_8.jpg" alt="Флакон сыворотки" loading="lazy"><figcaption>флакон · свет и тень</figcaption></figure>
+        <figure class="c2"><img src="media/amo_9.jpg" alt="Коробки с вырубкой" loading="lazy"><figcaption>вырубка: море внутри коробки</figcaption></figure>
+        <figure class="c3"><img src="media/amo_14.jpg" alt="Фирменные пакеты" loading="lazy"></figure>
+        <figure class="c4"><img src="media/amo_12.jpg" alt="Упаковка с пейзажем" loading="lazy"></figure>
+        <figure class="c5"><img src="media/amo_7.jpg" alt="Чертёж линейки флаконов" loading="lazy"><figcaption>линейка · 6 форм</figcaption></figure>
+        <figure class="c6"><img src="media/amo_16.jpg" alt="Лента Instagram" loading="lazy"><figcaption>лента в одном стиле</figcaption></figure>
       </div>
     </article>
 
-    <article class="case">
-      <div class="case-text">
-        <span class="tag">wellness-добавки · айдентика и контент</span>
-        <h3>TRÅD</h3>
-        <p>По-датски «нить», связь человека и природы. Бренд для людей, которые заботятся о здоровье осознанно и покупают качество. Отсюда спокойный серый, природный нюд и один энергичный оранжевый акцент, который отвечает за «энергию жизни». Для соцсетей разработала рубрики, правила фотоконтента и шаблоны.</p>
-        <ul class="points"><li>Логотип, цвета, шрифтовая пара</li><li>Графический приём: линия-«нить»</li><li>Рубрикатор и гид по фотоконтенту</li><li>Лента, обложки Reels, истории</li></ul>
-      </div>
-      <div class="rail" tabindex="0" aria-label="Кадры презентации TRÅD">
-        <img src="media/trad_9.jpg" alt="Логотип TRÅD">
-        <img src="media/trad_10.jpg" alt="Фирменные цвета" loading="lazy">
-        <img src="media/trad_11.jpg" alt="Графические приёмы" loading="lazy">
-        <img src="media/trad_2.jpg" alt="История компании" loading="lazy">
-        <img src="media/trad_4.jpg" alt="Контент, продвигающий бренд" loading="lazy">
-        <img src="media/trad_14.jpg" alt="Лента Instagram" loading="lazy">
-        <img src="media/trad_15.jpg" alt="Обложки Reels" loading="lazy">
-        <img src="media/trad_17.jpg" alt="Истории" loading="lazy">
-        <img src="media/trad_18.jpg" alt="Посты с продуктом" loading="lazy">
+    <article class="bx bx-trad">
+      <figure class="bx-hero"><img src="media/trad_18.jpg" alt="Продукты TRÅD на фоне гор" loading="lazy"><span class="bx-label">02 · wellness-добавки</span></figure>
+      <div class="bx-grid">
+        <div class="bx-text">
+          <h3>TRÅD</h3>
+          <p class="bx-quote">«Нить» по-датски</p>
+          <p>Связь человека и природы. Бренд для тех, кто заботится о здоровье осознанно: спокойный серый, природный нюд и один оранжевый акцент - «энергия жизни». Для соцсетей сделала рубрики, гид по фотоконтенту и шаблоны.</p>
+          <div class="sw"><span style="--c:#B8BBC2">серый</span><span style="--c:#F26A1B">оранжевый</span><span style="--c:#F3EDE3">нюд</span></div>
+          <ul class="points"><li>Логотип, цвета, шрифтовая пара</li><li>Графический приём: линия-«нить»</li><li>Лента, обложки Reels, истории</li></ul>
+        </div>
+        <figure class="c1"><img src="media/trad_4.jpg" alt="Фотоконтент бренда" loading="lazy"><figcaption>гид по фотоконтенту</figcaption></figure>
+        <figure class="c2"><img src="media/trad_11.jpg" alt="Графические приёмы" loading="lazy"><figcaption>приём «нить»</figcaption></figure>
+        <figure class="c3"><img src="media/trad_14.jpg" alt="Лента Instagram" loading="lazy"></figure>
+        <figure class="c4"><img src="media/trad_2.jpg" alt="История компании" loading="lazy"></figure>
+        <figure class="c5"><img src="media/trad_15.jpg" alt="Обложки Reels" loading="lazy"><figcaption>обложки Reels</figcaption></figure>
+        <figure class="c6"><img src="media/trad_17.jpg" alt="Истории" loading="lazy"><figcaption>истории</figcaption></figure>
       </div>
     </article>
   </div>
