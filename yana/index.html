@@ -297,6 +297,21 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
   section{padding-block:56px}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+
+.refs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:30px}
+.refs figure{margin:0}
+.refs img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:6px;background:var(--paper-2)}
+.refs figcaption{margin-top:8px;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.shoot-lab{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin:0 0 14px}
+.shoot{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.shoot figure{margin:0}
+.shoot img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:6px;background:var(--paper-2)}
+.shoot .big{grid-column:span 2;grid-row:span 2}
+.shoot .big img{aspect-ratio:auto;height:100%}
+.shoot-dl{margin:34px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.shoot-dl dt{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.shoot-dl dd{margin:4px 0 0;font-size:15px}
+@media (max-width:760px){.refs{grid-template-columns:repeat(2,minmax(0,1fr))}.shoot{grid-template-columns:repeat(2,minmax(0,1fr))}.shoot .big{grid-column:span 2;grid-row:auto}.shoot .big img{aspect-ratio:4/5;height:auto}.shoot-dl{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -444,7 +459,40 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <p class="mono">04 · Карточки</p>
+      <p class="mono">04 · Фотосессия</p>
+      <div>
+        <h2>Персонаж и съёмка с нуля</h2>
+        <p>Героиню, локацию и свет создала нейросеть. Одежда настоящая: беру фото товара с сайта бренда и переношу его на персонажа в уличную съёмку. Вместо студии, модели и стилиста - один персонаж, одни референсы и один свет на всю серию.</p>
+      </div>
+    </div>
+    <p class="shoot-lab">Референсы одежды</p>
+    <div class="refs">
+      <figure><img src="media/fs_ref_dress.jpg" alt="Референс: платье-свитер на модели" loading="lazy"><figcaption>Платье</figcaption></figure>
+      <figure><img src="media/fs_ref_boots.jpg" alt="Референс: сапоги" loading="lazy"><figcaption>Сапоги</figcaption></figure>
+      <figure><img src="media/fs_ref_bag.jpg" alt="Референс: сумка" loading="lazy"><figcaption>Сумка</figcaption></figure>
+      <figure><img src="media/fs_ref_glasses.jpg" alt="Референс: очки" loading="lazy"><figcaption>Очки</figcaption></figure>
+    </div>
+    <p class="shoot-lab">Результат · всё в кадре сгенерировано в ИИ, включая персонажа</p>
+    <div class="shoot">
+      <figure class="big"><img src="media/fs_1.jpg" alt="Героиня у стены в платье, очках и с сумкой" loading="lazy"></figure>
+      <figure><img src="media/fs_2.jpg" alt="Героиня идёт по улице" loading="lazy"></figure>
+      <figure><img src="media/fs_3.jpg" alt="Героиня сидит на ступенях, крупно сапоги" loading="lazy"></figure>
+      <figure><img src="media/fs_4.jpg" alt="Героиня сидит на ступенях, съёмка снизу" loading="lazy"></figure>
+      <figure><img src="media/fs_5.jpg" alt="Героиня сидит на бордюре" loading="lazy"></figure>
+      <figure><img src="media/fs_6.jpg" alt="Героиня у чёрной двери" loading="lazy"></figure>
+    </div>
+    <dl class="shoot-dl">
+      <div><dt>Задача</dt><dd>Серия для бренда без съёмки с моделью и студией, одежда в кадре такая же, как в каталоге</dd></div>
+      <div><dt>Сделано</dt><dd>Персонаж с нуля, образ, позы и 6 кадров в одном свете и цвете</dd></div>
+      <div><dt>Инструменты</dt><dd>Midjourney, Nano Banana Pro</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="mono">05 · Карточки</p>
       <div>
         <h2>Обложки и слайды для маркетплейсов</h2>
         <p>Смотрю на карточку глазами покупателя в выдаче: что он должен понять за секунду и что его останавливает. Всё, что на слайдах, сгенерировано нейросетями и свёрстано в Figma.</p>
