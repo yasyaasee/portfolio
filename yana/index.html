@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Портфолио Яны</title>
+<title>Yana Serbzhinskaya - Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: витрина-лента — крупные кадры работ, короткие подписи сбоку, разделы как главы каталога */
+/* Layout: showcase feed */
 :root{
   --paper:#F4F3EF; --paper-2:#E9E7E1; --ink:#171615; --ink-2:#5E5A55; --line:#D6D3CC;
   --accent:#6B2E44; --accent-ink:#FFFFFF; --chip:#FFFFFF;
@@ -30,7 +30,7 @@ p{margin:0}
 /* top */
 .top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px;border-bottom:1px solid var(--line)}
 .top .name{font-family:var(--f-display);font-size:22px}
-.top .tg{font-family:var(--f-mono);font-size:13px;text-decoration:none;border:1px solid var(--line);padding:.55em 1em;border-radius:999px}
+.top .tg{white-space:nowrap;font-family:var(--f-mono);font-size:13px;text-decoration:none;border:1px solid var(--line);padding:.55em 1em;border-radius:999px}
 /* hero */
 .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:end;padding-block:64px 72px}
 .hero h1{font-size:clamp(40px,6vw,78px);line-height:1.02;letter-spacing:-.01em}
@@ -318,21 +318,21 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
 
 <div class="wrap">
   <header class="top">
-    <div class="name">Яна</div>
-    <a class="tg" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Telegram · @yaaasyya</a>
+    <div class="name">Yana</div>
+    <div style="display:flex;gap:8px;align-items:center"><a class="tg" href="ru/">RU</a><a class="tg" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Telegram · @yaaasyya</a></div>
   </header>
 
   <div class="hero">
     <div>
-      <p class="mono">Графический дизайнер · AI-креатор · Санкт-Петербург / Москва</p>
-      <h1 style="margin-top:18px">Дизайн бренда: от логотипа <em>до&nbsp;карточки</em> и&nbsp;ролика</h1>
-      <p class="lead">Разрабатываю фирменные стили, упаковку и печатные материалы. Снимаю рекламные ролики и UGC в нейросетях: модели и сцены генерирую, а товар в кадре совпадает с оригиналом до надписей. Делаю карточки для Wildberries и Ozon - от структуры и текстов слайдов до вёрстки.</p>
-      <div class="facts"><span>Фирменный стиль</span><span>Упаковка и полиграфия</span><span>Рекламные ИИ-ролики</span><span>UGC</span><span>Карточки WB / Ozon</span><span>Тексты и структура карточек</span></div>
-      <div class="cta"><a class="btn" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Написать в Telegram →</a><span class="mono">готова к тестовому</span></div>
+      <p class="mono">Graphic Designer · AI Creator · Saint Petersburg / Moscow</p>
+      <h1 style="margin-top:18px">Brand design: from logo <em>to&nbsp;product card</em> and&nbsp;video</h1>
+      <p class="lead">I design brand identities, packaging and print. I produce ad videos and UGC with AI: models and scenes are generated, while the product in the frame matches the original down to the label text. I create product cards for Wildberries and Ozon - from slide structure and copy to final layout.</p>
+      <div class="facts"><span>Brand identity</span><span>Packaging & print</span><span>AI ad videos</span><span>UGC</span><span>WB / Ozon product cards</span><span>Card structure & copy</span></div>
+      <div class="cta"><a class="btn" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Message me on Telegram →</a><span class="mono">open to a test task</span></div>
     </div>
     <figure class="reel" style="margin:0">
-      <video src="media/moveli.mp4" poster="media/moveli.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Ролик «Мамино пальто»"></video>
-      <figcaption class="mono">«Мамино пальто» · ролик для бренда сумок · концепт</figcaption>
+      <video src="media/moveli.mp4" poster="media/moveli.jpg" autoplay muted loop playsinline preload="metadata" aria-label=""Mom's Coat" video"></video>
+      <figcaption class="mono">"Mom's Coat" · video for a bag brand · concept</figcaption>
     </figure>
   </div>
 </div>
@@ -340,64 +340,64 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
 <section id="graphic">
   <div class="wrap">
     <div class="sec-head">
-      <p class="mono">01 · Фирменный стиль</p>
+      <p class="mono">01 · Brand identity</p>
       <div>
-        <h2>Фирменный стиль, упаковка и печать</h2>
-        <p>Два бренда с нуля: от смысла названия и логотипа до упаковки, развёрток, пакетов и визуала соцсетей.</p>
+        <h2>Brand identity, packaging and print</h2>
+        <p>Two brands from scratch: from the meaning of the name and the logo to packaging, dielines, bags and social media visuals.</p>
       </div>
     </div>
 
     <article class="bx bx-amo">
-      <figure class="bx-hero"><img src="media/am_cover2.jpg" alt="Обложка amologia: логотип в проёме морской пещеры" loading="lazy"></figure>
+      <figure class="bx-hero"><img src="media/am_cover2.jpg" alt="amologia cover: logo framed by a sea cave" loading="lazy"></figure>
       <div class="bx-grid">
         <div class="bx-text">
           <h3>[amologia]</h3>
-          <p class="bx-quote">«Я люблю тебя, наука»</p>
-          <p>Так переводится название. Задача - соединить строгую медицину и живую природу: типографика сдержанная, почти лабораторная, а на коробке через вырубку видна волна или камни у моря.</p>
-          <div class="sw"><span style="--c:#1E2830">морской</span><span style="--c:#F4F4F2">белый</span><span style="--c:#8E9499">камень</span></div>
-          <ul class="points"><li>Логотип в скобках, как формула</li><li>Две линии: anti-age и базовый уход</li><li>Коробки, развёртка, пакеты, флаконы</li></ul>
+          <p class="bx-quote">"I love you, science"</p>
+          <p>That is what the name means. The goal was to combine strict medicine with living nature: the typography is restrained, almost clinical, while a die-cut window on the box reveals a wave or seaside stones.</p>
+          <div class="sw"><span style="--c:#1E2830">sea</span><span style="--c:#F4F4F2">white</span><span style="--c:#8E9499">stone</span></div>
+          <ul class="points"><li>Logo in brackets, like a formula</li><li>Two lines: anti-age and basic care</li><li>Boxes, dielines, bags, bottles</li></ul>
         </div>
-              <figure class="ta"><img src="media/b_amo_a.jpg" alt="Коробки с вырубкой" loading="lazy"></figure>
-        <figure class="tb"><img src="media/b_amo_b2.jpg" alt="Флакон amologia на мокром камне у моря" loading="lazy"></figure>
-        <figure class="tc"><img src="media/b_amo_c.jpg" alt="Стопка коробок" loading="lazy"></figure>
-        <figure class="td"><img src="media/b_amo_d.jpg" alt="Фирменные пакеты" loading="lazy"></figure>
-        <figure class="te te-wide2"><img src="media/b_amo_e2.jpg" alt="Чертёж линейки" loading="lazy"></figure>
+              <figure class="ta"><img src="media/b_amo_a.jpg" alt="Die-cut boxes" loading="lazy"></figure>
+        <figure class="tb"><img src="media/b_amo_b2.jpg" alt="amologia bottle on a wet seaside stone" loading="lazy"></figure>
+        <figure class="tc"><img src="media/b_amo_c.jpg" alt="Stack of boxes" loading="lazy"></figure>
+        <figure class="td"><img src="media/b_amo_d.jpg" alt="Branded bags" loading="lazy"></figure>
+        <figure class="te te-wide2"><img src="media/b_amo_e2.jpg" alt="Product line drawing" loading="lazy"></figure>
         <div class="am-st">
-          <img src="media/am_sz1.jpg" alt="История amologia: утро у моря" loading="lazy">
-          <img src="media/am_sz2.jpg" alt="История amologia: Botox Cream на камнях" loading="lazy">
-          <img src="media/am_sz3.jpg" alt="История amologia: Peptide Eye Emulsion" loading="lazy">
-          <img src="media/am_sz4.jpg" alt="История amologia: Peptide Night Cream" loading="lazy">
+          <img src="media/am_sz1.jpg" alt="amologia story: morning by the sea" loading="lazy">
+          <img src="media/am_sz2.jpg" alt="amologia story: Botox Cream on stones" loading="lazy">
+          <img src="media/am_sz3.jpg" alt="amologia story: Peptide Eye Emulsion" loading="lazy">
+          <img src="media/am_sz4.jpg" alt="amologia story: Peptide Night Cream" loading="lazy">
         </div>
       </div>
     </article>
 
     <article class="bx bx-trad">
-      <figure class="bx-hero"><img src="media/b_trad_h2.jpg" alt="Обложка TRÅD: женщина в туманной долине и логотип" loading="lazy"></figure>
+      <figure class="bx-hero"><img src="media/b_trad_h2.jpg" alt="TRÅD cover: woman in a misty valley with the logo" loading="lazy"></figure>
       <div class="bx-grid">
         <div class="bx-text">
           <h3>TRÅD</h3>
-          <p class="bx-quote">«Нить» по-датски</p>
-          <p>Бренд растительных добавок выглядел как десятки других: бежевые стоки, нет продукта и нет людей, которым он нужен. Я начала с аудита контента и портрета клиента - человек 35+, который бегает по утрам, читает составы и платит за качество. Из этого выросла система: один оранжевый акцент как «энергия жизни», линия-«нить» в инфографике и лента, где в каждом ряду продукт, человек и польза.</p>
-          <p>Весь фотоконтент для соцсетей - предметную съёмку, людей и комьюнити - сгенерировала в нейросетях. Банки и этикетки настоящие.</p>
-          <div class="sw"><span style="--c:#B8BBC2">серый</span><span style="--c:#F26A1B">оранжевый</span><span style="--c:#F3EDE3">нюд</span></div>
-          <ul class="points"><li>Аудит контента и портрет аудитории</li><li>Рубрикатор и гид по фотоконтенту</li><li>ИИ-съёмка продукта и комьюнити</li><li>Сетка 3:4, профиль, истории и актуальные</li></ul>
+          <p class="bx-quote">"Thread" in Danish</p>
+          <p>This plant-based supplement brand looked like dozens of others: beige stock photos, no product and no people who need it. I started with a content audit and a customer profile - a 35+ person who runs in the morning, reads ingredient lists and pays for quality. That grew into a system: a single orange accent as "life energy", a "thread" line in the infographics, and a feed where every row shows the product, a person and a benefit.</p>
+          <p>All social media photo content - product shots, people and community - was generated with AI. The jars and labels are real.</p>
+          <div class="sw"><span style="--c:#B8BBC2">grey</span><span style="--c:#F26A1B">orange</span><span style="--c:#F3EDE3">nude</span></div>
+          <ul class="points"><li>Content audit and audience profile</li><li>Content pillars and photo guide</li><li>AI product and community shoots</li><li>3:4 grid, profile, stories and highlights</li></ul>
         </div>
-        <figure class="r-curc"><img src="media/r_curc.jpg" alt="Куркумин TRÅD с корнем куркумы и чёрным перцем" loading="lazy"></figure>
-        <figure class="r-3"><img src="media/r_woman.jpg" alt="Женщина 35+ после пробежки пьёт протеин у моря" loading="lazy"></figure>
-        <figure class="r-3"><img src="media/r_pack.jpg" alt="Протеин TRÅD на камне со мхом в горах" loading="lazy"></figure>
-        <figure class="r-3"><img src="media/r_coll.jpg" alt="Коллаген TRÅD на гальке у моря" loading="lazy"></figure>
+        <figure class="r-curc"><img src="media/r_curc.jpg" alt="TRÅD curcumin with turmeric root and black pepper" loading="lazy"></figure>
+        <figure class="r-3"><img src="media/r_woman.jpg" alt="Woman 35+ drinking protein by the sea after a run" loading="lazy"></figure>
+        <figure class="r-3"><img src="media/r_pack.jpg" alt="TRÅD protein on a mossy stone in the mountains" loading="lazy"></figure>
+        <figure class="r-3"><img src="media/r_coll.jpg" alt="TRÅD collagen on seaside pebbles" loading="lazy"></figure>
         <div class="r-sm">
-          <figure class="r-feed"><img src="media/n_trad_feed.jpg" alt="Сетка ленты TRÅD 3×3" loading="lazy"></figure>
+          <figure class="r-feed"><img src="media/n_trad_feed.jpg" alt="TRÅD 3×3 feed grid" loading="lazy"></figure>
         </div>
-        <figure class="r-logo"><img src="media/b_trad_d.jpg" alt="Логотип TRÅD" loading="lazy"></figure>
-        <div class="r-stories" tabindex="0" aria-label="Истории TRÅD">
-          <img src="media/r_st_curc.jpg" alt="История: куркумин с пиперином" loading="lazy">
-          <img src="media/r_st_run.jpg" alt="История: рубрика комьюнити" loading="lazy">
-          <img src="media/r_st_rec.jpg" alt="История: рецепт тыквенного смузи" loading="lazy">
-          <img src="media/r_st_chl.jpg" alt="История: чем полезна хлорелла" loading="lazy">
-          <img src="media/r_st_del.jpg" alt="История: доставка" loading="lazy">
+        <figure class="r-logo"><img src="media/b_trad_d.jpg" alt="TRÅD logo" loading="lazy"></figure>
+        <div class="r-stories" tabindex="0" aria-label="TRÅD stories">
+          <img src="media/r_st_curc.jpg" alt="Story: curcumin with piperine" loading="lazy">
+          <img src="media/r_st_run.jpg" alt="Story: community feature" loading="lazy">
+          <img src="media/r_st_rec.jpg" alt="Story: pumpkin smoothie recipe" loading="lazy">
+          <img src="media/r_st_chl.jpg" alt="Story: benefits of chlorella" loading="lazy">
+          <img src="media/r_st_del.jpg" alt="Story: delivery" loading="lazy">
         </div>
-        <figure class="r-hl"><img src="media/r_hl.jpg" alt="Обложки актуальных историй" loading="lazy"></figure>
+        <figure class="r-hl"><img src="media/r_hl.jpg" alt="Highlight covers" loading="lazy"></figure>
       </div>
     </article>
   </div>
@@ -406,29 +406,29 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <p class="mono">02 · Ролики для брендов</p>
+      <p class="mono">02 · Brand videos</p>
       <div>
-        <h2>Рекламные ролики уровня съёмки</h2>
-        <p>Идея, раскадровка, генерация и монтаж. Сумка в кадре повторяет настоящую модель бренда: форму, фурнитуру, фактуру кожи.</p>
+        <h2>Ad videos at production-shoot quality</h2>
+        <p>Idea, storyboard, generation and editing. The bag in the frame matches the brand's real model: shape, hardware and leather texture.</p>
       </div>
     </div>
     <div class="films">
       <article class="film">
         <video src="media/moveli.mp4" poster="media/moveli.jpg" controls playsinline preload="none"></video>
         <div>
-          <span class="tag">концепт</span>
-          <h3>Мамино пальто</h3>
-          <p>Короткий фильм для бренда сумок: мех на сумке напоминает героине мамин воротник, и мы уходим в воспоминание из 90-х.</p>
-          <dl><div><dt>Задача</dt><dd>Эмоция и история вместо демонстрации товара</dd></div><div><dt>Сделано</dt><dd>Сценарий, раскадровка, переход в воспоминание через свет</dd></div><div><dt>Инструменты</dt><dd>Midjourney, Nano Banana Pro, Seedance</dd></div></dl>
+          <span class="tag">concept</span>
+          <h3>Mom's Coat</h3>
+          <p>A short film for a bag brand: the fur on the bag reminds the heroine of her mother's collar, and we drift into a memory from the 90s.</p>
+          <dl><div><dt>Task</dt><dd>Emotion and story instead of a product demo</dd></div><div><dt>Done</dt><dd>Script, storyboard, a transition into the memory through light</dd></div><div><dt>Tools</dt><dd>Midjourney, Nano Banana Pro, Seedance</dd></div></dl>
         </div>
       </article>
       <article class="film">
         <video src="media/cns.mp4" poster="media/cns.jpg" controls playsinline preload="none"></video>
         <div>
-          <span class="tag">концепт</span>
-          <h3>Сумка как экспонат</h3>
-          <p>Презентация новой сумки бренда: фактура кожи, фурнитура, силуэт на модели и финальный кадр в музейном зале.</p>
-          <dl><div><dt>Задача</dt><dd>Показать товар дорого и спокойно, без вычурности</dd></div><div><dt>Сделано</dt><dd>Детали крупно, свет из фонаря, финал под логотип</dd></div><div><dt>Инструменты</dt><dd>Midjourney, Nano Banana Pro, Seedance</dd></div></dl>
+          <span class="tag">concept</span>
+          <h3>The Bag as an Exhibit</h3>
+          <p>A launch film for the brand's new bag: leather texture, hardware, the silhouette on a model and a final shot in a museum hall.</p>
+          <dl><div><dt>Task</dt><dd>Show the product as premium and calm, without excess</dd></div><div><dt>Done</dt><dd>Close-up details, lantern light, a final shot built for the logo</dd></div><div><dt>Tools</dt><dd>Midjourney, Nano Banana Pro, Seedance</dd></div></dl>
         </div>
       </article>
     </div>
@@ -440,15 +440,15 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
     <div class="sec-head">
       <p class="mono">03 · UGC</p>
       <div>
-        <h2>Ролики с реальным товаром и ИИ-моделью</h2>
-        <p>Одна модель держится во всех роликах бренда. В углу каждого ролика фото упаковки с сайта бренда для сравнения.</p>
+        <h2>Videos with a real product and an AI model</h2>
+        <p>The same model stays consistent across all of a brand's videos. Each video shows the packaging photo from the brand's website in the corner for comparison.</p>
       </div>
     </div>
     <div class="ugc">
-      <div class="u"><div class="v"><video src="media/coat.mp4" poster="media/coat.jpg" controls playsinline preload="none"></video><img class="pack" src="media/p_coat.jpg" alt="Фото плаща"></div><div><b>Fashion · утеплённый плащ</b><span>концепт · street-style</span></div></div>
-<div class="u"><div class="v"><video src="media/lips.mp4" poster="media/lips.jpg" controls playsinline preload="none"></video><img class="pack" src="media/p_lippencil.jpg" alt="Упаковка карандаша для губ"></div><div><b>LUVU · Lip Pencil + Glossy</b><span>для бренда · макияж в метро</span></div></div>
-      <div class="u"><div class="v"><video src="media/stick.mp4" poster="media/stick.jpg" controls playsinline preload="none"></video><img class="pack" src="media/p_stick.jpg" alt="Упаковка крем-стика"></div><div><b>a'skin · Крем-стик</b><span>концепт · лайфхак в машине</span></div></div>
-      <div class="u"><div class="v"><video src="media/hair1.mp4" poster="media/hair1.jpg" controls playsinline preload="none"></video><img class="pack" src="media/p_hairspray.jpg" alt="Упаковка спрея для волос"></div><div><b>a'skin · Спрей для объёма</b><span>концепт · до / после</span></div></div>
+      <div class="u"><div class="v"><video src="media/coat.mp4" poster="media/coat.jpg" controls playsinline preload="none"></video><img class="pack" src="media/p_coat.jpg" alt="Coat photo"></div><div><b>Fashion · insulated trench coat</b><span>concept · street style</span></div></div>
+<div class="u"><div class="v"><video src="media/lips.mp4" poster="media/lips.jpg" controls playsinline preload="none"></video><img class="pack" src="media/p_lippencil.jpg" alt="Lip pencil packaging"></div><div><b>LUVU · Lip Pencil + Glossy</b><span>for the brand · makeup on the metro</span></div></div>
+      <div class="u"><div class="v"><video src="media/stick.mp4" poster="media/stick.jpg" controls playsinline preload="none"></video><img class="pack" src="media/p_stick.jpg" alt="Cream stick packaging"></div><div><b>a'skin · Cream stick</b><span>concept · car life hack</span></div></div>
+      <div class="u"><div class="v"><video src="media/hair1.mp4" poster="media/hair1.jpg" controls playsinline preload="none"></video><img class="pack" src="media/p_hairspray.jpg" alt="Hair spray packaging"></div><div><b>a'skin · Volumizing spray</b><span>concept · before / after</span></div></div>
       
       
       
@@ -459,32 +459,32 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <p class="mono">04 · Фотосессия</p>
+      <p class="mono">04 · Photo shoot</p>
       <div>
-        <h2>Персонаж и съёмка с нуля</h2>
-        <p>Героиню, локацию и свет создала нейросеть. Одежда настоящая: беру фото товара с сайта бренда и переношу его на персонажа в уличную съёмку. Вместо студии, модели и стилиста - один персонаж, одни референсы и один свет на всю серию.</p>
+        <h2>A character and a shoot from scratch</h2>
+        <p>The heroine, location and light are AI-generated. The clothes are real: I take product photos from the brand's website and put them on the character in a street shoot. Instead of a studio, a model and a stylist - one character, one set of references and one light setup for the whole series.</p>
       </div>
     </div>
-    <p class="shoot-lab">Референсы одежды</p>
+    <p class="shoot-lab">Clothing references</p>
     <div class="refs">
-      <figure><img src="media/fs_ref_dress.jpg" alt="Референс: платье-свитер на модели" loading="lazy"><figcaption>Платье</figcaption></figure>
-      <figure><img src="media/fs_ref_boots.jpg" alt="Референс: сапоги" loading="lazy"><figcaption>Сапоги</figcaption></figure>
-      <figure><img src="media/fs_ref_bag.jpg" alt="Референс: сумка" loading="lazy"><figcaption>Сумка</figcaption></figure>
-      <figure><img src="media/fs_ref_glasses.jpg" alt="Референс: очки" loading="lazy"><figcaption>Очки</figcaption></figure>
+      <figure><img src="media/fs_ref_dress.jpg" alt="Reference: sweater dress on a model" loading="lazy"><figcaption>Dress</figcaption></figure>
+      <figure><img src="media/fs_ref_boots.jpg" alt="Reference: boots" loading="lazy"><figcaption>Boots</figcaption></figure>
+      <figure><img src="media/fs_ref_bag.jpg" alt="Reference: bag" loading="lazy"><figcaption>Bag</figcaption></figure>
+      <figure><img src="media/fs_ref_glasses.jpg" alt="Reference: glasses" loading="lazy"><figcaption>Glasses</figcaption></figure>
     </div>
-    <p class="shoot-lab">Результат · всё в кадре сгенерировано в ИИ, включая персонажа</p>
+    <p class="shoot-lab">Result · everything in the frame is AI-generated, including the character</p>
     <div class="shoot">
-      <figure class="big"><img src="media/fs_1.jpg" alt="Героиня у стены в платье, очках и с сумкой" loading="lazy"></figure>
-      <figure><img src="media/fs_2.jpg" alt="Героиня идёт по улице" loading="lazy"></figure>
-      <figure><img src="media/fs_3.jpg" alt="Героиня сидит на ступенях, крупно сапоги" loading="lazy"></figure>
-      <figure><img src="media/fs_4.jpg" alt="Героиня сидит на ступенях, съёмка снизу" loading="lazy"></figure>
-      <figure><img src="media/fs_5.jpg" alt="Героиня сидит на бордюре" loading="lazy"></figure>
-      <figure><img src="media/fs_6.jpg" alt="Героиня у чёрной двери" loading="lazy"></figure>
+      <figure class="big"><img src="media/fs_1.jpg" alt="Heroine by a wall in the dress, glasses and bag" loading="lazy"></figure>
+      <figure><img src="media/fs_2.jpg" alt="Heroine walking down the street" loading="lazy"></figure>
+      <figure><img src="media/fs_3.jpg" alt="Heroine sitting on steps, boots close-up" loading="lazy"></figure>
+      <figure><img src="media/fs_4.jpg" alt="Heroine sitting on steps, low angle" loading="lazy"></figure>
+      <figure><img src="media/fs_5.jpg" alt="Heroine sitting on a curb" loading="lazy"></figure>
+      <figure><img src="media/fs_6.jpg" alt="Heroine by a black door" loading="lazy"></figure>
     </div>
     <dl class="shoot-dl">
-      <div><dt>Задача</dt><dd>Серия для бренда без съёмки с моделью и студией, одежда в кадре такая же, как в каталоге</dd></div>
-      <div><dt>Сделано</dt><dd>Персонаж с нуля, образ, позы и 6 кадров в одном свете и цвете</dd></div>
-      <div><dt>Инструменты</dt><dd>Midjourney, Nano Banana Pro</dd></div>
+      <div><dt>Task</dt><dd>A series for a brand without a model or studio shoot, with the clothes looking exactly as in the catalogue</dd></div>
+      <div><dt>Done</dt><dd>Character from scratch, styling, poses and 6 frames in consistent light and color</dd></div>
+      <div><dt>Tools</dt><dd>Midjourney, Nano Banana Pro</dd></div>
     </dl>
   </div>
 </section>
@@ -492,22 +492,22 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <p class="mono">05 · Карточки</p>
+      <p class="mono">05 · Product cards</p>
       <div>
-        <h2>Обложки и слайды для маркетплейсов</h2>
-        <p>Смотрю на карточку глазами покупателя в выдаче: что он должен понять за секунду и что его останавливает. Всё, что на слайдах, сгенерировано нейросетями и свёрстано в Figma.</p>
+        <h2>Covers and slides for marketplaces</h2>
+        <p>I look at a card the way a shopper sees it in search results: what they need to understand in one second and what makes them stop. Everything on the slides is AI-generated and laid out in Figma.</p>
       </div>
     </div>
 
-    <div class="cdx"><input type="radio" name="cdt" id="cdt0" checked><input type="radio" name="cdt" id="cdt1"><input type="radio" name="cdt" id="cdt2"><input type="radio" name="cdt" id="cdt3"><input type="radio" name="cdt" id="cdt4"><div class="fn-tabs"><label for="cdt0">Тушь</label><label for="cdt1">Бельё</label><label for="cdt2">Сыворотка</label><label for="cdt3">Кремы</label><label for="cdt4">Маски</label></div><div class="cd-rail cr0" tabindex="0" aria-label="Тушь"><figure class="bf"><span class="ctag">до · сейчас на WB</span><img src="media/wb_mascara.jpg" alt="Текущая обложка туши на Wildberries" loading="lazy"><figcaption>Тушь теряется на пустом бежевом фоне</figcaption></figure><figure><span class="ctag on">после</span><img src="media/tush1.jpg" alt="Новая обложка: модель и ресницы крупно" loading="lazy"><figcaption>Обложка · результат на ресницах виден раньше текста</figcaption></figure><figure><span class="ctag" style="visibility:hidden">·</span><img src="media/tush2.jpg" alt="Предметный слайд с тушью" loading="lazy"><figcaption>Упаковка и кисточка крупно</figcaption></figure><figure><img src="media/tush3.jpg" alt="Слайд: тушь и мазок текстуры" loading="lazy"><figcaption>Термотушь · текстура</figcaption></figure><figure><img src="media/tush4.jpg" alt="Слайд: тушь у лица модели" loading="lazy"><figcaption>Термотушь · результат на ресницах</figcaption></figure><div class="cnote"><b>Что поменяла</b><ul><li>Было: тушь на пустом фоне, шесть надписей одного размера спорят между собой</li><li>Стало: ресницы модели крупно, один заголовок и два преимущества</li><li>Тени от листьев и тёплый свет делают упаковку дороже, слайды собраны в серию</li></ul></div></div><div class="cd-rail cr1" tabindex="0" aria-label="Бельё"><figure><img src="media/lin_cover.jpg" alt="Обложка: трусы-шорты на модели, 3 шт в наборе, размеры 42–52" loading="lazy"><figcaption>Обложка · количество, размеры и цвета видны сразу</figcaption></figure><figure><img src="media/lin_fit.jpg" alt="Слайд посадки: модель со спины и четыре преимущества" loading="lazy"><figcaption>Посадка · четыре причины купить</figcaption></figure><figure><img src="media/lin_fabric.jpg" alt="Слайд ткани: макро и три цвета набора" loading="lazy"><figcaption>Ткань и набор · макро и три цвета</figcaption></figure><figure class="cw"><img src="media/lin_compare.jpg" alt="Слева кадр с фотосессии, справа ИИ-генерация с тем же товаром" loading="lazy"><figcaption>Фотосессия → ИИ-генерация: модель, свет и поза новые, крой, цвет и фактура те же</figcaption></figure></div><div class="cd-rail cr2" tabindex="0" aria-label="Сыворотка"><figure><img src="media/serum1.jpg" alt="Обложка сыворотки с моделью" loading="lazy"><figcaption>Anti-age сыворотка · обложка</figcaption></figure><figure><img src="media/serum2.jpg" alt="Слайд сыворотки: кожа крупно" loading="lazy"><figcaption>Anti-age сыворотка · кожа крупно</figcaption></figure></div><div class="cd-rail cr3" tabindex="0" aria-label="Кремы"><figure><img src="media/souffle.jpg" alt="Обложка крема-суфле" loading="lazy"><figcaption>Крем-суфле для лица · обложка</figcaption></figure><figure><img src="media/butter3.jpg" alt="Слайд: крем-баттер в руках модели" loading="lazy"><figcaption>Крем-баттер · состав</figcaption></figure><figure><img src="media/butter1.jpg" alt="Слайд: крем-баттер, предмет" loading="lazy"><figcaption>Крем-баттер · предмет</figcaption></figure></div><div class="cd-rail cr4" tabindex="0" aria-label="Маски"><figure><img src="media/mask1.jpg" alt="Слайд: тканевые маски, упаковка" loading="lazy"><figcaption>Тканевые маски · упаковка</figcaption></figure><figure><img src="media/mask3.jpg" alt="Слайд: маска на лице модели" loading="lazy"><figcaption>Тканевые маски · в использовании</figcaption></figure></div></div>
+    <div class="cdx"><input type="radio" name="cdt" id="cdt0" checked><input type="radio" name="cdt" id="cdt1"><input type="radio" name="cdt" id="cdt2"><input type="radio" name="cdt" id="cdt3"><input type="radio" name="cdt" id="cdt4"><div class="fn-tabs"><label for="cdt0">Mascara</label><label for="cdt1">Underwear</label><label for="cdt2">Serum</label><label for="cdt3">Creams</label><label for="cdt4">Masks</label></div><div class="cd-rail cr0" tabindex="0" aria-label="Mascara"><figure class="bf"><span class="ctag">before · live on WB</span><img src="media/wb_mascara.jpg" alt="Current mascara cover on Wildberries" loading="lazy"><figcaption>The mascara gets lost on an empty beige background</figcaption></figure><figure><span class="ctag on">after</span><img src="media/tush1.jpg" alt="New cover: model and lashes in close-up" loading="lazy"><figcaption>Cover · the result on the lashes reads before the text</figcaption></figure><figure><span class="ctag" style="visibility:hidden">·</span><img src="media/tush2.jpg" alt="Mascara product slide" loading="lazy"><figcaption>Packaging and brush close-up</figcaption></figure><figure><img src="media/tush3.jpg" alt="Slide: mascara and a texture swatch" loading="lazy"><figcaption>Tubing mascara · texture</figcaption></figure><figure><img src="media/tush4.jpg" alt="Slide: mascara by the model's face" loading="lazy"><figcaption>Tubing mascara · result on the lashes</figcaption></figure><div class="cnote"><b>What I changed</b><ul><li>Before: mascara on an empty background, six same-size captions competing with each other</li><li>After: the model's lashes in close-up, one headline and two benefits</li><li>Leaf shadows and warm light make the packaging look premium; the slides work as one series</li></ul></div></div><div class="cd-rail cr1" tabindex="0" aria-label="Underwear"><figure><img src="media/lin_cover.jpg" alt="Cover: boyshorts on a model, 3 in a set, sizes 42–52" loading="lazy"><figcaption>Cover · quantity, sizes and colors are clear at once</figcaption></figure><figure><img src="media/lin_fit.jpg" alt="Fit slide: model from behind and four benefits" loading="lazy"><figcaption>Fit · four reasons to buy</figcaption></figure><figure><img src="media/lin_fabric.jpg" alt="Fabric slide: macro and the three colors of the set" loading="lazy"><figcaption>Fabric and set · macro and three colors</figcaption></figure><figure class="cw"><img src="media/lin_compare.jpg" alt="Left: a photo shoot frame, right: AI generation with the same product" loading="lazy"><figcaption>Photo shoot → AI generation: new model, light and pose; same cut, color and texture</figcaption></figure></div><div class="cd-rail cr2" tabindex="0" aria-label="Serum"><figure><img src="media/serum1.jpg" alt="Serum cover with a model" loading="lazy"><figcaption>Anti-age serum · cover</figcaption></figure><figure><img src="media/serum2.jpg" alt="Serum slide: skin close-up" loading="lazy"><figcaption>Anti-age serum · skin close-up</figcaption></figure></div><div class="cd-rail cr3" tabindex="0" aria-label="Creams"><figure><img src="media/souffle.jpg" alt="Soufflé cream cover" loading="lazy"><figcaption>Face soufflé cream · cover</figcaption></figure><figure><img src="media/butter3.jpg" alt="Slide: body butter in the model's hands" loading="lazy"><figcaption>Body butter · ingredients</figcaption></figure><figure><img src="media/butter1.jpg" alt="Slide: body butter, product shot" loading="lazy"><figcaption>Body butter · product shot</figcaption></figure></div><div class="cd-rail cr4" tabindex="0" aria-label="Masks"><figure><img src="media/mask1.jpg" alt="Slide: sheet masks, packaging" loading="lazy"><figcaption>Sheet masks · packaging</figcaption></figure><figure><img src="media/mask3.jpg" alt="Slide: mask on the model's face" loading="lazy"><figcaption>Sheet masks · in use</figcaption></figure></div></div>
 
-    <h3 class="sub">Воронки: структура и тексты карточки</h3>
-    <p class="fn-lead">Пишу продающую структуру карточки: из состава, исследований и описания бренда отбираю главное и раскладываю по 10 слайдам - от проблемы покупателя на обложке до противопоказаний и гарантий. Ниже две мои воронки без правок.</p>
+    <h3 class="sub">Funnels: card structure and copy</h3>
+    <p class="fn-lead">I write the selling structure of a card: from the ingredients, studies and brand description I pick what matters and lay it out across 10 slides - from the shopper's problem on the cover to contraindications and guarantees. Below are two of my funnels, unedited.</p>
     <div class="fnx">
       <input type="radio" name="fnt" id="fnt1" checked><input type="radio" name="fnt" id="fnt2">
-      <div class="fn-tabs"><label for="fnt1">Крем-гуаша</label><label for="fnt2">Крем с ретиналем 0.1</label></div>
-      <div class="fn-rail fr1" tabindex="0" aria-label="VT Cosmetics V-Mode Gua Sha Massage Cream, 120 ml"><div class="fs fs-head"><div class="fn-imgs"><img src="media/gua_pack.jpg" alt="" loading="lazy"><img src="media/gua_use.jpg" alt="" loading="lazy"></div><b>VT Cosmetics V-Mode Gua Sha Massage Cream, 120 ml</b><p>Готовая воронка из 10 слайдов →</p></div><div class="fs"><span class="fs-n">Слайд 1</span><b>МАССАЖНЫЙ КРЕМ ДЛЯ ОВАЛА ЛИЦА С РЕТИНАЛЕМ И КОФЕИНОМ</b><ul><li>Отёки + птоз + морщины</li><li>120 мл · ретиналь 12 000 мкг + кофеин 10 000 ppm + встроенный гуаша · K-beauty</li></ul></div><div class="fs"><span class="fs-n">Слайд 2</span><b>ВЕЧЕРНИЙ МАССАЖНЫЙ УХОД</b><ul><li>ШАГ 1: Повернуть дозатор в положение «ON» (стрелка ▼), нанести крем на лицо, шею, декольте или тело</li><li>ШАГ 2: Массировать V-образным аппликатором от центра к периферии и снизу вверх</li><li>ШАГ 3: После массажа повернуть дозатор в «OFF», протереть аппликатор, закрыть крышку → ГОТОВО!</li></ul><p>Завершающий этап вечернего ухода. Хранить в холодильнике 3–10 °C. Утром — SPF 50+</p></div><div class="fs"><span class="fs-n">Слайд 3</span><b>ДО / ПОСЛЕ — ЧЁТКИЙ ОВАЛ И СВЕЖИЙ ВИД</b><p>Отёки, птоз и второй подбородок уменьшаются</p><p>Gua Sha Cream → лифтинг + дренаж + подтяжка контуров</p><p>Мгновенное снятие утренней припухлости</p></div><div class="fs"><span class="fs-n">Слайд 4</span><b>КОФЕИН 10 000 PPM + РЕТИНАЛЬ 12 000 МКГ + АППЛИКАТОР</b><ul><li>Кофеин 1% (10 000 ppm) → дренажный эффект, улучшает микроциркуляцию, выводит лишнюю жидкость, уменьшает утреннюю отёчность</li><li>Ретиналь 12 000 мкг → мощная форма витамина A, стимулирует обновление клеток и синтез коллагена, разглаживает морщины и заломы</li><li>Встроенный V-образный аппликатор → повторяет изгибы лица и тела на 360°, формирует овал, подчёркивает скулы и линию челюсти</li><li>2-е функциональное средство: официально зарегистрирован для улучшения морщин и осветления пигментации</li></ul></div><div class="fs"><span class="fs-n">Слайд 5</span><b>9 ПЕПТИДОВ + 7 ВИДОВ КОЛЛАГЕНА + 10 ВИДОВ ГК</b><ul><li>9 пептидов (включая аргирелин / Acetyl Hexapeptide-8) → антивозрастное действие, расслабляют мимические мышцы, тургор</li><li>7 видов коллагена → удержание влаги, выравнивание текстуры, восстановление и уменьшение морщин</li><li>10 видов гиалуроновой кислоты → от сверхнизкомолекулярной до высокомолекулярной: барьер и увлажнение на всех уровнях</li><li>10% масло подсолнечника + масло ши, макадамии и какао → питание, антиоксидантная защита, гладкость</li></ul></div><div class="fs"><span class="fs-n">Слайд 6</span><b>ДЛЯ ТЕБЯ, ЕСЛИ</b><ul><li>Утренняя отёчность, мешки под глазами, второй подбородок</li><li>Птоз овала лица и снижение чёткости контуров</li><li>Шея, декольте и тело нуждаются в уходе</li><li>Нужен лифтинг с профессиональным массажным эффектом дома</li></ul></div><div class="fs"><span class="fs-n">Слайд 7</span><b>СКУЛЬПТУРИРУЮЩИЙ ЛИФТИНГ-ЭФФЕКТ</b><p>Формирует овал, подчёркивает скулы и линию челюсти</p><p>Уменьшает выраженность второго подбородка</p><p>Лимфодренажное действие — кожа получает больше кислорода и питательных веществ</p><p>Прошёл тест на раздражение: уровень раздражения — 0.00</p></div><div class="fs"><span class="fs-n">Слайд 8</span><b>НАСЫЩЕННАЯ ТЕКСТУРА ДЛЯ МАССАЖА</b><p>Обеспечивает идеальное скольжение аппликатора</p><p>Быстро впитывается после массажа, оставляет кожу мягкой</p><p>Объём 120 мл — можно использовать на лице и теле</p></div><div class="fs"><span class="fs-n">Слайд 9</span><b>ВАЖНО ЗНАТЬ</b><p>Только вечером — ретиналь повышает чувствительность к солнцу</p><p>Хранить в холодильнике при температуре 3–10 °C</p><p>❗️Не использовать при беременности, лактации и за полгода до беременности</p></div><div class="fs"><span class="fs-n">Слайд 10</span><ul><li>Официальный дистрибьютор VT Cosmetics</li><li>Сертификаты, гарантия</li><li>Прямые поставки из Кореи</li></ul></div></div>
-      <div class="fn-rail fr2" tabindex="0" aria-label="VT Retinal Pro Cream 0.1, 20 ml"><div class="fs fs-head"><div class="fn-imgs"><img src="media/ret_pack.jpg" alt="" loading="lazy"><img src="media/ret_drops.jpg" alt="" loading="lazy"></div><b>VT Retinal Pro Cream 0.1, 20 ml</b><p>Готовая воронка из 10 слайдов →</p></div><div class="fs"><span class="fs-n">Слайд 1</span><b>ИНТЕНСИВНЫЙ КРЕМ С РЕТИНАЛЕМ 0.1 И EGF</b><ul><li>Глубокие морщины + птоз + тусклость</li><li>20 мл · нано-ретиналь 0.1% · для экспертов · K-beauty</li></ul></div><div class="fs"><span class="fs-n">Слайд 2</span><b>ФИНАЛЬНЫЙ ШАГ ВЕЧЕРНЕГО УХОДА</b><ul><li>ШАГ 1: После очищения, тонера и сыворотки нанести небольшое количество крема</li><li>ШАГ 2: Распределить мягкими похлопывающими движениями до впитывания</li><li>ШАГ 3: ГОТОВО!</li></ul><p>Привыкание: неделя 1 — 2 раза, неделя 2 — через ночь, неделя 3 — каждый вечер по переносимости. Утром — SPF 50+ PA++++</p></div><div class="fs"><span class="fs-n">Слайд 3</span><b>ДО / ПОСЛЕ — ПОДТЯНУТАЯ И ОБНОВЛЁННАЯ КОЖА</b><p>Глубокие морщины, птоз и пигментация уменьшаются</p><p>Retinal Pro Cream 0.1 → максимальный лифтинг + обновление + наполнение</p><p>Высшая ступень линейки для опытных пользователей ретиноидов</p></div><div class="fs"><span class="fs-n">Слайд 4</span><b>НАНО-РЕТИНАЛЬ 0.1% + PHYTO PDRN® PANAX + EGF</b><ul><li>Нано-ретиналь 0.1% в липосомах ~100 нм → мощное действие, сразу трансформируется в ретиноевую кислоту</li><li>Phyto PDRN® Panax (экстракт женьшеня + ДНК натрия) → клеточное восстановление, поддержка упругости</li><li>Факторы роста EGF (sh-Oligopeptide-1, sh-Oligopeptide-2, sh-Polypeptide-1 и др.) → стимулируют клеточную активность и регенерацию, уменьшают морщины</li><li>2-е функциональное средство: официально для улучшения морщин и осветления пигментации</li></ul></div><div class="fs"><span class="fs-n">Слайд 5</span><b>ВОЛЮФИЛИН + NMN + 9 ПЕПТИДОВ</b><ul><li>Волюфилин (экстракт анемаррены) → натуральный липофиллер, увеличивает плотность и объём тканей, снижает птоз</li><li>NMN (никотинамид мононуклеотид) → стимулирует синтез белков, улучшает текстуру, усиливает барьерные функции</li><li>9 пептидов (Acetyl Hexapeptide-8, Copper Tripeptide-1, Palmitoyl Pentapeptide-4 и др.) → регенерация, сокращение заломов, тургор</li><li>Церамиды, центелла, аденозин → барьер, увлажнение, обновление</li></ul></div><div class="fs"><span class="fs-n">Слайд 6</span><b>ДЛЯ ТЕБЯ, ЕСЛИ</b><ul><li>Опытные пользователи ретиноидов, прошедшие адаптацию к 0.025–0.05%</li><li>Зрелая кожа с глубокими морщинами, выраженным птозом и потерей тонуса</li><li>Пигментация, тусклый тон, неровная текстура</li><li>Нужен максимальный антивозрастной результат</li></ul></div><div class="fs"><span class="fs-n">Слайд 7</span><b>ВЫСШАЯ СТУПЕНЬ В ЛИНЕЙКЕ RETINAL PRO CREAM</b><p>0.025% Basic → для новичков: мягкое знакомство</p><p>0.05% Advanced → для продолжающих: сияние и лифтинг</p><p>0.1% Expert → для вас: максимальная интенсивность, глубокие морщины</p></div><div class="fs"><span class="fs-n">Слайд 8</span><b>НАСЫЩЕННАЯ КРЕМОВАЯ ТЕКСТУРА</b><p>Питательная, но быстро впитывается без стянутости</p><p>Подходит для локального применения: носогубные складки, зона вокруг глаз, межбровье, лоб</p><p>Удобный тонкий носик для точечного нанесения</p></div><div class="fs"><span class="fs-n">Слайд 9</span><b>ВАЖНО ЗНАТЬ</b><p>Только вечером — ретиналь повышает чувствительность к солнцу</p><p>Привыкание 0.1%: неделя 1 — 2 раза, неделя 2 — через ночь, неделя 3 — ежедневно по переносимости</p><p>❗️Не использовать при беременности, лактации и за полгода до беременности</p></div><div class="fs"><span class="fs-n">Слайд 10</span><ul><li>Официальный дистрибьютор VT Cosmetics</li><li>Сертификаты, гарантия</li><li>Прямые поставки из Кореи</li></ul></div></div>
+      <div class="fn-tabs"><label for="fnt1">Gua sha cream</label><label for="fnt2">Retinal 0.1 cream</label></div>
+      <div class="fn-rail fr1" tabindex="0" aria-label="VT Cosmetics V-Mode Gua Sha Massage Cream, 120 ml"><div class="fs fs-head"><div class="fn-imgs"><img src="media/gua_pack.jpg" alt="" loading="lazy"><img src="media/gua_use.jpg" alt="" loading="lazy"></div><b>VT Cosmetics V-Mode Gua Sha Massage Cream, 120 ml</b><p>Full 10-slide funnel (copy in Russian, as written for WB) →</p></div><div class="fs"><span class="fs-n">Slide 1</span><b>МАССАЖНЫЙ КРЕМ ДЛЯ ОВАЛА ЛИЦА С РЕТИНАЛЕМ И КОФЕИНОМ</b><ul><li>Отёки + птоз + морщины</li><li>120 мл · ретиналь 12 000 мкг + кофеин 10 000 ppm + встроенный гуаша · K-beauty</li></ul></div><div class="fs"><span class="fs-n">Slide 2</span><b>ВЕЧЕРНИЙ МАССАЖНЫЙ УХОД</b><ul><li>ШАГ 1: Повернуть дозатор в положение «ON» (стрелка ▼), нанести крем на лицо, шею, декольте или тело</li><li>ШАГ 2: Массировать V-образным аппликатором от центра к периферии и снизу вверх</li><li>ШАГ 3: После массажа повернуть дозатор в «OFF», протереть аппликатор, закрыть крышку → ГОТОВО!</li></ul><p>Завершающий этап вечернего ухода. Хранить в холодильнике 3–10 °C. Утром — SPF 50+</p></div><div class="fs"><span class="fs-n">Slide 3</span><b>ДО / ПОСЛЕ — ЧЁТКИЙ ОВАЛ И СВЕЖИЙ ВИД</b><p>Отёки, птоз и второй подбородок уменьшаются</p><p>Gua Sha Cream → лифтинг + дренаж + подтяжка контуров</p><p>Мгновенное снятие утренней припухлости</p></div><div class="fs"><span class="fs-n">Slide 4</span><b>КОФЕИН 10 000 PPM + РЕТИНАЛЬ 12 000 МКГ + АППЛИКАТОР</b><ul><li>Кофеин 1% (10 000 ppm) → дренажный эффект, улучшает микроциркуляцию, выводит лишнюю жидкость, уменьшает утреннюю отёчность</li><li>Ретиналь 12 000 мкг → мощная форма витамина A, стимулирует обновление клеток и синтез коллагена, разглаживает морщины и заломы</li><li>Встроенный V-образный аппликатор → повторяет изгибы лица и тела на 360°, формирует овал, подчёркивает скулы и линию челюсти</li><li>2-е функциональное средство: официально зарегистрирован для улучшения морщин и осветления пигментации</li></ul></div><div class="fs"><span class="fs-n">Slide 5</span><b>9 ПЕПТИДОВ + 7 ВИДОВ КОЛЛАГЕНА + 10 ВИДОВ ГК</b><ul><li>9 пептидов (включая аргирелин / Acetyl Hexapeptide-8) → антивозрастное действие, расслабляют мимические мышцы, тургор</li><li>7 видов коллагена → удержание влаги, выравнивание текстуры, восстановление и уменьшение морщин</li><li>10 видов гиалуроновой кислоты → от сверхнизкомолекулярной до высокомолекулярной: барьер и увлажнение на всех уровнях</li><li>10% масло подсолнечника + масло ши, макадамии и какао → питание, антиоксидантная защита, гладкость</li></ul></div><div class="fs"><span class="fs-n">Slide 6</span><b>ДЛЯ ТЕБЯ, ЕСЛИ</b><ul><li>Утренняя отёчность, мешки под глазами, второй подбородок</li><li>Птоз овала лица и снижение чёткости контуров</li><li>Шея, декольте и тело нуждаются в уходе</li><li>Нужен лифтинг с профессиональным массажным эффектом дома</li></ul></div><div class="fs"><span class="fs-n">Slide 7</span><b>СКУЛЬПТУРИРУЮЩИЙ ЛИФТИНГ-ЭФФЕКТ</b><p>Формирует овал, подчёркивает скулы и линию челюсти</p><p>Уменьшает выраженность второго подбородка</p><p>Лимфодренажное действие — кожа получает больше кислорода и питательных веществ</p><p>Прошёл тест на раздражение: уровень раздражения — 0.00</p></div><div class="fs"><span class="fs-n">Slide 8</span><b>НАСЫЩЕННАЯ ТЕКСТУРА ДЛЯ МАССАЖА</b><p>Обеспечивает идеальное скольжение аппликатора</p><p>Быстро впитывается после массажа, оставляет кожу мягкой</p><p>Объём 120 мл — можно использовать на лице и теле</p></div><div class="fs"><span class="fs-n">Slide 9</span><b>ВАЖНО ЗНАТЬ</b><p>Только вечером — ретиналь повышает чувствительность к солнцу</p><p>Хранить в холодильнике при температуре 3–10 °C</p><p>❗️Не использовать при беременности, лактации и за полгода до беременности</p></div><div class="fs"><span class="fs-n">Slide 10</span><ul><li>Официальный дистрибьютор VT Cosmetics</li><li>Сертификаты, гарантия</li><li>Прямые поставки из Кореи</li></ul></div></div>
+      <div class="fn-rail fr2" tabindex="0" aria-label="VT Retinal Pro Cream 0.1, 20 ml"><div class="fs fs-head"><div class="fn-imgs"><img src="media/ret_pack.jpg" alt="" loading="lazy"><img src="media/ret_drops.jpg" alt="" loading="lazy"></div><b>VT Retinal Pro Cream 0.1, 20 ml</b><p>Full 10-slide funnel (copy in Russian, as written for WB) →</p></div><div class="fs"><span class="fs-n">Slide 1</span><b>ИНТЕНСИВНЫЙ КРЕМ С РЕТИНАЛЕМ 0.1 И EGF</b><ul><li>Глубокие морщины + птоз + тусклость</li><li>20 мл · нано-ретиналь 0.1% · для экспертов · K-beauty</li></ul></div><div class="fs"><span class="fs-n">Slide 2</span><b>ФИНАЛЬНЫЙ ШАГ ВЕЧЕРНЕГО УХОДА</b><ul><li>ШАГ 1: После очищения, тонера и сыворотки нанести небольшое количество крема</li><li>ШАГ 2: Распределить мягкими похлопывающими движениями до впитывания</li><li>ШАГ 3: ГОТОВО!</li></ul><p>Привыкание: неделя 1 — 2 раза, неделя 2 — через ночь, неделя 3 — каждый вечер по переносимости. Утром — SPF 50+ PA++++</p></div><div class="fs"><span class="fs-n">Slide 3</span><b>ДО / ПОСЛЕ — ПОДТЯНУТАЯ И ОБНОВЛЁННАЯ КОЖА</b><p>Глубокие морщины, птоз и пигментация уменьшаются</p><p>Retinal Pro Cream 0.1 → максимальный лифтинг + обновление + наполнение</p><p>Высшая ступень линейки для опытных пользователей ретиноидов</p></div><div class="fs"><span class="fs-n">Slide 4</span><b>НАНО-РЕТИНАЛЬ 0.1% + PHYTO PDRN® PANAX + EGF</b><ul><li>Нано-ретиналь 0.1% в липосомах ~100 нм → мощное действие, сразу трансформируется в ретиноевую кислоту</li><li>Phyto PDRN® Panax (экстракт женьшеня + ДНК натрия) → клеточное восстановление, поддержка упругости</li><li>Факторы роста EGF (sh-Oligopeptide-1, sh-Oligopeptide-2, sh-Polypeptide-1 и др.) → стимулируют клеточную активность и регенерацию, уменьшают морщины</li><li>2-е функциональное средство: официально для улучшения морщин и осветления пигментации</li></ul></div><div class="fs"><span class="fs-n">Slide 5</span><b>ВОЛЮФИЛИН + NMN + 9 ПЕПТИДОВ</b><ul><li>Волюфилин (экстракт анемаррены) → натуральный липофиллер, увеличивает плотность и объём тканей, снижает птоз</li><li>NMN (никотинамид мононуклеотид) → стимулирует синтез белков, улучшает текстуру, усиливает барьерные функции</li><li>9 пептидов (Acetyl Hexapeptide-8, Copper Tripeptide-1, Palmitoyl Pentapeptide-4 и др.) → регенерация, сокращение заломов, тургор</li><li>Церамиды, центелла, аденозин → барьер, увлажнение, обновление</li></ul></div><div class="fs"><span class="fs-n">Slide 6</span><b>ДЛЯ ТЕБЯ, ЕСЛИ</b><ul><li>Опытные пользователи ретиноидов, прошедшие адаптацию к 0.025–0.05%</li><li>Зрелая кожа с глубокими морщинами, выраженным птозом и потерей тонуса</li><li>Пигментация, тусклый тон, неровная текстура</li><li>Нужен максимальный антивозрастной результат</li></ul></div><div class="fs"><span class="fs-n">Slide 7</span><b>ВЫСШАЯ СТУПЕНЬ В ЛИНЕЙКЕ RETINAL PRO CREAM</b><p>0.025% Basic → для новичков: мягкое знакомство</p><p>0.05% Advanced → для продолжающих: сияние и лифтинг</p><p>0.1% Expert → для вас: максимальная интенсивность, глубокие морщины</p></div><div class="fs"><span class="fs-n">Slide 8</span><b>НАСЫЩЕННАЯ КРЕМОВАЯ ТЕКСТУРА</b><p>Питательная, но быстро впитывается без стянутости</p><p>Подходит для локального применения: носогубные складки, зона вокруг глаз, межбровье, лоб</p><p>Удобный тонкий носик для точечного нанесения</p></div><div class="fs"><span class="fs-n">Slide 9</span><b>ВАЖНО ЗНАТЬ</b><p>Только вечером — ретиналь повышает чувствительность к солнцу</p><p>Привыкание 0.1%: неделя 1 — 2 раза, неделя 2 — через ночь, неделя 3 — ежедневно по переносимости</p><p>❗️Не использовать при беременности, лактации и за полгода до беременности</p></div><div class="fs"><span class="fs-n">Slide 10</span><ul><li>Официальный дистрибьютор VT Cosmetics</li><li>Сертификаты, гарантия</li><li>Прямые поставки из Кореи</li></ul></div></div>
     </div>
   </div>
 </section>
@@ -517,13 +517,13 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
 
 <section class="proc">
   <div class="wrap">
-    <div class="pr-head"><p class="mono">Процесс</p><h2>Как довожу генерацию до коммерческого качества</h2></div>
+    <div class="pr-head"><p class="mono">Process</p><h2>How I bring AI generation to commercial quality</h2></div>
     <ol class="pr">
-      <li><b>Разбор</b><span>кто покупатель и что его остановит</span></li>
-      <li><b>Стиль</b><span>свет, палитра и настроение под бренд</span></li>
-      <li><b>Генерация</b><span>модель и сцена в нейросетях</span></li>
-      <li><b>Точный товар</b><span>крой, цвет и надписи как в оригинале</span></li>
-      <li><b>Вёрстка и видео</b><span>Figma, монтаж, звук</span></li>
+      <li><b>Research</b><span>who the buyer is and what will make them stop</span></li>
+      <li><b>Style</b><span>light, palette and mood for the brand</span></li>
+      <li><b>Generation</b><span>model and scene with AI</span></li>
+      <li><b>Exact product</b><span>cut, color and label text as in the original</span></li>
+      <li><b>Layout and video</b><span>Figma, editing, sound</span></li>
     </ol>
     <div class="tools"><span>Midjourney</span><span>Nano Banana Pro</span><span>Higgsfield</span><span>Seedance</span><span>Kling</span><span>Veo</span><span>Figma</span><span>Photoshop</span><span>Illustrator</span><span>CapCut</span></div>
   </div>
@@ -532,16 +532,16 @@ footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;c
 <section>
   <div class="wrap contact">
     <div>
-      <p class="mono">Контакты</p>
-      <h2 style="margin-top:12px">Открыта к работе в команде</h2>
+      <p class="mono">Contacts</p>
+      <h2 style="margin-top:12px">Open to joining a team</h2>
       <p class="handle">Telegram · @yaaasyya</p>
     </div>
-    <a class="btn" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Написать в Telegram →</a>
+    <a class="btn" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Message me on Telegram →</a>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">Все модели, сцены и ролики созданы с помощью нейросетей. Товары и упаковка в кадре реальные. Работы с пометкой «концепт» сделаны для портфолио и не заказаны брендом.</div>
+  <div class="wrap">All models, scenes and videos are created with AI. The products and packaging in the frame are real. Works marked "concept" were made for the portfolio and were not commissioned by the brand.</div>
 </footer>
 
 </body>

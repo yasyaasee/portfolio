@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Портфолио Яны</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: витрина-лента — крупные кадры работ, короткие подписи сбоку, разделы как главы каталога */
+:root{
+  --paper:#F4F3EF; --paper-2:#E9E7E1; --ink:#171615; --ink-2:#5E5A55; --line:#D6D3CC;
+  --accent:#6B2E44; --accent-ink:#FFFFFF; --chip:#FFFFFF;
+  --f-display:"Prata", "Times New Roman", Georgia, serif;
+  --f-body:"Onest", "Helvetica Neue", Arial, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+  --maxw:1180px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#141312;--paper-2:#1E1C1B;--ink:#EEEBE5;--ink-2:#A8A29A;--line:#34312E;--accent:#D49AB0;--accent-ink:#1A1214;--chip:#24211F;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#141312;--paper-2:#1E1C1B;--ink:#EEEBE5;--ink-2:#A8A29A;--line:#34312E;--accent:#D49AB0;--accent-ink:#1A1214;--chip:#24211F;color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:var(--maxw);margin:0 auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;text-wrap:balance;margin:0}
+p{margin:0}
+.mono{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.btn{display:inline-flex;align-items:center;gap:.5em;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:500;padding:.8em 1.3em;border-radius:999px;font-size:16px}
+.btn:focus-visible,a:focus-visible,video:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+/* top */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px;border-bottom:1px solid var(--line)}
+.top .name{font-family:var(--f-display);font-size:22px}
+.top .tg{white-space:nowrap;font-family:var(--f-mono);font-size:13px;text-decoration:none;border:1px solid var(--line);padding:.55em 1em;border-radius:999px}
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:end;padding-block:64px 72px}
+.hero h1{font-size:clamp(40px,6vw,78px);line-height:1.02;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{max-width:560px;margin-top:26px;font-size:19px;color:var(--ink-2)}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.facts span{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:.45em .95em;font-size:14px}
+.hero .cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero .reel{position:relative;max-width:360px;justify-self:end;width:100%}
+.reel video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border-radius:6px;background:var(--paper-2)}
+.reel figcaption{margin-top:10px}
+/* sections */
+section{padding-block:76px;border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:200px 1fr;gap:32px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(30px,4vw,48px);line-height:1.08}
+.sec-head p{margin-top:14px;color:var(--ink-2);max-width:620px}
+/* before / after */
+.ba{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.ba figure{margin:0}
+.ba img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:4px}
+.ba figcaption{margin-top:10px;font-size:14px;color:var(--ink-2)}
+.ba figure.before img{filter:saturate(.85)}
+.tag{display:inline-block;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding:.3em .7em;border-radius:999px;border:1px solid var(--line);margin-bottom:8px}
+.tag.mine{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:36px}
+.why h3{font-family:var(--f-body);font-weight:600;font-size:17px;margin-bottom:10px}
+.why ul{margin:0;padding-left:1.1em;color:var(--ink-2);display:grid;gap:8px}
+/* card grid */
+.sub{font-family:var(--f-body);font-weight:600;font-size:20px;margin:64px 0 18px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.cards figure{margin:0}
+.cards img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:4px;background:var(--paper-2)}
+.cards figcaption{margin-top:8px;font-size:13.5px;color:var(--ink-2)}
+.compare{margin:18px 0 0}
+.compare img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;border-radius:4px;background:var(--paper-2)}
+.compare figcaption{margin-top:10px;font-size:14px;color:var(--ink-2);max-width:640px}
+/* funnels */
+.fn-lead{color:var(--ink-2);max-width:680px;margin:-6px 0 28px}
+.funnel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px}
+.funnel article{min-width:0}
+.fn-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fn-imgs img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:4px;background:#fff}
+.funnel h4{font-family:var(--f-display);font-weight:400;font-size:22px;line-height:1.2;margin:18px 0 14px}
+.fn{list-style:none;margin:0;padding:0;counter-reset:f;border-top:1px solid var(--line)}
+.fn li{counter-increment:f;display:grid;grid-template-columns:30px 96px minmax(0,1fr);column-gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.fn li::before{content:counter(f,decimal-leading-zero);font-family:var(--f-mono);font-size:12px;color:var(--ink-2);padding-top:2px;grid-row:span 2}
+.fn i{font-style:normal;font-family:var(--f-mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);padding-top:3px;grid-row:span 2}
+.fn b{font-weight:600}
+.fn span{color:var(--ink-2);grid-column:3}
+@media (max-width:900px){.funnel{grid-template-columns:1fr}}
+@media (max-width:560px){.fn li{grid-template-columns:26px minmax(0,1fr)}.fn i{grid-row:auto;grid-column:2;padding:0}.fn b,.fn span{grid-column:2}}
+/* funnels compact */
+.fnx>input{position:absolute;opacity:0;pointer-events:none}
+.fn-tabs{display:flex;gap:8px;margin-bottom:14px}
+.fn-tabs label{cursor:pointer;font-size:14px;border:1px solid var(--line);border-radius:999px;padding:.45em 1em}
+#fnt1:checked~.fn-tabs label[for=fnt1],#fnt2:checked~.fn-tabs label[for=fnt2]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+#fnt1:focus-visible~.fn-tabs label[for=fnt1],#fnt2:focus-visible~.fn-tabs label[for=fnt2]{outline:2px solid var(--accent)}
+.fn-rail{display:none;grid-auto-flow:column;grid-auto-columns:minmax(260px,300px);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-color:var(--line) transparent}
+#fnt1:checked~.fr1,#fnt2:checked~.fr2{display:grid}
+.fs{scroll-snap-align:start;background:var(--chip);border:1px solid var(--line);border-radius:8px;padding:16px;font-size:13.5px;line-height:1.45;min-width:0}
+.fs-n{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.fs b{display:block;font-weight:600;font-size:14.5px;margin-bottom:8px}
+.fs ul{margin:0;padding-left:1em;display:grid;gap:6px}
+.fs p{margin:6px 0 0;color:var(--ink-2)}
+.fs-head .fn-imgs{margin-bottom:12px}
+.fs-head b{font-family:var(--f-display);font-weight:400;font-size:18px}
+/* card series tabs */
+.cdx>input{position:absolute;opacity:0;pointer-events:none}
+#cdt0:checked~.fn-tabs label[for=cdt0],#cdt1:checked~.fn-tabs label[for=cdt1],#cdt2:checked~.fn-tabs label[for=cdt2],#cdt3:checked~.fn-tabs label[for=cdt3],#cdt4:checked~.fn-tabs label[for=cdt4]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+#cdt0:focus-visible~.fn-tabs label[for=cdt0],#cdt1:focus-visible~.fn-tabs label[for=cdt1],#cdt2:focus-visible~.fn-tabs label[for=cdt2],#cdt3:focus-visible~.fn-tabs label[for=cdt3],#cdt4:focus-visible~.fn-tabs label[for=cdt4]{outline:2px solid var(--accent)}
+.cd-rail{display:none;grid-auto-flow:column;grid-auto-columns:minmax(220px,280px);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-color:var(--line) transparent}
+#cdt0:checked~.cr0,#cdt1:checked~.cr1,#cdt2:checked~.cr2,#cdt3:checked~.cr3,#cdt4:checked~.cr4{display:grid}
+.cd-rail figure{margin:0;scroll-snap-align:start;min-width:0}
+.cd-rail img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:4px;background:var(--paper-2)}
+.cd-rail figcaption{margin-top:8px;font-size:13px;color:var(--ink-2)}
+.cd-rail .cw{grid-column:span 2}
+.cd-rail .cw img{aspect-ratio:auto;height:auto}
+.fn-tabs{flex-wrap:wrap}
+/* brand films */
+.films{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px}
+.film{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start}
+.film video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border-radius:6px;background:var(--paper-2)}
+.film h3{font-size:30px;line-height:1.1;margin:6px 0 12px}
+.film p{color:var(--ink-2);font-size:15.5px}
+.film dl{margin:18px 0 0;display:grid;gap:10px}
+.film dt{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.film dd{margin:2px 0 0;font-size:15px}
+/* ugc */
+.ugc{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:22px}
+.u{display:grid;gap:10px;min-width:0}
+.u .v{position:relative}
+.u video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border-radius:6px;background:var(--paper-2)}
+.u .pack{position:absolute;right:8px;bottom:8px;width:54px;height:54px;border-radius:6px;object-fit:cover;background:#fff;border:2px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.u b{font-weight:600;font-size:15.5px;display:block}
+.u span{font-size:14px;color:var(--ink-2)}
+/* brand cases */
+.case{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,2fr);gap:36px;align-items:start}
+.case+.case{margin-top:72px}
+.case h3{font-size:40px;line-height:1.05;margin:4px 0 14px}
+.case-text p{color:var(--ink-2);font-size:15.5px}
+.points{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:14.5px}
+.points li{padding-left:18px;position:relative}
+.points li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:1px;background:var(--ink)}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:88%;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;min-width:0;scrollbar-color:var(--line) transparent}
+.rail img{content-visibility:auto;width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:4px;scroll-snap-align:start;background:var(--paper-2)}
+/* brand bento */
+.bx+.bx{margin-top:96px}
+.bx figure{margin:0;position:relative;overflow:hidden;border-radius:6px;background:var(--paper-2)}
+.bx img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
+.bx figure:hover img{transform:scale(1.04)}
+.bx figcaption{position:absolute;left:10px;bottom:10px;font-family:var(--f-mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:rgba(255,255,255,.88);color:#171615;padding:.35em .7em;border-radius:999px}
+.bx-hero{aspect-ratio:21/9}
+.bx-label{position:absolute;left:18px;top:16px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#fff;mix-blend-mode:difference}
+.bx-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px;margin-top:14px}
+.bx-text{grid-column:1/6;grid-row:1/3;padding:22px 8px 8px 0}
+.bx-text h3{font-size:46px;line-height:1;margin:0 0 14px}
+.bx-quote{font-family:var(--f-display);font-size:24px;color:var(--accent);margin:0 0 14px}
+.bx-text p{color:var(--ink-2);font-size:15.5px}
+.sw{display:flex;gap:16px;margin:22px 0 6px}
+.sw span{display:grid;justify-items:center;gap:6px;font-family:var(--f-mono);font-size:11px;color:var(--ink-2)}
+.sw span::before{content:"";width:46px;height:46px;border-radius:50%;background:var(--c);border:1px solid var(--line)}
+.bx .c1{grid-column:6/9;grid-row:1/3;aspect-ratio:auto}
+.bx .c2{grid-column:9/13;aspect-ratio:4/3}
+.bx .c3{grid-column:9/11;aspect-ratio:1}
+.bx .c4{grid-column:11/13;aspect-ratio:1}
+.bx .c5{grid-column:1/8;aspect-ratio:16/9}
+.bx .c6{grid-column:8/13;aspect-ratio:auto}
+.bx-amo .c1 img{object-position:50% 50%}
+.bx-amo .c2 img{object-position:50% 40%}
+.bx-amo .c3 img{object-position:38% 60%}
+.bx-amo .c4 img{object-position:72% 55%}
+.bx-amo .c6 img{object-position:40% 50%}
+.bx-trad .c1 img{object-position:68% 50%}
+.bx-trad .c2 img{object-position:62% 45%}
+.bx-trad .c3 img{object-position:50% 30%}
+.bx-trad .c4 img{object-position:78% 60%}
+.bx-trad .c6 img{object-position:55% 55%}
+@media (max-width:900px){
+ .bx-text{grid-column:1/-1;grid-row:auto;padding:8px 0}
+ .bx .c1{grid-column:1/7;grid-row:auto;aspect-ratio:3/4}
+ .bx .c2{grid-column:7/13;aspect-ratio:3/4}
+ .bx .c3{grid-column:1/7}.bx .c4{grid-column:7/13}
+ .bx .c5{grid-column:1/-1}
+ .bx .c6{grid-column:1/-1;aspect-ratio:4/3}
+ .bx-hero{aspect-ratio:16/9}
+}
+.bx .ta{grid-column:6/13;aspect-ratio:3/2}
+.bx .tb,.bx .tc,.bx .td{grid-column:span 4;aspect-ratio:4/5}
+.bx .te{grid-column:1/8;aspect-ratio:16/9}
+.bx .tf{grid-column:8/13;aspect-ratio:5/4}
+.bx-text{grid-row:auto!important}
+@media (max-width:900px){.bx .ta,.bx .te,.bx .tf{grid-column:1/-1}.bx .tb,.bx .tc,.bx .td{grid-column:span 6}.bx .td{grid-column:1/-1;aspect-ratio:4/5}}
+.bx .te-wide{grid-column:1/-1;aspect-ratio:3.2/1}
+.bx .te-wide2{grid-column:1/-1;aspect-ratio:2.6/1}
+.bx-trad .tk{grid-column:1/8;aspect-ratio:3/2}
+.bx-trad .tl{grid-column:8/13;aspect-ratio:1.07/1}
+.bx-trad .tm,.bx-trad .tn{grid-column:span 6;aspect-ratio:3/2}
+.feedx{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.6fr);gap:28px;align-items:center;background:var(--paper-2);border-radius:6px;padding:36px}
+.fx-ph{display:grid;justify-items:center;gap:12px}
+.phone{width:100%;max-width:250px;aspect-ratio:390/844;border:9px solid #141414;border-radius:38px;overflow:hidden;background:#fff;box-shadow:0 18px 40px rgba(0,0,0,.18);position:relative}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.fx-text h4{font-family:var(--f-display);font-weight:400;font-size:28px;margin:0 0 6px}
+.fx-note{margin-top:16px;font-size:13.5px;color:var(--ink-2)}
+@media (max-width:900px){.bx-trad .tk,.bx-trad .tl{grid-column:1/-1}.bx-trad .tl{aspect-ratio:4/5}.bx-trad .tm,.bx-trad .tn{grid-column:1/-1}.feedx{grid-template-columns:1fr 1fr;padding:20px}.fx-text{grid-column:1/-1}}
+.bx .feedg{grid-column:1/-1;background:var(--paper-2);padding:40px;display:grid;justify-items:center}
+.bx .feedg img{width:100%;max-width:640px;height:auto}
+.bx-trad .tb,.bx-trad .tc{grid-column:span 6;aspect-ratio:4/5}
+.bx-trad .bx-text{grid-column:1/6;grid-row:1}
+.bx-trad .tr-col{grid-column:1/6;grid-row:2;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-self:end}
+.bx-trad .tr-col figure{aspect-ratio:1}
+.bx-trad .tr-feed{grid-column:6/13;grid-row:1/3;background:var(--paper-2);padding:28px;display:grid;place-items:center}
+.bx-trad .tr-feed img{width:100%;max-width:620px;height:auto}
+.bx-trad .tr-st{grid-column:1/-1;aspect-ratio:2.4/1;background:transparent}
+.bx-trad .tr-st img{object-fit:contain}
+.bx-trad .tr-st:hover img{transform:none}
+@media (max-width:900px){.bx-trad .bx-text,.bx-trad .tr-col,.bx-trad .tr-feed{grid-column:1/-1;grid-row:auto}.bx-trad .tr-st{aspect-ratio:auto}.bx-trad .tr-st img{height:auto}}
+.bx-trad .bx-text{grid-column:1/6;grid-row:auto}
+.bx-trad .r-curc{grid-column:6/13;aspect-ratio:1}
+.bx-trad .r-3{grid-column:span 4;aspect-ratio:4/5}
+.bx-trad .r-sm{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr) minmax(0,.9fr);gap:14px;align-items:stretch}
+.bx-trad .r-ph{background:var(--paper-2);border-radius:6px;display:grid;place-items:center;padding:28px}
+.bx-trad .r-ph .phone{max-width:260px;width:100%;aspect-ratio:390/844;border:9px solid #141414;border-radius:40px;overflow:hidden;background:#fff;box-shadow:0 18px 40px rgba(0,0,0,.18)}
+.bx-trad .r-ph .phone img{width:100%;height:100%;object-fit:cover;object-position:top}
+.bx-trad .r-feed{background:var(--paper-2);padding:28px;display:grid;place-items:center}
+.bx-trad .r-feed img{width:100%;height:auto;max-width:460px}
+.bx-trad .r-logo{background:#FDFBF5}
+.bx-trad .r-logo img{object-fit:contain}
+.bx-trad .r-stories{grid-column:1/-1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.bx-trad .r-stories img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;display:block;height:auto}
+.bx-trad .r-hl{grid-column:1/-1;background:#FDFBF5;padding:28px;display:grid;place-items:center}
+.bx-trad .r-hl img{width:100%;max-width:620px;height:auto}
+.bx-trad .r-hl:hover img{transform:none}
+@media (max-width:900px){.bx-trad .bx-text,.bx-trad .r-curc{grid-column:1/-1}.bx-trad .r-3{grid-column:span 6}.bx-trad .r-3:last-of-type{grid-column:1/-1}.bx-trad .r-sm{grid-template-columns:1fr 1fr}.bx-trad .r-logo{grid-column:1/-1;aspect-ratio:16/9}.bx-trad .r-stories{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:42%;overflow-x:auto;scroll-snap-type:x mandatory}.bx-trad .r-stories img{scroll-snap-align:start}}
+.bx-trad .r-sm{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}
+.bx-trad .r-ph{padding:20px!important}
+.bx-trad .r-ph .phone{max-width:380px!important;border-width:6px!important;border-radius:14px!important}
+.bx-trad .r-feed{padding:20px!important}
+.bx-trad .r-feed img{max-width:none!important}
+.bx-trad .r-logo{grid-column:1/-1;aspect-ratio:3.2/1}
+@media (max-width:900px){.bx-trad .r-sm{grid-template-columns:1fr!important}.bx-trad .r-ph{padding:14px!important}.bx-trad .r-ph .phone{max-width:none!important}.bx-trad .r-feed{padding:0!important;background:none!important}.bx-trad .r-logo{aspect-ratio:2/1}}
+.bx-trad .r-sm{grid-template-columns:1fr!important}
+.bx-trad .r-feed img{max-width:760px!important}
+.bx .am-feed{grid-column:1/-1;background:var(--paper-2);padding:20px;display:grid;place-items:center}
+.bx .am-feed img{width:100%;max-width:760px;height:auto}
+.bx .am-feed:hover img{transform:none}
+@media (max-width:900px){.bx .am-feed{padding:0;background:none}}
+.bx .am-st{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:900px;margin:0 auto;width:100%}
+.bx .am-st img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;display:block;height:auto}
+@media (max-width:900px){.bx .am-st{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:62%;overflow-x:auto;scroll-snap-type:x mandatory}.bx .am-st img{scroll-snap-align:start}}
+.ba{max-width:780px;gap:12px}
+.ba figcaption{font-size:12.5px;margin-top:6px}
+.ba .tag{font-size:10.5px;margin-bottom:6px}
+.cd-rail figure{position:relative}
+.ctag{display:inline-block;margin-bottom:6px;border:1px solid var(--line);font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:.35em .75em;border-radius:999px;background:rgba(255,255,255,.9);color:#171615}
+.ctag.on{background:var(--accent);color:var(--accent-ink)}
+.cd-rail .bf img{filter:saturate(.85)}
+.cnote{scroll-snap-align:start;background:var(--paper-2);border-radius:4px;padding:20px;font-size:14px;align-self:start;aspect-ratio:3/4;display:flex;flex-direction:column;justify-content:center}
+.cnote b{font-weight:600;margin-bottom:10px}.cnote ul{margin:0;padding-left:1.1em;display:grid;gap:8px;color:var(--ink-2)}
+.proc{padding-block:48px}
+.pr-head{display:flex;align-items:baseline;gap:24px;flex-wrap:wrap;margin-bottom:26px}
+.pr-head h2{font-size:clamp(22px,2.6vw,30px);line-height:1.15}
+.pr{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;counter-reset:p}
+.pr li{counter-increment:p;border-top:1px solid var(--ink);padding-top:10px;min-width:0}
+.pr li::before{content:counter(p,decimal-leading-zero);font-family:var(--f-mono);font-size:11px;color:var(--ink-2);display:block;margin-bottom:4px}
+.pr b{display:block;font-weight:600;font-size:15px}
+.pr span{display:block;font-size:13px;color:var(--ink-2);margin-top:2px}
+.proc .tools{margin-top:22px;gap:6px}.proc .tools span{font-size:11.5px;padding:.35em .75em}
+@media (max-width:900px){.pr{grid-template-columns:1fr 1fr}}
+.bx .am-st{grid-template-columns:repeat(6,minmax(0,1fr));max-width:none}
+.bx .am-st{grid-template-columns:repeat(4,minmax(0,1fr));max-width:none}
+@media (max-width:900px){.bx-amo .td{aspect-ratio:3/2!important}.bx .am-st{grid-template-columns:none;grid-auto-columns:46%}}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;counter-reset:s}
+.step{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:var(--f-mono);font-size:12px;color:var(--ink-2)}
+.step b{display:block;margin:8px 0 6px;font-weight:600}
+.step p{font-size:14.5px;color:var(--ink-2)}
+.tools{margin-top:36px;display:flex;flex-wrap:wrap;gap:10px}
+.tools span{font-family:var(--f-mono);font-size:13px;border:1px solid var(--line);border-radius:999px;padding:.45em .9em}
+/* contact */
+.contact{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:28px}
+.contact h2{font-size:clamp(34px,5vw,60px);line-height:1.04}
+.handle{font-family:var(--f-mono);font-size:15px;margin-top:14px;user-select:all}
+footer{padding-block:26px 40px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-2)}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:36px;padding-block:40px 48px}
+  .hero .reel{justify-self:start;max-width:300px}
+  .sec-head{grid-template-columns:1fr;gap:6px}
+  .films{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .why{grid-template-columns:1fr}
+  .case{grid-template-columns:1fr;gap:22px}
+  .rail{grid-auto-columns:92%}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .ba{grid-template-columns:1fr 1fr}
+  .ba figure.before{grid-column:1/-1}
+  .film{grid-template-columns:1fr}
+  .film video{max-width:340px}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ugc{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .steps{grid-template-columns:1fr}
+  section{padding-block:56px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+
+.refs{display:grid;grid-template-columns:repeat(4,minmax(0,150px));gap:14px;margin-bottom:30px}
+.refs figure{margin:0}
+.refs img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:6px;background:var(--paper-2)}
+.refs figcaption{margin-top:8px;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.shoot-lab{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin:0 0 14px}
+.shoot{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.shoot figure{margin:0}
+.shoot img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:6px;background:var(--paper-2)}
+.shoot .big{grid-column:span 2;grid-row:span 2}
+.shoot .big img{aspect-ratio:auto;height:100%}
+.shoot-dl{margin:34px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.shoot-dl dt{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.shoot-dl dd{margin:4px 0 0;font-size:15px}
+@media (max-width:760px){.refs{grid-template-columns:repeat(4,minmax(0,1fr))}.shoot{grid-template-columns:repeat(2,minmax(0,1fr))}.shoot .big{grid-column:span 2;grid-row:auto}.shoot .big img{aspect-ratio:4/5;height:auto}.shoot-dl{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="name">Яна</div>
+    <div style="display:flex;gap:8px;align-items:center"><a class="tg" href="../">EN</a><a class="tg" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Telegram · @yaaasyya</a></div>
+  </header>
+
+  <div class="hero">
+    <div>
+      <p class="mono">Графический дизайнер · AI-креатор · Санкт-Петербург / Москва</p>
+      <h1 style="margin-top:18px">Дизайн бренда: от логотипа <em>до&nbsp;карточки</em> и&nbsp;ролика</h1>
+      <p class="lead">Разрабатываю фирменные стили, упаковку и печатные материалы. Снимаю рекламные ролики и UGC в нейросетях: модели и сцены генерирую, а товар в кадре совпадает с оригиналом до надписей. Делаю карточки для Wildberries и Ozon - от структуры и текстов слайдов до вёрстки.</p>
+      <div class="facts"><span>Фирменный стиль</span><span>Упаковка и полиграфия</span><span>Рекламные ИИ-ролики</span><span>UGC</span><span>Карточки WB / Ozon</span><span>Тексты и структура карточек</span></div>
+      <div class="cta"><a class="btn" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Написать в Telegram →</a><span class="mono">готова к тестовому</span></div>
+    </div>
+    <figure class="reel" style="margin:0">
+      <video src="../media/moveli.mp4" poster="../media/moveli.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Ролик «Мамино пальто»"></video>
+      <figcaption class="mono">«Мамино пальто» · ролик для бренда сумок · концепт</figcaption>
+    </figure>
+  </div>
+</div>
+
+<section id="graphic">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="mono">01 · Фирменный стиль</p>
+      <div>
+        <h2>Фирменный стиль, упаковка и печать</h2>
+        <p>Два бренда с нуля: от смысла названия и логотипа до упаковки, развёрток, пакетов и визуала соцсетей.</p>
+      </div>
+    </div>
+
+    <article class="bx bx-amo">
+      <figure class="bx-hero"><img src="../media/am_cover2.jpg" alt="Обложка amologia: логотип в проёме морской пещеры" loading="lazy"></figure>
+      <div class="bx-grid">
+        <div class="bx-text">
+          <h3>[amologia]</h3>
+          <p class="bx-quote">«Я люблю тебя, наука»</p>
+          <p>Так переводится название. Задача - соединить строгую медицину и живую природу: типографика сдержанная, почти лабораторная, а на коробке через вырубку видна волна или камни у моря.</p>
+          <div class="sw"><span style="--c:#1E2830">морской</span><span style="--c:#F4F4F2">белый</span><span style="--c:#8E9499">камень</span></div>
+          <ul class="points"><li>Логотип в скобках, как формула</li><li>Две линии: anti-age и базовый уход</li><li>Коробки, развёртка, пакеты, флаконы</li></ul>
+        </div>
+              <figure class="ta"><img src="../media/b_amo_a.jpg" alt="Коробки с вырубкой" loading="lazy"></figure>
+        <figure class="tb"><img src="../media/b_amo_b2.jpg" alt="Флакон amologia на мокром камне у моря" loading="lazy"></figure>
+        <figure class="tc"><img src="../media/b_amo_c.jpg" alt="Стопка коробок" loading="lazy"></figure>
+        <figure class="td"><img src="../media/b_amo_d.jpg" alt="Фирменные пакеты" loading="lazy"></figure>
+        <figure class="te te-wide2"><img src="../media/b_amo_e2.jpg" alt="Чертёж линейки" loading="lazy"></figure>
+        <div class="am-st">
+          <img src="../media/am_sz1.jpg" alt="История amologia: утро у моря" loading="lazy">
+          <img src="../media/am_sz2.jpg" alt="История amologia: Botox Cream на камнях" loading="lazy">
+          <img src="../media/am_sz3.jpg" alt="История amologia: Peptide Eye Emulsion" loading="lazy">
+          <img src="../media/am_sz4.jpg" alt="История amologia: Peptide Night Cream" loading="lazy">
+        </div>
+      </div>
+    </article>
+
+    <article class="bx bx-trad">
+      <figure class="bx-hero"><img src="../media/b_trad_h2.jpg" alt="Обложка TRÅD: женщина в туманной долине и логотип" loading="lazy"></figure>
+      <div class="bx-grid">
+        <div class="bx-text">
+          <h3>TRÅD</h3>
+          <p class="bx-quote">«Нить» по-датски</p>
+          <p>Бренд растительных добавок выглядел как десятки других: бежевые стоки, нет продукта и нет людей, которым он нужен. Я начала с аудита контента и портрета клиента - человек 35+, который бегает по утрам, читает составы и платит за качество. Из этого выросла система: один оранжевый акцент как «энергия жизни», линия-«нить» в инфографике и лента, где в каждом ряду продукт, человек и польза.</p>
+          <p>Весь фотоконтент для соцсетей - предметную съёмку, людей и комьюнити - сгенерировала в нейросетях. Банки и этикетки настоящие.</p>
+          <div class="sw"><span style="--c:#B8BBC2">серый</span><span style="--c:#F26A1B">оранжевый</span><span style="--c:#F3EDE3">нюд</span></div>
+          <ul class="points"><li>Аудит контента и портрет аудитории</li><li>Рубрикатор и гид по фотоконтенту</li><li>ИИ-съёмка продукта и комьюнити</li><li>Сетка 3:4, профиль, истории и актуальные</li></ul>
+        </div>
+        <figure class="r-curc"><img src="../media/r_curc.jpg" alt="Куркумин TRÅD с корнем куркумы и чёрным перцем" loading="lazy"></figure>
+        <figure class="r-3"><img src="../media/r_woman.jpg" alt="Женщина 35+ после пробежки пьёт протеин у моря" loading="lazy"></figure>
+        <figure class="r-3"><img src="../media/r_pack.jpg" alt="Протеин TRÅD на камне со мхом в горах" loading="lazy"></figure>
+        <figure class="r-3"><img src="../media/r_coll.jpg" alt="Коллаген TRÅD на гальке у моря" loading="lazy"></figure>
+        <div class="r-sm">
+          <figure class="r-feed"><img src="../media/n_trad_feed.jpg" alt="Сетка ленты TRÅD 3×3" loading="lazy"></figure>
+        </div>
+        <figure class="r-logo"><img src="../media/b_trad_d.jpg" alt="Логотип TRÅD" loading="lazy"></figure>
+        <div class="r-stories" tabindex="0" aria-label="Истории TRÅD">
+          <img src="../media/r_st_curc.jpg" alt="История: куркумин с пиперином" loading="lazy">
+          <img src="../media/r_st_run.jpg" alt="История: рубрика комьюнити" loading="lazy">
+          <img src="../media/r_st_rec.jpg" alt="История: рецепт тыквенного смузи" loading="lazy">
+          <img src="../media/r_st_chl.jpg" alt="История: чем полезна хлорелла" loading="lazy">
+          <img src="../media/r_st_del.jpg" alt="История: доставка" loading="lazy">
+        </div>
+        <figure class="r-hl"><img src="../media/r_hl.jpg" alt="Обложки актуальных историй" loading="lazy"></figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="mono">02 · Ролики для брендов</p>
+      <div>
+        <h2>Рекламные ролики уровня съёмки</h2>
+        <p>Идея, раскадровка, генерация и монтаж. Сумка в кадре повторяет настоящую модель бренда: форму, фурнитуру, фактуру кожи.</p>
+      </div>
+    </div>
+    <div class="films">
+      <article class="film">
+        <video src="../media/moveli.mp4" poster="../media/moveli.jpg" controls playsinline preload="none"></video>
+        <div>
+          <span class="tag">концепт</span>
+          <h3>Мамино пальто</h3>
+          <p>Короткий фильм для бренда сумок: мех на сумке напоминает героине мамин воротник, и мы уходим в воспоминание из 90-х.</p>
+          <dl><div><dt>Задача</dt><dd>Эмоция и история вместо демонстрации товара</dd></div><div><dt>Сделано</dt><dd>Сценарий, раскадровка, переход в воспоминание через свет</dd></div><div><dt>Инструменты</dt><dd>Midjourney, Nano Banana Pro, Seedance</dd></div></dl>
+        </div>
+      </article>
+      <article class="film">
+        <video src="../media/cns.mp4" poster="../media/cns.jpg" controls playsinline preload="none"></video>
+        <div>
+          <span class="tag">концепт</span>
+          <h3>Сумка как экспонат</h3>
+          <p>Презентация новой сумки бренда: фактура кожи, фурнитура, силуэт на модели и финальный кадр в музейном зале.</p>
+          <dl><div><dt>Задача</dt><dd>Показать товар дорого и спокойно, без вычурности</dd></div><div><dt>Сделано</dt><dd>Детали крупно, свет из фонаря, финал под логотип</dd></div><div><dt>Инструменты</dt><dd>Midjourney, Nano Banana Pro, Seedance</dd></div></dl>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="mono">03 · UGC</p>
+      <div>
+        <h2>Ролики с реальным товаром и ИИ-моделью</h2>
+        <p>Одна модель держится во всех роликах бренда. В углу каждого ролика фото упаковки с сайта бренда для сравнения.</p>
+      </div>
+    </div>
+    <div class="ugc">
+      <div class="u"><div class="v"><video src="../media/coat.mp4" poster="../media/coat.jpg" controls playsinline preload="none"></video><img class="pack" src="../media/p_coat.jpg" alt="Фото плаща"></div><div><b>Fashion · утеплённый плащ</b><span>концепт · street-style</span></div></div>
+<div class="u"><div class="v"><video src="../media/lips.mp4" poster="../media/lips.jpg" controls playsinline preload="none"></video><img class="pack" src="../media/p_lippencil.jpg" alt="Упаковка карандаша для губ"></div><div><b>LUVU · Lip Pencil + Glossy</b><span>для бренда · макияж в метро</span></div></div>
+      <div class="u"><div class="v"><video src="../media/stick.mp4" poster="../media/stick.jpg" controls playsinline preload="none"></video><img class="pack" src="../media/p_stick.jpg" alt="Упаковка крем-стика"></div><div><b>a'skin · Крем-стик</b><span>концепт · лайфхак в машине</span></div></div>
+      <div class="u"><div class="v"><video src="../media/hair1.mp4" poster="../media/hair1.jpg" controls playsinline preload="none"></video><img class="pack" src="../media/p_hairspray.jpg" alt="Упаковка спрея для волос"></div><div><b>a'skin · Спрей для объёма</b><span>концепт · до / после</span></div></div>
+      
+      
+      
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="mono">04 · Фотосессия</p>
+      <div>
+        <h2>Персонаж и съёмка с нуля</h2>
+        <p>Героиню, локацию и свет создала нейросеть. Одежда настоящая: беру фото товара с сайта бренда и переношу его на персонажа в уличную съёмку. Вместо студии, модели и стилиста - один персонаж, одни референсы и один свет на всю серию.</p>
+      </div>
+    </div>
+    <p class="shoot-lab">Референсы одежды</p>
+    <div class="refs">
+      <figure><img src="../media/fs_ref_dress.jpg" alt="Референс: платье-свитер на модели" loading="lazy"><figcaption>Платье</figcaption></figure>
+      <figure><img src="../media/fs_ref_boots.jpg" alt="Референс: сапоги" loading="lazy"><figcaption>Сапоги</figcaption></figure>
+      <figure><img src="../media/fs_ref_bag.jpg" alt="Референс: сумка" loading="lazy"><figcaption>Сумка</figcaption></figure>
+      <figure><img src="../media/fs_ref_glasses.jpg" alt="Референс: очки" loading="lazy"><figcaption>Очки</figcaption></figure>
+    </div>
+    <p class="shoot-lab">Результат · всё в кадре сгенерировано в ИИ, включая персонажа</p>
+    <div class="shoot">
+      <figure class="big"><img src="../media/fs_1.jpg" alt="Героиня у стены в платье, очках и с сумкой" loading="lazy"></figure>
+      <figure><img src="../media/fs_2.jpg" alt="Героиня идёт по улице" loading="lazy"></figure>
+      <figure><img src="../media/fs_3.jpg" alt="Героиня сидит на ступенях, крупно сапоги" loading="lazy"></figure>
+      <figure><img src="../media/fs_4.jpg" alt="Героиня сидит на ступенях, съёмка снизу" loading="lazy"></figure>
+      <figure><img src="../media/fs_5.jpg" alt="Героиня сидит на бордюре" loading="lazy"></figure>
+      <figure><img src="../media/fs_6.jpg" alt="Героиня у чёрной двери" loading="lazy"></figure>
+    </div>
+    <dl class="shoot-dl">
+      <div><dt>Задача</dt><dd>Серия для бренда без съёмки с моделью и студией, одежда в кадре такая же, как в каталоге</dd></div>
+      <div><dt>Сделано</dt><dd>Персонаж с нуля, образ, позы и 6 кадров в одном свете и цвете</dd></div>
+      <div><dt>Инструменты</dt><dd>Midjourney, Nano Banana Pro</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="mono">05 · Карточки</p>
+      <div>
+        <h2>Обложки и слайды для маркетплейсов</h2>
+        <p>Смотрю на карточку глазами покупателя в выдаче: что он должен понять за секунду и что его останавливает. Всё, что на слайдах, сгенерировано нейросетями и свёрстано в Figma.</p>
+      </div>
+    </div>
+
+    <div class="cdx"><input type="radio" name="cdt" id="cdt0" checked><input type="radio" name="cdt" id="cdt1"><input type="radio" name="cdt" id="cdt2"><input type="radio" name="cdt" id="cdt3"><input type="radio" name="cdt" id="cdt4"><div class="fn-tabs"><label for="cdt0">Тушь</label><label for="cdt1">Бельё</label><label for="cdt2">Сыворотка</label><label for="cdt3">Кремы</label><label for="cdt4">Маски</label></div><div class="cd-rail cr0" tabindex="0" aria-label="Тушь"><figure class="bf"><span class="ctag">до · сейчас на WB</span><img src="../media/wb_mascara.jpg" alt="Текущая обложка туши на Wildberries" loading="lazy"><figcaption>Тушь теряется на пустом бежевом фоне</figcaption></figure><figure><span class="ctag on">после</span><img src="../media/tush1.jpg" alt="Новая обложка: модель и ресницы крупно" loading="lazy"><figcaption>Обложка · результат на ресницах виден раньше текста</figcaption></figure><figure><span class="ctag" style="visibility:hidden">·</span><img src="../media/tush2.jpg" alt="Предметный слайд с тушью" loading="lazy"><figcaption>Упаковка и кисточка крупно</figcaption></figure><figure><img src="../media/tush3.jpg" alt="Слайд: тушь и мазок текстуры" loading="lazy"><figcaption>Термотушь · текстура</figcaption></figure><figure><img src="../media/tush4.jpg" alt="Слайд: тушь у лица модели" loading="lazy"><figcaption>Термотушь · результат на ресницах</figcaption></figure><div class="cnote"><b>Что поменяла</b><ul><li>Было: тушь на пустом фоне, шесть надписей одного размера спорят между собой</li><li>Стало: ресницы модели крупно, один заголовок и два преимущества</li><li>Тени от листьев и тёплый свет делают упаковку дороже, слайды собраны в серию</li></ul></div></div><div class="cd-rail cr1" tabindex="0" aria-label="Бельё"><figure><img src="../media/lin_cover.jpg" alt="Обложка: трусы-шорты на модели, 3 шт в наборе, размеры 42–52" loading="lazy"><figcaption>Обложка · количество, размеры и цвета видны сразу</figcaption></figure><figure><img src="../media/lin_fit.jpg" alt="Слайд посадки: модель со спины и четыре преимущества" loading="lazy"><figcaption>Посадка · четыре причины купить</figcaption></figure><figure><img src="../media/lin_fabric.jpg" alt="Слайд ткани: макро и три цвета набора" loading="lazy"><figcaption>Ткань и набор · макро и три цвета</figcaption></figure><figure class="cw"><img src="../media/lin_compare.jpg" alt="Слева кадр с фотосессии, справа ИИ-генерация с тем же товаром" loading="lazy"><figcaption>Фотосессия → ИИ-генерация: модель, свет и поза новые, крой, цвет и фактура те же</figcaption></figure></div><div class="cd-rail cr2" tabindex="0" aria-label="Сыворотка"><figure><img src="../media/serum1.jpg" alt="Обложка сыворотки с моделью" loading="lazy"><figcaption>Anti-age сыворотка · обложка</figcaption></figure><figure><img src="../media/serum2.jpg" alt="Слайд сыворотки: кожа крупно" loading="lazy"><figcaption>Anti-age сыворотка · кожа крупно</figcaption></figure></div><div class="cd-rail cr3" tabindex="0" aria-label="Кремы"><figure><img src="../media/souffle.jpg" alt="Обложка крема-суфле" loading="lazy"><figcaption>Крем-суфле для лица · обложка</figcaption></figure><figure><img src="../media/butter3.jpg" alt="Слайд: крем-баттер в руках модели" loading="lazy"><figcaption>Крем-баттер · состав</figcaption></figure><figure><img src="../media/butter1.jpg" alt="Слайд: крем-баттер, предмет" loading="lazy"><figcaption>Крем-баттер · предмет</figcaption></figure></div><div class="cd-rail cr4" tabindex="0" aria-label="Маски"><figure><img src="../media/mask1.jpg" alt="Слайд: тканевые маски, упаковка" loading="lazy"><figcaption>Тканевые маски · упаковка</figcaption></figure><figure><img src="../media/mask3.jpg" alt="Слайд: маска на лице модели" loading="lazy"><figcaption>Тканевые маски · в использовании</figcaption></figure></div></div>
+
+    <h3 class="sub">Воронки: структура и тексты карточки</h3>
+    <p class="fn-lead">Пишу продающую структуру карточки: из состава, исследований и описания бренда отбираю главное и раскладываю по 10 слайдам - от проблемы покупателя на обложке до противопоказаний и гарантий. Ниже две мои воронки без правок.</p>
+    <div class="fnx">
+      <input type="radio" name="fnt" id="fnt1" checked><input type="radio" name="fnt" id="fnt2">
+      <div class="fn-tabs"><label for="fnt1">Крем-гуаша</label><label for="fnt2">Крем с ретиналем 0.1</label></div>
+      <div class="fn-rail fr1" tabindex="0" aria-label="VT Cosmetics V-Mode Gua Sha Massage Cream, 120 ml"><div class="fs fs-head"><div class="fn-imgs"><img src="../media/gua_pack.jpg" alt="" loading="lazy"><img src="../media/gua_use.jpg" alt="" loading="lazy"></div><b>VT Cosmetics V-Mode Gua Sha Massage Cream, 120 ml</b><p>Готовая воронка из 10 слайдов →</p></div><div class="fs"><span class="fs-n">Слайд 1</span><b>МАССАЖНЫЙ КРЕМ ДЛЯ ОВАЛА ЛИЦА С РЕТИНАЛЕМ И КОФЕИНОМ</b><ul><li>Отёки + птоз + морщины</li><li>120 мл · ретиналь 12 000 мкг + кофеин 10 000 ppm + встроенный гуаша · K-beauty</li></ul></div><div class="fs"><span class="fs-n">Слайд 2</span><b>ВЕЧЕРНИЙ МАССАЖНЫЙ УХОД</b><ul><li>ШАГ 1: Повернуть дозатор в положение «ON» (стрелка ▼), нанести крем на лицо, шею, декольте или тело</li><li>ШАГ 2: Массировать V-образным аппликатором от центра к периферии и снизу вверх</li><li>ШАГ 3: После массажа повернуть дозатор в «OFF», протереть аппликатор, закрыть крышку → ГОТОВО!</li></ul><p>Завершающий этап вечернего ухода. Хранить в холодильнике 3–10 °C. Утром — SPF 50+</p></div><div class="fs"><span class="fs-n">Слайд 3</span><b>ДО / ПОСЛЕ — ЧЁТКИЙ ОВАЛ И СВЕЖИЙ ВИД</b><p>Отёки, птоз и второй подбородок уменьшаются</p><p>Gua Sha Cream → лифтинг + дренаж + подтяжка контуров</p><p>Мгновенное снятие утренней припухлости</p></div><div class="fs"><span class="fs-n">Слайд 4</span><b>КОФЕИН 10 000 PPM + РЕТИНАЛЬ 12 000 МКГ + АППЛИКАТОР</b><ul><li>Кофеин 1% (10 000 ppm) → дренажный эффект, улучшает микроциркуляцию, выводит лишнюю жидкость, уменьшает утреннюю отёчность</li><li>Ретиналь 12 000 мкг → мощная форма витамина A, стимулирует обновление клеток и синтез коллагена, разглаживает морщины и заломы</li><li>Встроенный V-образный аппликатор → повторяет изгибы лица и тела на 360°, формирует овал, подчёркивает скулы и линию челюсти</li><li>2-е функциональное средство: официально зарегистрирован для улучшения морщин и осветления пигментации</li></ul></div><div class="fs"><span class="fs-n">Слайд 5</span><b>9 ПЕПТИДОВ + 7 ВИДОВ КОЛЛАГЕНА + 10 ВИДОВ ГК</b><ul><li>9 пептидов (включая аргирелин / Acetyl Hexapeptide-8) → антивозрастное действие, расслабляют мимические мышцы, тургор</li><li>7 видов коллагена → удержание влаги, выравнивание текстуры, восстановление и уменьшение морщин</li><li>10 видов гиалуроновой кислоты → от сверхнизкомолекулярной до высокомолекулярной: барьер и увлажнение на всех уровнях</li><li>10% масло подсолнечника + масло ши, макадамии и какао → питание, антиоксидантная защита, гладкость</li></ul></div><div class="fs"><span class="fs-n">Слайд 6</span><b>ДЛЯ ТЕБЯ, ЕСЛИ</b><ul><li>Утренняя отёчность, мешки под глазами, второй подбородок</li><li>Птоз овала лица и снижение чёткости контуров</li><li>Шея, декольте и тело нуждаются в уходе</li><li>Нужен лифтинг с профессиональным массажным эффектом дома</li></ul></div><div class="fs"><span class="fs-n">Слайд 7</span><b>СКУЛЬПТУРИРУЮЩИЙ ЛИФТИНГ-ЭФФЕКТ</b><p>Формирует овал, подчёркивает скулы и линию челюсти</p><p>Уменьшает выраженность второго подбородка</p><p>Лимфодренажное действие — кожа получает больше кислорода и питательных веществ</p><p>Прошёл тест на раздражение: уровень раздражения — 0.00</p></div><div class="fs"><span class="fs-n">Слайд 8</span><b>НАСЫЩЕННАЯ ТЕКСТУРА ДЛЯ МАССАЖА</b><p>Обеспечивает идеальное скольжение аппликатора</p><p>Быстро впитывается после массажа, оставляет кожу мягкой</p><p>Объём 120 мл — можно использовать на лице и теле</p></div><div class="fs"><span class="fs-n">Слайд 9</span><b>ВАЖНО ЗНАТЬ</b><p>Только вечером — ретиналь повышает чувствительность к солнцу</p><p>Хранить в холодильнике при температуре 3–10 °C</p><p>❗️Не использовать при беременности, лактации и за полгода до беременности</p></div><div class="fs"><span class="fs-n">Слайд 10</span><ul><li>Официальный дистрибьютор VT Cosmetics</li><li>Сертификаты, гарантия</li><li>Прямые поставки из Кореи</li></ul></div></div>
+      <div class="fn-rail fr2" tabindex="0" aria-label="VT Retinal Pro Cream 0.1, 20 ml"><div class="fs fs-head"><div class="fn-imgs"><img src="../media/ret_pack.jpg" alt="" loading="lazy"><img src="../media/ret_drops.jpg" alt="" loading="lazy"></div><b>VT Retinal Pro Cream 0.1, 20 ml</b><p>Готовая воронка из 10 слайдов →</p></div><div class="fs"><span class="fs-n">Слайд 1</span><b>ИНТЕНСИВНЫЙ КРЕМ С РЕТИНАЛЕМ 0.1 И EGF</b><ul><li>Глубокие морщины + птоз + тусклость</li><li>20 мл · нано-ретиналь 0.1% · для экспертов · K-beauty</li></ul></div><div class="fs"><span class="fs-n">Слайд 2</span><b>ФИНАЛЬНЫЙ ШАГ ВЕЧЕРНЕГО УХОДА</b><ul><li>ШАГ 1: После очищения, тонера и сыворотки нанести небольшое количество крема</li><li>ШАГ 2: Распределить мягкими похлопывающими движениями до впитывания</li><li>ШАГ 3: ГОТОВО!</li></ul><p>Привыкание: неделя 1 — 2 раза, неделя 2 — через ночь, неделя 3 — каждый вечер по переносимости. Утром — SPF 50+ PA++++</p></div><div class="fs"><span class="fs-n">Слайд 3</span><b>ДО / ПОСЛЕ — ПОДТЯНУТАЯ И ОБНОВЛЁННАЯ КОЖА</b><p>Глубокие морщины, птоз и пигментация уменьшаются</p><p>Retinal Pro Cream 0.1 → максимальный лифтинг + обновление + наполнение</p><p>Высшая ступень линейки для опытных пользователей ретиноидов</p></div><div class="fs"><span class="fs-n">Слайд 4</span><b>НАНО-РЕТИНАЛЬ 0.1% + PHYTO PDRN® PANAX + EGF</b><ul><li>Нано-ретиналь 0.1% в липосомах ~100 нм → мощное действие, сразу трансформируется в ретиноевую кислоту</li><li>Phyto PDRN® Panax (экстракт женьшеня + ДНК натрия) → клеточное восстановление, поддержка упругости</li><li>Факторы роста EGF (sh-Oligopeptide-1, sh-Oligopeptide-2, sh-Polypeptide-1 и др.) → стимулируют клеточную активность и регенерацию, уменьшают морщины</li><li>2-е функциональное средство: официально для улучшения морщин и осветления пигментации</li></ul></div><div class="fs"><span class="fs-n">Слайд 5</span><b>ВОЛЮФИЛИН + NMN + 9 ПЕПТИДОВ</b><ul><li>Волюфилин (экстракт анемаррены) → натуральный липофиллер, увеличивает плотность и объём тканей, снижает птоз</li><li>NMN (никотинамид мононуклеотид) → стимулирует синтез белков, улучшает текстуру, усиливает барьерные функции</li><li>9 пептидов (Acetyl Hexapeptide-8, Copper Tripeptide-1, Palmitoyl Pentapeptide-4 и др.) → регенерация, сокращение заломов, тургор</li><li>Церамиды, центелла, аденозин → барьер, увлажнение, обновление</li></ul></div><div class="fs"><span class="fs-n">Слайд 6</span><b>ДЛЯ ТЕБЯ, ЕСЛИ</b><ul><li>Опытные пользователи ретиноидов, прошедшие адаптацию к 0.025–0.05%</li><li>Зрелая кожа с глубокими морщинами, выраженным птозом и потерей тонуса</li><li>Пигментация, тусклый тон, неровная текстура</li><li>Нужен максимальный антивозрастной результат</li></ul></div><div class="fs"><span class="fs-n">Слайд 7</span><b>ВЫСШАЯ СТУПЕНЬ В ЛИНЕЙКЕ RETINAL PRO CREAM</b><p>0.025% Basic → для новичков: мягкое знакомство</p><p>0.05% Advanced → для продолжающих: сияние и лифтинг</p><p>0.1% Expert → для вас: максимальная интенсивность, глубокие морщины</p></div><div class="fs"><span class="fs-n">Слайд 8</span><b>НАСЫЩЕННАЯ КРЕМОВАЯ ТЕКСТУРА</b><p>Питательная, но быстро впитывается без стянутости</p><p>Подходит для локального применения: носогубные складки, зона вокруг глаз, межбровье, лоб</p><p>Удобный тонкий носик для точечного нанесения</p></div><div class="fs"><span class="fs-n">Слайд 9</span><b>ВАЖНО ЗНАТЬ</b><p>Только вечером — ретиналь повышает чувствительность к солнцу</p><p>Привыкание 0.1%: неделя 1 — 2 раза, неделя 2 — через ночь, неделя 3 — ежедневно по переносимости</p><p>❗️Не использовать при беременности, лактации и за полгода до беременности</p></div><div class="fs"><span class="fs-n">Слайд 10</span><ul><li>Официальный дистрибьютор VT Cosmetics</li><li>Сертификаты, гарантия</li><li>Прямые поставки из Кореи</li></ul></div></div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="proc">
+  <div class="wrap">
+    <div class="pr-head"><p class="mono">Процесс</p><h2>Как довожу генерацию до коммерческого качества</h2></div>
+    <ol class="pr">
+      <li><b>Разбор</b><span>кто покупатель и что его остановит</span></li>
+      <li><b>Стиль</b><span>свет, палитра и настроение под бренд</span></li>
+      <li><b>Генерация</b><span>модель и сцена в нейросетях</span></li>
+      <li><b>Точный товар</b><span>крой, цвет и надписи как в оригинале</span></li>
+      <li><b>Вёрстка и видео</b><span>Figma, монтаж, звук</span></li>
+    </ol>
+    <div class="tools"><span>Midjourney</span><span>Nano Banana Pro</span><span>Higgsfield</span><span>Seedance</span><span>Kling</span><span>Veo</span><span>Figma</span><span>Photoshop</span><span>Illustrator</span><span>CapCut</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap contact">
+    <div>
+      <p class="mono">Контакты</p>
+      <h2 style="margin-top:12px">Открыта к работе в команде</h2>
+      <p class="handle">Telegram · @yaaasyya</p>
+    </div>
+    <a class="btn" href="https://t.me/yaaasyya" target="_blank" rel="noopener">Написать в Telegram →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Все модели, сцены и ролики созданы с помощью нейросетей. Товары и упаковка в кадре реальные. Работы с пометкой «концепт» сделаны для портфолио и не заказаны брендом.</div>
+</footer>
+
+</body>
+</html>
